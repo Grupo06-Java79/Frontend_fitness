@@ -9,6 +9,8 @@ import { AuthProvider } from './contexts/AuthContext'
 import ListaExercicios from './components/exercicio/listaexercicios/ListaExercicios'
 import ListaCategorias from './components/categoria/listacategorias/ListaCategorias'
 import ListaUsuarios from './components/usuario/listausuarios/ListaUsuarios'
+import FormCategoria from './components/categoria/formcategoria/FormCategoria'
+import FormExercicio from './components/exercicio/formexercicio/FormExercicio'
 
 function App() {
   return (
@@ -20,11 +22,17 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/" element={<Cadastrar />} />
+              <Route path="/cadastrar" element={<Cadastrar />} />
               <Route path="/login" element={<Login />} />
               <Route path="/exercicios" element={<ListaExercicios />} />
               <Route path="/categorias" element={<ListaCategorias/>}/>
               <Route path="/usuarios" element={<ListaUsuarios/>}/>
+              <Route path="/editarexercicio/:id" element={<FormExercicio/>}/>
+              <Route path="/editarcategoria/:id" element={<FormCategoria/>}/>
+              <Route path="/cadastrarexercicio" element={<FormExercicio/>}/>
+              <Route path="/cadastrarcategoria" element={<FormCategoria/>}/>
+              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+              <Route path="/deletarexercicio/:id" element={<DeletarExercicio />} />
             </Routes>
           </div>
           <Footer />

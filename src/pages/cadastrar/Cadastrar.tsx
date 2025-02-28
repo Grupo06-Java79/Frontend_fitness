@@ -1,9 +1,9 @@
+import './Cadastrar.css'
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
-import './Cadastrar.css'
 import { RotatingLines } from 'react-loader-spinner'
+import Usuario from '../../models/Usuario'
 
 function Cadastrar() {
 
