@@ -11,6 +11,8 @@ import ListaCategorias from './components/categoria/listacategorias/ListaCategor
 import ListaUsuarios from './components/usuario/listausuarios/ListaUsuarios'
 import FormCategoria from './components/categoria/formcategoria/FormCategoria'
 import FormExercicio from './components/exercicio/formexercicio/FormExercicio'
+import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
+import DeletarExercicio from './components/exercicio/deletarexercicio/DeletarExercicio'
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrar" element={<Cadastrar />} />
               <Route path="/login" element={<Login />} />
