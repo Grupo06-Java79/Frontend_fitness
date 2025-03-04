@@ -13,6 +13,7 @@ import FormCategoria from './components/categoria/formcategoria/FormCategoria'
 import FormExercicio from './components/exercicio/formexercicio/FormExercicio'
 import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
 import DeletarExercicio from './components/exercicio/deletarexercicio/DeletarExercicio'
+import Sobre from './pages/sobre/Sobre'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/cadastrarcategoria" element={<FormCategoria/>}/>
               <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
               <Route path="/deletarexercicio/:id" element={<DeletarExercicio />} />
+              <Route path="/sobre" element={<Sobre />} />
             </Routes>
           </div>
           <Footer />

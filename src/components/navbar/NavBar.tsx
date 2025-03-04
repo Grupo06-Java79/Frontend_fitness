@@ -8,10 +8,13 @@ function Navbar() {
                     <Link to='/home' className="text-2xl font-bold">PraçaFit</Link>
                     <Link to='/exercicios' className='hover:underline'>Exercícios</Link>
                     <Link to='/categorias' className='hover:underline'>Categorias</Link>
+                    <Link to='/sobre' className='hover:underline'>sobre</Link>
                 </div>
             </div>
         </>
     )
 }
+
+
 
 export default Navbar
