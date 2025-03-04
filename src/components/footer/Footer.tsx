@@ -6,23 +6,20 @@ function Footer() {
 
     return (
         <>
-            <div className="flex justify-center bg-indigo-900 text-white">
-                <div className="container flex flex-col items-center py-4">
-                    <p className='text-xl font-bold'>
-                        PraçaFit | Copyright: {data}
+            <div className="flex w-96 bg-black text-white">
+                <div className="flex p-2">
+                    <a href="https://www.linkedin.com/in/seu_usuario" target="_blank" className="pl-5">
+                        <LinkedinLogo size={36} weight='bold'/>
+                    </a>
+                    <a href="https://www.instagram.com/seu_usuario" target="_blank" className="px-5">
+                        <InstagramLogo size={36} weight='bold' />
+                    </a>
+                    <a href="https://www.facebook.com/seu_usuario" target="_blank" >
+                        <FacebookLogo size={36} weight='bold' />
+                    </a>
+                    <p className='text-xl font-bold px-5'>
+                        PraçaFit | {data}
                     </p>
-                    <p className='text-lg'>Acesse nossas redes sociais</p>
-                    <div className='flex gap-2'>
-                        <a href="https://www.linkedin.com/in/seu_usuario" target="_blank">
-                            <LinkedinLogo size={48} weight='bold' />
-                        </a>
-                        <a href="https://www.instagram.com/seu_usuario" target="_blank">
-                            <InstagramLogo size={48} weight='bold' />
-                        </a>
-                        <a href="https://www.facebook.com/seu_usuario" target="_blank">
-                            <FacebookLogo size={48} weight='bold' />
-                        </a>
-                    </div>
                 </div>
             </div>
         </>
