@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.2.0",
     "@phosphor-icons/react": "^2.1.7",
     "axios": "^1.8.1",
+    "framer-motion": "^12.4.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-loader-spinner": "^6.1.6",
