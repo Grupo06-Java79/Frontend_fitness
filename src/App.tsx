@@ -13,6 +13,14 @@ import FormCategoria from './components/categoria/formcategoria/FormCategoria'
 import FormExercicio from './components/exercicio/formexercicio/FormExercicio'
 import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
 import DeletarExercicio from './components/exercicio/deletarexercicio/DeletarExercicio'
+import ListaAbaixoDoPeso from './components/categoria/listacategorias/ListaAbaixoDoPeso'
+import ListaPesoNormal from './components/categoria/listacategorias/ListaPesoNormal';
+import ListaSobrepeso from "./components/categoria/listacategorias/ListaSobrepeso";
+import ListaObesidade from "./components/categoria/listacategorias/ListaObesidade";
+import Alongamento from "./components/categoria/listacategorias/Alongamento";
+import Aquecimento from "./components/categoria/listacategorias/Aquecimento";
+
+
 
 function App() {
   return (
@@ -35,7 +43,13 @@ function App() {
               <Route path="/cadastrarcategoria" element={<FormCategoria/>}/>
               <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
               <Route path="/deletarexercicio/:id" element={<DeletarExercicio />} />
-            </Routes>
+              <Route path="/listacategorias/ListaAbaixoDoPeso" element={<ListaAbaixoDoPeso />} />
+              <Route path="/listacategorias/ListaPesoNormal" element={<ListaPesoNormal />} />
+              <Route path="/listacategorias/ListaSobrepeso" element={<ListaSobrepeso />} />
+              <Route path="/listacategorias/ListaObesidade" element={<ListaObesidade />} />
+              <Route path="/listacategorias/Alongamento" element={<Alongamento />} /> 
+              <Route path="/listacategorias/Aquecimento" element={<Aquecimento />} />           
+           </Routes>
           </div>
           <Footer />
         </BrowserRouter>

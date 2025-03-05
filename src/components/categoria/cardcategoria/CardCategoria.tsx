@@ -1,34 +1,70 @@
-import { Link } from 'react-router-dom'
-import Categoria from '../../../models/Categoria'
+import { useNavigate } from "react-router-dom";
 
-interface CardCategoriaProps{
-    categoria: Categoria
-}
+export default function CardCategoria() {
+    const navigate = useNavigate();
 
-function CardCategoria({ categoria }: CardCategoriaProps) {
+    // Lista de exercícios recomendados
+    const exercicios = [
+        "Leg Press",
+        "Extensor de Pernas",
+        "Remada Sentada",
+        "Puxador Costas",
+        "Barras Paralelas",
+        "Banco para Abdominais"
+    ];
+
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
-                Categoria
-            </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>Descrição</p>
-            
-            <div className="flex">
-                <Link to={`/editarcategoria/${categoria.id}`} 
-                    className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
-                        flex items-center justify-center py-2'>
-                    <button>Editar</button>
-                </Link>
+        <div className="w-full max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Imagem do treino */}
+            <img 
+                src="https://img.freepik.com/fotos-gratis/fitness-homem-treinamento-ao-ar-livre-vida-ativo-saudavel_1328-2922.jpg?t=st=1741034358~exp=1741037958~hmac=482c9534c23385e61b32315118ab7305361f9a274930c7aa2e8016c9d437e652&w=1800" 
+                alt="Treinamento ao Ar Livre"
+                className="w-full h-48 object-cover"
+            />
 
-                <Link to={`/deletarcategoria/${categoria.id}`} 
-                    className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-                        flex items-center justify-center'>
-                    <button>Deletar</button>
-                </Link>
+            {/* Barra de título */}
+            <div className="bg-green-500 text-white text-center font-bold py-2 text-lg">
+                GANHO DE MASSA
             </div>
 
-        </div>
-    )
-}
+            {/* Informações principais */}
+            <div className="p-4">
+                <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-2">
+                        <span className="text-lg">⏳</span>
+                        <span className="text-gray-700 font-semibold">Duração</span>
+                        <span className="text-gray-600">30 min</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-lg">⚡</span>
+                        <span className="text-gray-700 font-semibold">Intensidade</span>
+                        <span className="text-gray-600">Alta</span>
+                    </div>
+                </div>
 
-export default CardCategoria
+                {/* Descrição */}
+                <p className="text-gray-700 text-sm mb-4">
+                    Com duração de aproximadamente 30 minutos e uma combinação de vários exercícios, fortaleça seus músculos e aumente sua resistência.
+                </p>
+
+                {/* Lista de exercícios */}
+                <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
+                        {exercicios.map((exercicio, index) => (
+                            <li key={index}>{exercicio}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Botão de ação */}
+                <button
+                    className="w-full text-green-600 font-semibold text-sm py-2 mt-4 hover:underline"
+                    onClick={() => navigate("/listacategorias/ListaAbaixoDoPeso")}
+                >
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
+    );
+}
