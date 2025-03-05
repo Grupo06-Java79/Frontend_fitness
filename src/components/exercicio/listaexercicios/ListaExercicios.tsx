@@ -29,38 +29,36 @@ function ListaExercicios() {
         if (token === '') {
             alert('Você precisa estar logado');
             navigate('/');
+        } else {
+            buscarExercicio(); 
         }
-    }, [token]);
-
-    useEffect(() => {
-        buscarExercicio();
-    }, [exercicio]);
+    }, [token]); 
 
     return (
         <>
-            
-            {/* Imagem com Texto Sobreposto */}
-            <div className="relative w-full h-[50vh]">
-             <img
-              src="images/exercicio_topo.png"
-             alt="Imagem mulheres praticando exercício"
-                 className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-between">
-            <div className="absolute bottom-0 left-0 mb-4 ml-20 text-white text-8xl md:text-7xl sm:text-5xl font-bold">
-            Exercícios
-            </div>
-            </div>
-         </div>
+            <div className="bg-gray-100 min-h-screen">
+                <section 
+                    className="text-center py-52 bg-cover bg-center" 
+                    style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
+                >
+                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">EXERCÍCIOS</h2>
+                    <div className="mx-auto brightness-80"></div>
+                </section> 
 
-
-            {/*  Lista de Exercícios */}
-            <div className="flex justify-center w-full w-1/2 bg-[#CEF9A9]">
+                {/* Lista de Exercícios */}
+                <div className="flex justify-center w-full bg-[#CEF9A9] pt-16"> 
                 <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {exercicio.map((exercicio) => (
-                            <CardExercicio key={exercicio.id} exercicio={exercicio} />
-                        ))}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {exercicio.length > 0 ? (
+                                exercicio.map((exercicio) => (
+                                    <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
+                                        throw new Error("Function not implemented.");
+                                    } } />
+                                ))
+                            ) : (
+                                <p>Carregando exercícios...</p>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

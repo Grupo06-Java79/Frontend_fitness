@@ -75,118 +75,143 @@ function FormExercicio() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto py-10">
-            <h1 className="text-4xl text-center my-8 font-bold">
-                {id === undefined ? 'Cadastrar Exercício' : 'Editar Exercício'}
-            </h1>
+        <div className="bg-gray-100 min-h-screen">
+            <section
+                className="text-center py-52 bg-cover bg-center"
+                style={{ backgroundImage: `url('/images/exercicio_topo.png')` }}
+            >
+                <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
+                    {id === undefined ? 'Cadastrar Exercício' : 'Editar Exercício'}
+                </h2>
+            </section>
 
-            <form className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-md" onSubmit={gerarNovoExercicio}>
-                <div className="flex flex-col gap-4">
-                    <div>
-                        <label htmlFor="nome" className="block mb-1">Nome do Exercício</label>
-                        <input
-                            type="text"
-                            name="nome"
-                            placeholder="Nome do exercício"
-                            className="border border-gray-300 rounded w-full p-2"
-                            value={exercicio.nome || ""}
-                            onChange={atualizarEstado}
-                            required
-                        />
-                    </div>
+            <div className="flex justify-center w-full bg-[#CEF9A9] p-4">
+                <div className="container w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
+                    <form onSubmit={gerarNovoExercicio}>
+                        <div className="flex flex-col gap-4">
+                            <div>
+                                <label htmlFor="nome" className="block mb-1">Nome do Exercício</label>
+                                <input
+                                    type="text"
+                                    name="nome"
+                                    placeholder="Nome do exercício"
+                                    className="border border-gray-300 rounded w-full p-2"
+                                    value={exercicio.nome || ""}
+                                    onChange={atualizarEstado}
+                                    required
+                                />
+                            </div>
 
-                    <div>
-                        <label htmlFor="descricao" className="block mb-1">Descrição</label>
-                        <input
-                            type="text"
-                            name="descricao"
-                            placeholder="Descreva o exercício"
-                            className="border border-gray-300 rounded w-full p-2"
-                            value={exercicio.descricao || ""}
-                            onChange={atualizarEstado}
-                            required
-                        />
-                    </div>
+                            <div>
+                                <label htmlFor="descricao" className="block mb-1">Descrição</label>
+                                <input
+                                    type="text"
+                                    name="descricao"
+                                    placeholder="Descreva o exercício"
+                                    className="border border-gray-300 rounded w-full p-2"
+                                    value={exercicio.descricao || ""}
+                                    onChange={atualizarEstado}
+                                    required
+                                />
+                            </div>
 
-                    <div>
-                        <label htmlFor="aparelho" className="block mb-1">Aparelho</label>
-                        <input
-                            type="text"
-                            name="aparelho"
-                            placeholder="Informe o aparelho utilizado"
-                            className="border border-gray-300 rounded w-full p-2"
-                            value={exercicio.aparelho || ""}
-                            onChange={atualizarEstado}
-                        />
-                    </div>
+                            <div>
+                                <label htmlFor="aparelho" className="block mb-1">Aparelho</label>
+                                <input
+                                    type="text"
+                                    name="aparelho"
+                                    placeholder="Informe o aparelho utilizado"
+                                    className="border border-gray-300 rounded w-full p-2"
+                                    value={exercicio.aparelho || ""}
+                                    onChange={atualizarEstado}
+                                />
+                            </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>
-                            <label htmlFor="serie" className="block mb-1">Série</label>
-                            <input
-                                type="number"
-                                name="serie"
-                                placeholder="Número de séries"
-                                className="border border-gray-300 rounded w-full p-2"
-                                value={exercicio.serie || ""}
-                                onChange={atualizarEstado}
-                                min={1}
-                            />
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label htmlFor="serie" className="block mb-1">Série</label>
+                                    <input
+                                        type="number"
+                                        name="serie"
+                                        placeholder="Número de séries"
+                                        className="border border-gray-300 rounded w-full p-2"
+                                        value={exercicio.serie || ""}
+                                        onChange={atualizarEstado}
+                                        min={1}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="repeticao" className="block mb-1">Repetições</label>
+                                    <input
+                                        type="number"
+                                        name="repeticao"
+                                        placeholder="Número de repetições"
+                                        className="border border-gray-300 rounded w-full p-2"
+                                        value={exercicio.repeticao || ""}
+                                        onChange={atualizarEstado}
+                                        min={1}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label htmlFor="categoria" className="block mb-1">Categoria</label>
+                                <select
+                                    name="categoria"
+                                    className="border border-gray-300 rounded w-full p-2"
+                                    value={exercicio.categoria?.id || ""}
+                                    onChange={(e) =>
+                                        setExercicio({
+                                            ...exercicio,
+                                            categoria: { id: Number(e.target.value) } as Categoria,
+                                        })
+                                    }
+                                >
+                                    <option value="">Selecione uma categoria</option>
+                                    <option value="1">Cardio</option>
+                                    <option value="2">Força</option>
+                                    <option value="3">Flexibilidade</option>
+                                </select>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="text-teal-600 font-semibold text-sm flex items-center hover:underline"
+                            >
+                                {isLoading ? (
+                                    <RotatingLines
+                                        strokeColor="teal"
+                                        strokeWidth="5"
+                                        animationDuration="0.75"
+                                        width="16"
+                                        visible={true}
+                                    />
+                                ) : (
+                                    <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                                )}
+                                {!isLoading && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="ml-2 h-4 w-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+
                         </div>
-
-                        <div>
-                            <label htmlFor="repeticao" className="block mb-1">Repetições</label>
-                            <input
-                                type="number"
-                                name="repeticao"
-                                placeholder="Número de repetições"
-                                className="border border-gray-300 rounded w-full p-2"
-                                value={exercicio.repeticao || ""}
-                                onChange={atualizarEstado}
-                                min={1}
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label htmlFor="categoria" className="block mb-1">Categoria</label>
-                        <select
-                            name="categoria"
-                            className="border border-gray-300 rounded w-full p-2"
-                            value={exercicio.categoria?.id || ""}
-                            onChange={(e) =>
-                                setExercicio({
-                                    ...exercicio,
-                                    categoria: { id: Number(e.target.value) } as Categoria,
-                                })
-                            }
-                        >
-                            <option value="">Selecione uma categoria</option>
-                            <option value="1">Cardio</option>
-                            <option value="2">Força</option>
-                            <option value="3">Flexibilidade</option>
-                            {/* Adicione outras opções conforme necessário */}
-                        </select>
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700 flex justify-center"
-                    >
-                        {isLoading ? (
-                            <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            />
-                        ) : (
-                            <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-                        )}
-                    </button>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     );
 }
