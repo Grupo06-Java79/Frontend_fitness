@@ -1,49 +1,26 @@
 import { Link } from 'react-router-dom';
 import Exercicio from '../../../models/Exercicio';
-import { deletar } from '../../../services/Service';
-import { useContext } from 'react';
-import { AuthContext } from '../../../contexts/AuthContext';
 
 interface CardExercicioProps {
     exercicio: Exercicio;
-    onDelete: () => void; // Função para atualizar a lista ao deletar
+    onDelete: () => void; 
+    showActions?: boolean; 
 }
 
-function CardExercicio({ exercicio, onDelete }: CardExercicioProps) {
-    const { usuario } = useContext(AuthContext);
-    const token = usuario.token;
-
-    async function handleDelete() {
-        if (window.confirm(`Deseja realmente excluir o exercício "${exercicio.nome}"?`)) {
-            try {
-                await deletar(`/exercicios/${exercicio.id}`, {
-                    headers: {
-                        Authorization: token,
-                    },
-                });
-                alert('Exercício excluído com sucesso!');
-                onDelete(); // Atualiza a lista de exercícios após a exclusão
-            } catch (error) {
-                alert('Erro ao excluir o exercício. Tente novamente.');
-            }
-        }
-    }
-
+function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
     return (
         <div className="relative flex flex-col w-full my-6 bg-white shadow-lg border border-slate-200 rounded-lg max-w-xs overflow-hidden">
-            {/* Imagem Grande no Topo */}
             <div className="relative w-full h-56">
                 <img
                     className="h-full w-full object-cover"
-                    src="images/exer_01.jpg"
+                    src="/images/exer_01.jpg"
                     alt="Imagem do exercício"
                 />
             </div>
 
-            {/* Conteúdo do Card */}
             <div className="p-6 flex flex-col justify-between">
                 <div className="mb-4 rounded-full bg-teal-600 py-1 px-3 text-xs text-white w-max">
-                    {exercicio.categoria ? exercicio.categoria.nome : 'Sem Categoria'}
+                    {exercicio.categoria ? exercicio.categoria.tipo : 'Sem Categoria'}
                 </div>
 
                 <h4 className="mb-2 text-slate-800 text-xl font-semibold">
@@ -60,50 +37,51 @@ function CardExercicio({ exercicio, onDelete }: CardExercicioProps) {
                     <p><strong>Repetições:</strong> {exercicio.repeticao}</p>
                 </div>
 
-                {/* Botões de ação */}
-                <div className="mt-4 flex gap-4">
-                    <Link
-                        to={`/editarexercicio/${exercicio.id}`}
-                        className="text-teal-600 font-semibold text-sm hover:underline flex items-center"
-                    >
-                        Editar
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="ml-2 h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                {showActions && ( 
+                    <div className="mt-4 flex gap-4">
+                        <Link
+                            to={`/editarexercicio/${exercicio.id}`}
+                            className="text-teal-600 font-semibold text-sm hover:underline flex items-center"
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                        </svg>
-                    </Link>
+                            Editar
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="ml-2 h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                />
+                            </svg>
+                        </Link>
 
-                    <button
-                        onClick={handleDelete}
-                        className="text-red-600 font-semibold text-sm hover:underline flex items-center"
-                    >
-                        Deletar
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="ml-2 h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                        <Link
+                            to={`/deletarexercicio/${exercicio.id}`} 
+                            className="text-red-600 font-semibold text-sm hover:underline flex items-center"
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </button>
-                </div>
+                            Deletar
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="ml-2 h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </Link>
+                    </div>
+                )}
             </div>
         </div>
     );
