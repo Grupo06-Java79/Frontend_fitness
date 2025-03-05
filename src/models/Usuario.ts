@@ -10,5 +10,5 @@ export default interface Usuario {
     peso: number;
     altura: number;
     idade: number;
-    exercicio: Exercicio | null;
+    exercicio?: Exercicio | null;
 }

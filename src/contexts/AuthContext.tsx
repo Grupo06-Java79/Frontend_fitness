@@ -1,12 +1,14 @@
 import { createContext, ReactNode, useState } from "react"
 
 import UsuarioLogin from "../models/UsuarioLogin"
-import { login } from "../services/Service"
+import { cadastrar, login } from "../services/Service"
+import Usuario from "../models/Usuario"
 
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
+    handleCadastro: (usuario: Usuario) => Promise<void>;
     isLoading: boolean
 }
 
@@ -40,6 +42,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(false)
     }
 
+    async function handleCadastro(usuario: Usuario) {
+        setIsLoading(true);
+        try {
+          const resposta = await cadastrar(`/usuarios/cadastrar`, usuario, setUsuario, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+        //   setUsuario(resposta.data);
+          alert('Usuário cadastrado com sucesso!');
+        } catch (error) {
+          alert('Erro ao cadastrar o usuário!');
+        }
+        setIsLoading(false);
+      }
+
     function handleLogout() {
         setUsuario({
             id: 0,
@@ -52,7 +70,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, handleCadastro, isLoading }}>
             {children}
         </AuthContext.Provider>
     )
