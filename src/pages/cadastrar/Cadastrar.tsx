@@ -9,17 +9,7 @@ function Cadastrar() {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [confirmaSenha, setConfirmaSenha] = useState<string>("");
-    const [usuario, setUsuario] = useState<Usuario>({
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: '',
-        token: '',
-        peso: 0,
-        altura: 0,
-        idade: 0,
-    });
+    const [usuario, setUsuario] = useState<Usuario>({ } as Usuario);
 
     useEffect(() => {
         if (usuario.id !== 0) {
@@ -32,9 +22,12 @@ function Cadastrar() {
     }
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+        const {name, value, type} = e.target;
+
         setUsuario({
             ...usuario,
-            [e.target.name]: e.target.value
+            [name]: type === 'number' ? +value : value  // se o valor for identico a number, converte para number
+            // [e.target.name]: e.target.value
         });
     }
 
@@ -44,12 +37,15 @@ function Cadastrar() {
 
     async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        console.log("Dados enviados:", usuario); // 🟢 Depuração
+    
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
             setIsLoading(true);
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
                 alert('Usuário cadastrado com sucesso!');
             } catch (error) {
+                console.error("Erro ao cadastrar:", error);
                 alert('Erro ao cadastrar o usuário!');
             }
         } else {
@@ -59,8 +55,10 @@ function Cadastrar() {
         }
         setIsLoading(false);
     }
+    
 
     return (
+        <>
         <form onSubmit={cadastrarNovoUsuario} className="flip-card__form flex flex-col items-center">
             <div className="grid-container">
                 <div className="column">
@@ -82,6 +80,8 @@ function Cadastrar() {
                 </button>
             </div>
         </form>
+        
+        </>
     );
 }
 
