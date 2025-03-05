@@ -51,7 +51,7 @@ function Home() {
 
     async function calcularIMC(){
         try {
-            await cadastrar(`/usuarios/calcular-imc`, cliente, setCliente, { headers: { Authorization: usuario.token } })
+            await cadastrar(`/usuarios/calcular-imc`, clienteSemExercicio, setCliente, { headers: { Authorization: usuario.token } })
         } catch (error) {
             console.log(error)
         }
@@ -62,19 +62,12 @@ function Home() {
         calcularIMC()
     }, [usuario.id])
 
-    /*
-    service que faça o processo de imc ok
+    console.log("cliente");
+    const { exercicio, 
+        ...clienteSemExercicio 
+    } = cliente;
 
-    cirar uma variavel que armazene a msg ok
-
-    criar uma função que chame a service
-    
-    */
-
-    // console.log(usuario)
-    console.log("cliente")
-    console.log(cliente)
-
+    console.log(clienteSemExercicio);
 
     return (
         <>
@@ -167,4 +160,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
