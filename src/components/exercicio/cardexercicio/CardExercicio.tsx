@@ -43,7 +43,7 @@ function CardExercicio({ exercicio, onDelete }: CardExercicioProps) {
             {/* Conteúdo do Card */}
             <div className="p-6 flex flex-col justify-between">
                 <div className="mb-4 rounded-full bg-teal-600 py-1 px-3 text-xs text-white w-max">
-                    {exercicio.categoria ? exercicio.categoria.nome : 'Sem Categoria'}
+                    {exercicio.categoria ? exercicio.categoria.tipo : 'Sem Categoria'}
                 </div>
 
                 <h4 className="mb-2 text-slate-800 text-xl font-semibold">

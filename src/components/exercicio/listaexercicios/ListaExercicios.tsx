@@ -38,20 +38,20 @@ function ListaExercicios() {
 
     return (
         <>
-            
+
             {/* Imagem com Texto Sobreposto */}
             <div className="relative w-full h-[50vh]">
-             <img
-              src="images/exercicio_topo.png"
-             alt="Imagem mulheres praticando exercício"
-                 className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-between">
-            <div className="absolute bottom-0 left-0 mb-4 ml-20 text-white text-8xl md:text-7xl sm:text-5xl font-bold">
-            Exercícios
+                <img
+                    src="images/exercicio_topo.png"
+                    alt="Imagem mulheres praticando exercício"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-between">
+                    <div className="absolute bottom-0 left-0 mb-4 ml-20 text-white text-8xl md:text-7xl sm:text-5xl font-bold">
+                        Exercícios
+                    </div>
+                </div>
             </div>
-            </div>
-         </div>
 
 
             {/*  Lista de Exercícios */}

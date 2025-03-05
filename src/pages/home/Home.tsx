@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, A11y  } from "swiper/modules";
-import fotosobre from "../../../public/fotosobre.png"
+import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
+import fotosobre from "../../../public/fotosobre.png";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useContext, useEffect, useState } from "react";
+import { buscar, cadastrar } from "../../services/Service";
+import Usuario from "../../models/Usuario";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const images: string[] = [
     "/img/foto1.png",
@@ -21,6 +25,57 @@ const images: string[] = [
 ];
 
 function Home() {
+
+    const [mensagem, setMensagem] = useState<string>("");
+
+    const [cliente, setCliente] = useState<Usuario>({
+        id: 0,
+        nome: "",
+        usuario: "",
+        senha: "",
+        foto: "",
+        peso: 0,
+        altura: 0,
+        idade: 0,
+    });
+
+    const { usuario } = useContext(AuthContext)
+
+    async function buscaDados() {
+        try {
+            await buscar(`usuarios/${usuario.id}`, setCliente, { headers: { Authorization: usuario.token } })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function calcularIMC(){
+        try {
+            await cadastrar(`/usuarios/calcular-imc`, cliente, setCliente, { headers: { Authorization: usuario.token } })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        buscaDados(),
+        calcularIMC()
+    }, [usuario.id])
+
+    /*
+    service que faça o processo de imc ok
+
+    cirar uma variavel que armazene a msg ok
+
+    criar uma função que chame a service
+    
+    */
+
+    // console.log(usuario)
+    console.log("cliente")
+    console.log(cliente)
+
+
     return (
         <>
             <div className="">

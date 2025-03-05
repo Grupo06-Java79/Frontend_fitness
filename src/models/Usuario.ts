@@ -6,9 +6,8 @@ export default interface Usuario {
     usuario: string;
     senha: string;
     foto: string;
-    token: string;
     peso: number;
     altura: number;
     idade: number;
-    exercicio?: Exercicio | null;
+    // exercicio?: Exercicio | null;
 }
