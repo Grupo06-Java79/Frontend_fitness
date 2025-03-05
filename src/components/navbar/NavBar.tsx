@@ -8,6 +8,7 @@ function Navbar() {
                     <Link to='/home' className="text-2xl font-bold">PraçaFit</Link>
                     <Link to='/exercicios' className='hover:underline'>Exercícios</Link>
                     <Link to='/categorias' className='hover:underline'>Categorias</Link>
+                    <Link to='/perfil' className='hover:underline'>Perfil</Link>
                 </div>
             </div>
         </>
