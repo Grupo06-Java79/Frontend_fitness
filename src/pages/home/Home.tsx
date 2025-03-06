@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, A11y  } from "swiper/modules";
-import fotosobre from "../../../public/fotosobre.png"
+import fotosobre from "../../../public/images/fotosobre.png"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import Usuario from "../../models/Usuario";
@@ -64,7 +64,7 @@ function Home() {
     return (
         <>
             <div className="">
-                <section className="text-white bg-[url('../../../public/fundo.png')] bg-fixed bg-cover bg-center" >
+                <section className="text-white bg-[url('../../../public/images/fundo.png')] bg-fixed bg-cover bg-center" >
                     <div className="flex flex-col justify-start p-20">
                         
                         <h2 className='text-5xl font-bold my-20'>
