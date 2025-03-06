@@ -62,7 +62,9 @@ function Navbar() {
                         Sobre
                     </Link>
                     {usuario.token !=='' &&
-                        <Link to='/perfil' className='hover:underline'>Perfil</Link>
+                        <Link to='/perfil' className='hover:underline' 
+                        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}
+                        >Perfil</Link>
                     }          
                     {usuario.id >0 &&
                     <Link 
