@@ -17,11 +17,11 @@ function Alongamento() {
     return (
         <>
             {/* Banner da página */}
-            <div className="relative w-full h-[50vh]">
+            <div className="bg-gray-100 min-h-screen">
                 <img
                     src="https://img.freepik.com/fotos-gratis/uma-mulher-saudavel-esta-fazendo-exercicios-ao-ar-livre_344912-1989.jpg?t=st=1741210520~exp=1741214120~hmac=6f43812d2939615aa386e2260fa7e021815f3db92d932ded062ebdcf264e402b&w=1380"
                     alt="Mulher fazendo alongamento ao ar livre"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute w-full h-full object-cover"
                 />
 
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
@@ -35,35 +35,30 @@ function Alongamento() {
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="bg-[#F9D9A9] py-12 px-6"> {/* Mesma cor do aquecimento */}
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-                    
+            <div className="flex">
+                <div className="w-full p-10 bg-[#F9D9A9]"> {/* Mesma cor do aquecimento */}
                     {/* Seção Esquerda */}
-                    <div className="p-8">
-                        <div className="flex items-center gap-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">10 a 20 minutos</p>
-                        </div>
-
-                        <div className="flex items-center gap-2 mt-4 md:mt-0">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">Baixa</p> 
-                        </div>
-
-                        <p>🏋️‍♂️ **Melhora a elasticidade muscular** e reduz tensões pós-treino.</p>
-                        <p>🌬️ **Mantenha uma respiração controlada** para potencializar o relaxamento.</p>
+                    <div className="flex items-center gap-2 p-2">
+                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">10 a 20 minutos</p>
                     </div>
 
-                    {/* Seção Direita */}
-                    <div className="bg-[#E0B878] p-8 text-right"> {/* Mesma cor do aquecimento */}
-                        <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Alongamento</h2>
-                        <p>🦵 Aumenta a flexibilidade | 💪 **Melhora a circulação | 🧘‍♀️ Reduz o estresse e as tensões musculares</p>
+                    <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">Baixa</p> 
                     </div>
+                    <p>🏋️‍♂️ **Melhora a elasticidade muscular** e reduz tensões pós-treino.</p>
+                    <p>🌬️ **Mantenha uma respiração controlada** para potencializar o relaxamento.</p>
+                </div>
+                {/* Seção Direita */}
+                <div className="bg-[#E0B878] w-full p-16 "> {/* Mesma cor do aquecimento */}
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Alongamento</h2>
+                    <p>🦵 Aumenta a flexibilidade | 💪 **Melhora a circulação | 🧘‍♀️ Reduz o estresse e as tensões musculares</p>
                 </div>
             </div>
 
             {/* Passo a Passo do Alongamento */}
-            <div className="flex justify-center w-full bg-white py-8 min-h-screen">
+            <div className="flex justify-center w-full py-8 min-h-screen">
                 <div className="container flex flex-col">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
                         🏋️‍♂️ Passo a Passo para um Alongamento Completo 🏋️‍♀️
