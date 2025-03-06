@@ -27,7 +27,7 @@ function Home() {
                 <section className="text-white bg-[url('../../../public/fundo.png')] bg-fixed bg-cover bg-center" >
                     <div className="flex flex-col justify-start p-20">
                         <p className="pt-20">Treino na Praça</p>
-                        <h2 className='text-5xl font-bold my-20'>
+                        <h2 className='text-5xl font-bold my-20 font-(font-family:fugaz-one)'>
                             PRAÇAFit<br/> Seu treino livre
                         </h2>
                         <p className='text-xl'>

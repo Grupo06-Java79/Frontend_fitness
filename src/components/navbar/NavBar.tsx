@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
+import logo from "../../../public/logo.png"
 
 function Navbar() {
     return (
         <>
             <div className='w-full flex justify-center py-4 fixed text-white shadow-lg backdrop-blur-sm'>
-                <Link to='/home' className="text-2xl font-bold ml-10" >PRAÇAFit</Link>
+                <Link to='/home' className="text-2xl font-bold ml-10" >
+                    <img src={logo} alt="Logotipo"/>
+                </Link>
                 <div className=" container flex justify-end mx-10 text-lg">
                     <Link to='/categorias' className='hover:underline px-5'>Categorias</Link>
                     <Link to='/exercicios' className='hover:underline px-5'>Exercícios</Link>
