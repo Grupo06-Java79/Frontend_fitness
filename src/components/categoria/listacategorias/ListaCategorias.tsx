@@ -44,27 +44,19 @@ function ListaExercicios() {
     return (
         
         <>
-        <div className="w-full min-h-screen flex flex-col bg-[#CEF9A9]">
+            <section className="text-center py-64 bg-cover bg-center " 
+                style={{ backgroundImage: `url('../../../../public/fundocategoria.png')` }}>
+
+                <h1 className="text-5xl font-bold text-white brightness-70">
+                    Escolha sua categoria
+                </h1>
+            </section>
             {/* Título no topo da página */}
-            
-            <section 
-                    className="text-center py-52 bg-cover bg-center" 
-                    style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
-                >
-                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
-                        ESCOLHA SUA CATEGORIA
-                    </h2>
-                        <p className="text-white text-lg mt-4 max-w-3xl text-center mx-auto">
-                            Seu corpo é sua casa para a vida toda! 🏡💪 Escolha seu treino, desafie-se e conquiste sua melhor versão hoje mesmo!
-                        </p>
-
-                    <div className="mx-auto brightness-80"></div>
-                </section>
-            
-
-        {/* Grid de Exercícios */}
-            <div className="w-full flex justify-center my-4  bg-[#CEF9A9]">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-[#CEF9A9]">
+                
+            {/* Grid de Exercícios */}
+            <div className="w-full flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl my-10">
                     <CardCategoria/>
                     <CardCategoria2/>
                     <CardCategoria3/>
@@ -73,7 +65,7 @@ function ListaExercicios() {
                     <CardCategoria6/>
                 </div>
             </div>
-        </div>
+            </div>
         </>
     );
 }

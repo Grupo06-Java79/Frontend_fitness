@@ -27,12 +27,12 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
                 />
             </div>
 
-            <div className="p-6 flex flex-col justify-between">
-                <div className="mb-4 rounded-full bg-teal-600 py-1 px-3 text-xs text-white w-max">
+            <div className="p-5 flex flex-col items-center">
+                <div className="flex justify-center rounded-full bg-teal-600 py-1 px-3 w-3/5 text-xs text-white">
                     {exercicio.categoria ? exercicio.categoria.tipo : 'Sem Categoria'}
                 </div>
 
-                <h4 className="mb-2 text-slate-800 text-xl font-semibold">
+                <h4 className="m-2 text-slate-800 text-xl font-semibold">
                     {exercicio.nome}
                 </h4>
 

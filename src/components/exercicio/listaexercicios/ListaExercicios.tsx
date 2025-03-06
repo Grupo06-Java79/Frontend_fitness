@@ -35,10 +35,9 @@ function ListaExercicios() {
     }, [token]); 
 
     return (
-        <div className="w-full min-h-screen flex flex-col bg-[#CEF9A9]">
-        
-            {/* Imagem com Texto Sobreposto */}
-            <section 
+        <>
+            <div className="bg-gray-100 min-h-screen">
+                <section 
                     className="text-center py-52 bg-cover bg-center" 
                     style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
                 >
