@@ -52,11 +52,11 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
     return (
         <>
             {/* Banner da página */}
-            <div className="relative w-full h-[50vh]">
+            <div className="bg-gray-100 min-h-screen">
                 <img
                     src="/images/exercicio_topo.png"
                     alt="Imagem de treino"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
@@ -69,38 +69,30 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="bg-[#CEF9A9] py-12 px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-                    
+            <div className="flex">
+                <div className="bg-[#CEF9A9] w-full p-10">
                     {/* Seção Esquerda */}
-                    <div className="p-8">
-
-                        <div className="flex items-center gap-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">30 a 45 minutos</p> {/* Alterado de "40 a 55 minutos" para "30 a 45 minutos" */}
-                        </div>
-
-                        <div className="flex items-center gap-2 mt-4 md:mt-0">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">Moderada</p> {/* Alterado de "Alta" para "Moderada" */}
-                        </div>
-
-                        <p>Descansos alternados de 5 a 8 minutos.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
-                        <p>Realize o aquecimento adequadamente para evitar lesões.</p> {/* Texto atualizado para enfatizar a prevenção de lesões */}
+                    <div className="flex items-center gap-2">
+                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">30 a 45 minutos</p> {/* Alterado de "40 a 55 minutos" para "30 a 45 minutos" */}
                     </div>
-
-                    {/* Seção Direita */}
-                    <div className="bg-[#A0E080] p-8 text-right">
-                        <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Treino</h2>
-                        
-                        <p>Promove a perda de peso saudável com atividades aeróbicas, fortalecendo o corpo e melhorando o condicionamento físico. 🌱🏃‍♂️. {/* Texto alterado para focar no emagrecimento saudável */}
-                        </p>
+                    <div className="flex items-center gap-2 mt-4 md:mt-0">
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">Moderada</p> {/* Alterado de "Alta" para "Moderada" */}
                     </div>
+                    <p>Descansos alternados de 5 a 8 minutos.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
+                    <p>Realize o aquecimento adequadamente para evitar lesões.</p> {/* Texto atualizado para enfatizar a prevenção de lesões */}
+                </div> 
+                {/* Seção Direita */}
+                <div className="bg-[#A0E080] w-full p-10">
+                    <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Treino</h2>
+                    <p>Promove a perda de peso saudável com atividades aeróbicas, fortalecendo o corpo e melhorando o condicionamento físico. 🌱🏃‍♂️. {/* Texto alterado para focar no emagrecimento saudável */}
+                    </p>
                 </div>
             </div>
 
             {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6">                     
+            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
