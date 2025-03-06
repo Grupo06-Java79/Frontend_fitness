@@ -35,34 +35,39 @@ function ListaExercicios() {
     }, [token]); 
 
     return (
-        <>
-            <div className="bg-gray-100 min-h-screen">
-                <section 
+        <div className="w-full min-h-screen flex flex-col bg-[#CEF9A9]">
+        
+            {/* Imagem com Texto Sobreposto */}
+            <section 
                     className="text-center py-52 bg-cover bg-center" 
                     style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
                 >
-                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">EXERCÍCIOS</h2>
-                    <div className="mx-auto brightness-80"></div>
-                </section> 
+                        <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
+                            EXERCITE - SE                    
+                        </h2>
+                        <p className="text-white text-lg mt-4 max-w-3xl text-center mx-auto">
+                            Exercite Bons Hábitos 😊, Exercite Bons Pensamentos 🧘‍♀️, Exercite Disciplina 💪, EXERCITE-SE! ⛹️‍♂️
+                        </p>
 
-                {/* Lista de Exercícios */}
-                <div className="flex justify-center w-full bg-[#CEF9A9] pt-16"> 
-                <div className="container flex flex-col">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicio.length > 0 ? (
-                                exercicio.map((exercicio) => (
-                                    <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
-                                        throw new Error("Function not implemented.");
-                                    } } />
-                                ))
-                            ) : (
-                                <p>Carregando exercícios...</p>
-                            )}
-                        </div>
+                    <div className="mx-auto brightness-80"></div>
+                </section>
+
+        <div className="w-full bg-[#CEF9A9]">
+            {/*  Lista de Exercícios */}
+            <div className="w-full flex justify-center my-4">
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {exercicio.map((exercicio) => (
+                            <CardExercicio key={exercicio.id} exercicio={exercicio} />
+                        ))}
                     </div>
-                </div>
+                    
             </div>
-        </>
+        </div>    
+        
+        
+        </div>
+        
     );
 }
 

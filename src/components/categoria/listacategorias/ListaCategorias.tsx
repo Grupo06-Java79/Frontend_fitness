@@ -42,17 +42,29 @@ function ListaExercicios() {
     }, []);
 
     return (
+        
         <>
+        <div className="w-full min-h-screen flex flex-col bg-[#CEF9A9]">
             {/* Título no topo da página */}
-            <div className="flex justify-center w-full my-6">
-                <h1 className="text-3xl font-bold italic text-indigo-900">
-                    Escolha sua categoria
-                </h1>
-            </div>
+            
+            <section 
+                    className="text-center py-52 bg-cover bg-center" 
+                    style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
+                >
+                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
+                        ESCOLHA SUA CATEGORIA
+                    </h2>
+                        <p className="text-white text-lg mt-4 max-w-3xl text-center mx-auto">
+                            Seu corpo é sua casa para a vida toda! 🏡💪 Escolha seu treino, desafie-se e conquiste sua melhor versão hoje mesmo!
+                        </p>
 
-            {/* Grid de Exercícios */}
-            <div className="w-full flex justify-center my-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
+                    <div className="mx-auto brightness-80"></div>
+                </section>
+            
+
+        {/* Grid de Exercícios */}
+            <div className="w-full flex justify-center my-4  bg-[#CEF9A9]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <CardCategoria/>
                     <CardCategoria2/>
                     <CardCategoria3/>
@@ -61,6 +73,7 @@ function ListaExercicios() {
                     <CardCategoria6/>
                 </div>
             </div>
+        </div>
         </>
     );
 }
