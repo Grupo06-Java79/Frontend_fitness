@@ -151,7 +151,7 @@ function ListaPesoNormal() {
             </div>
 
             {/* Botões de Ação */}
-            <div className="flex justify-center gap-4 py-6">
+            <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
                 <button 
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
