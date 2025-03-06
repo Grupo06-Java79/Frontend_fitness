@@ -20,6 +20,7 @@ import ListaSobrepeso from "./components/categoria/listacategorias/ListaSobrepes
 import ListaObesidade from "./components/categoria/listacategorias/ListaObesidade";
 import Alongamento from "./components/categoria/listacategorias/Alongamento";
 import Aquecimento from "./components/categoria/listacategorias/Aquecimento";
+import Sobre from './pages/sobre/Sobre'
 
 
 
@@ -50,7 +51,8 @@ function App() {
               <Route path="/listacategorias/ListaSobrepeso" element={<ListaSobrepeso />} />
               <Route path="/listacategorias/ListaObesidade" element={<ListaObesidade />} />
               <Route path="/listacategorias/Alongamento" element={<Alongamento />} /> 
-              <Route path="/listacategorias/Aquecimento" element={<Aquecimento />} />           
+              <Route path="/listacategorias/Aquecimento" element={<Aquecimento />} /> 
+              <Route path='/sobre' element={<Sobre />} />         
            </Routes>
           </div>
           <Footer />
