@@ -46,19 +46,17 @@ function ListaExercicios() {
                 </section> 
 
                 {/* Lista de Exercícios */}
-                <div className="flex justify-center w-full bg-[#CEF9A9] pt-16"> 
-                <div className="container flex flex-col">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicio.length > 0 ? (
-                                exercicio.map((exercicio) => (
-                                    <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
-                                        throw new Error("Function not implemented.");
-                                    } } />
-                                ))
-                            ) : (
-                                <p>Carregando exercícios...</p>
-                            )}
-                        </div>
+                <div className="flex justify-center bg-[#CEF9A9] pt-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {exercicio.length > 0 ? (
+                            exercicio.map((exercicio) => (
+                                <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
+                                    throw new Error("Function not implemented.");
+                                } } />
+                            ))
+                        ) : (
+                            <p>Carregando exercícios...</p>
+                        )}
                     </div>
                 </div>
             </div>
