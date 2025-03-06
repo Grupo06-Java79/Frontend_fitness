@@ -28,10 +28,10 @@ function Home() {
                     <div className="flex flex-col justify-start p-20">
                         <p className="pt-20">Treino na Praça</p>
                         <h2 className='text-5xl font-bold my-20'>
-                            Seja Bem Vindo!<br/> Alguma coisa
+                            PRAÇAFit<br/> Seu treino livre
                         </h2>
                         <p className='text-xl'>
-                            Liberte sua energia, abrace a natureza e transforme <br/> seu corpo  ao ar livre. 
+                            Liberte sua energia, abrace a natureza e transforme <br/> seu corpo ao ar livre. 
                         </p>
                         <div>
                             <Link to={`/login`} 
@@ -43,27 +43,39 @@ function Home() {
                     </div>
                 </section>
                 <section className="flex">
-                    <div className="bg-[#CEF9A9] w-full p-10">
-                        <p className="text-3xl font-bold py-10">
-                            Alguma<br/> Coisa
+                    <div className="bg-[#CEF9A9] w-full p-5 px-10">
+                        <p className="text-3xl font-bold py-5">
+                            Monte seu<br/> Treino
                         </p>
                         <p className="w-3/5">
-                            Algum textinho rápido que resume um pouco sobre o objetivo do site
+                            Aqui você consegue montar seu treino de acordo com o seu objetivo. <br/>
+                            Te ajudamos a aprender usar cada aparelho na nossa lista de exercícios.
                         </p>
+                        <Link to={`/exercicios`}>
+                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                Exercícios
+                            </button>
+                        </Link>
                     </div>
-                    <div className="bg-[#B6EE8D] w-full p-10 text-end ">
-                        <p className="text-3xl font-bold py-10 ">
-                            Alguma<br/> Coisa
+                    <div className="bg-[#B6EE8D] w-full p-5 px-10 text-end ">
+                        <p className="text-3xl font-bold py-5 ">
+                            Escolha uma<br/> Categoria de treino
                         </p>
                         <p className="">
-                            Algum textinho rápido que resume um pouco <br/>sobre o objetivo do site
+                            Aqui você encontra categorias de treinos que <br/> se adequam a sua necessidade.<br/>
+                            Monte seu IMC e veja o melhor treino para seu objetivo <br/> e comece o quanto antes.
                         </p>
+                        <Link to={`/categorias`}>
+                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                Categorias
+                            </button>
+                        </Link>
                     </div>
                 </section>
                 <section className="bg-[#E5E5E5]">
                     <div className="flex flex-col p-10">
                         <p className="text-xl">
-                            Veja alguns exercícios na praça para você incluir no seu treino
+                            Veja alguns exercícios na praça para você incluir no seu treino:
                         </p>
                         <div className="flex p-10 relative">
                             <Swiper
@@ -96,7 +108,8 @@ function Home() {
                     <div className="flex justify-around">
                         <div className="grid justify-items-center m-20">
                             <p className="text-xl text-center ">
-                                algum textinho rápido que resume um pouco sobre o objetivo do site <br/> E algo pra enviar o usuário pra pagina sobre
+                                Quer mais praticidade e eficiência na sua jornada fitness? <br/>
+                                Com o Praça Fit, você tem uma plataforma exclusiva para monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva. 📊💪
                             </p>
                             <Link to={`/sobre`} className="flex justify-center m-10">
                                 <button className='text-slate-100 p-2 bg-[#14B467] hover:bg-[#129858]'>
