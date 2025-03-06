@@ -66,7 +66,7 @@ function ListaExercicios() {
         
         
         </div>
-        
+        </>
     );
 }
 
