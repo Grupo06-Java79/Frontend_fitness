@@ -52,11 +52,11 @@ function ListaObesidade() {
     return (
         <>
             {/* Banner da página */}
-            <div className="relative w-full h-[50vh]">
+            <div className="bg-gray-100 min-h-screen">
                 <img
                     src="/images/exercicio_topo.png"
                     alt="Imagem de treino"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
@@ -69,35 +69,28 @@ function ListaObesidade() {
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="bg-[#CEF9A9] py-12 px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-                    
+            <div className="flex">
+                <div className="w-full p-10 bg-[#CEF9A9]">
                     {/* Seção Esquerda */}
-                    <div className="p-8">
-                        <div className="flex items-center gap-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">20 a 40 minutos</p> 
-                        </div>
-
-                        <div className="flex items-center gap-2 mt-4 md:mt-0">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">Baixa a Moderada</p> 
-                        </div>
-
-                        <p>Descansos de 10 a 15 minutos entre as séries.</p>
-                        <p>Exercícios de baixo impacto para reduzir sobrecarga nas articulações.</p> 
+                    <div className="flex items-center gap-2">
+                        <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">20 a 40 minutos</p> 
                     </div>
-
-                    {/* Seção Direita */}
-                    <div className="bg-[#A0E080] p-8 text-right">
-                        <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Treino</h2>
-                        <p>Ajuda na mobilidade, queima de calorias e melhora da resistência física sem sobrecarregar o corpo. 🌱🏃‍♂️</p>
+                    <div className="flex items-center gap-2 mt-4 md:mt-0">
+                        <h2 className="text-3xl font-bold text-gray-900 p-2">⚡ Intensidade:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">Baixa a Moderada</p> 
                     </div>
+                    <p>Descansos de 10 a 15 minutos entre as séries.</p>
+                    <p>Exercícios de baixo impacto para reduzir sobrecarga nas articulações.</p>
+                </div>
+                {/* Seção Direita */}
+                <div className="bg-[#A0E080] w-full p-10">
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Treino</h2>
+                    <p>Ajuda na mobilidade, queima de calorias e melhora da resistência física sem sobrecarregar o corpo. 🌱🏃‍♂️</p>
                 </div>
             </div>
-
             {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6">                     
+            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={20}
@@ -120,8 +113,8 @@ function ListaObesidade() {
             </div>
 
             {/* Lista de Exercícios */}
-            <div className="flex justify-center w-full bg-white py-8 min-h-screen">
-                <div className="container flex flex-col">
+            <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
+                <div >
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
                         Exercícios do Treino
                     </h2>

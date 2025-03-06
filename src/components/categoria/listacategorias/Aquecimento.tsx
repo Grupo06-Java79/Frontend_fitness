@@ -17,11 +17,11 @@ function Aquecimento() {
     return (
         <>
             {/* Banner da página */}
-            <div className="relative w-full h-[50vh]">
+            <div className="bg-gray-100 min-h-screen">
             <img
                     src="https://img.freepik.com/fotos-gratis/homem-correndo-em-um-beco-no-parque_23-2148297573.jpg?t=st=1741210817~exp=1741214417~hmac=5a00c7d2c3d50d139d9b474fe4cdbf2a9c4e2e8ebb8cd296b852e680fac6ad14&w=1380"
                     alt="Homem correndo no parque"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
@@ -34,30 +34,24 @@ function Aquecimento() {
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="bg-[#F9D9A9] py-12 px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-                    
-                    {/* Seção Esquerda */}
-                    <div className="p-8">
-                        <div className="flex items-center gap-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">10 a 20 minutos</p>
-                        </div>
-
-                        <div className="flex items-center gap-2 mt-4 md:mt-0">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">Moderada</p>
-                        </div>
-
-                        <p>Realize cada movimento de forma controlada e progressiva para ativar os músculos corretamente.</p>
-                        <p>O aquecimento é essencial para melhorar a mobilidade e evitar lesões durante o treino.</p>
+            <div className="flex">
+                <div className="bg-[#F9D9A9] w-full p-10">
+                {/* Seção Esquerda */}
+                    <div className="flex items-center gap-2">
+                        <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">10 a 20 minutos</p>
                     </div>
-
-                    {/* Seção Direita */}
-                    <div className="bg-[#E0B878] p-8 text-right">
-                        <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Aquecimento</h2>
-                        <p>Ativa a circulação sanguínea, melhora a elasticidade muscular, reduz riscos de lesões e prepara o corpo para atividades mais intensas. 🔥💪</p>
+                    <div className="flex items-center gap-2 mt-4 md:mt-0">
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
+                        <p className="text-black text-lg md:text-xl font-bold">Moderada</p>
                     </div>
+                    <p >Realize cada movimento de forma controlada e progressiva para ativar os músculos corretamente.</p>
+                    <p>O aquecimento é essencial para melhorar a mobilidade e evitar lesões durante o treino.</p>
+                </div>
+                {/* Seção Direita */}
+                <div className="bg-[#E0B878] w-full p-10">
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Aquecimento</h2>
+                    <p className="text-center p-2">Ativa a circulação sanguínea, melhora a elasticidade muscular, reduz riscos de lesões e prepara o corpo para atividades mais intensas. 🔥💪</p>
                 </div>
             </div>
 
