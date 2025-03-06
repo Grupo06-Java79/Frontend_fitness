@@ -14,14 +14,14 @@ function ListaPesoNormal() {
     const token = usuario.token;
 
     const imagens = [
-        { src: "/img/surf.png" },
+        { src: "/img/Surf.png" },
         { src: "/img/Simulador de Remo.png" },
         { src: "/img/Simulador de Cavalgada.png" },
         { src: "/img/Simulador de Caminhada.png" },
         { src: "/img/Rotação Vertical.png" },
         { src: "/img/Leg Press.png" },
-        { src: "/img/esqui.png" },
-        { src: "/img/alongador.png" }
+        { src: "/img/Esqui.png" },
+        { src: "/img/Alongador.png" }
     ];
 
     async function buscarExercicio() {
@@ -140,7 +140,9 @@ function ListaPesoNormal() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {exercicios.length > 0 ? (
                                 exercicios.map((exercicio) => (
-                                    <CardExercicio key={exercicio.id} exercicio={exercicio} />
+                                    <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
+                                        throw new Error("Function not implemented.");
+                                    } } />
                                 ))
                             ) : (
                                 <p className="text-center text-gray-700">Carregando exercícios...</p>

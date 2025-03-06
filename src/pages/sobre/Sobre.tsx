@@ -18,7 +18,7 @@ function Sobre() {
                             Conectamos pessoas e promovemos saúde! Nossa plataforma revoluciona a forma como você cuida do seu bem-estar, oferecendo recomendações personalizadas de exercícios com base no seu IMC. De maneira acessível e segura, ajudamos você a aproveitar os aparelhos públicos e a manter um estilo de vida ativo e equilibrado.
                         </p>
                     </div>
-                    <Link to='/cadastrar' className='hover:underline'>
+                    <Link to='/login' className='hover:underline'>
                         <button className="bg-green-900 hover:bg-slate-900 text-white px-8 py-3 rounded-full font-semibold">COMEÇAR</button>
                     </Link>
                 </section>
