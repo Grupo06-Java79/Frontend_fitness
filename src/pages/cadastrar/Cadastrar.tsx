@@ -35,6 +35,21 @@ function Cadastrar() {
         setConfirmaSenha(e.target.value);
     }
 
+    function limparCampos() {
+        setUsuario({
+          id: 0,
+          nome: '',
+          usuario: '',
+          senha: '',
+          foto: '',
+          imc: 0,
+          peso: '' as unknown as number,
+          altura: '' as unknown as number,
+          idade: '' as unknown as number
+        });
+        setConfirmaSenha('');
+      }
+
     async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         console.log("Dados enviados:", usuario); // 🟢 Depuração
@@ -44,6 +59,7 @@ function Cadastrar() {
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
                 alert('Usuário cadastrado com sucesso!');
+                limparCampos();
             } catch (error) {
                 console.error("Erro ao cadastrar:", error);
                 alert('Erro ao cadastrar o usuário!');
