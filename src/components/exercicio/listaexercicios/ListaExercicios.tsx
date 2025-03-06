@@ -37,34 +37,39 @@ function ListaExercicios() {
     }, [exercicio]);
 
     return (
-        <>
-            
+        <div className="w-full min-h-screen flex flex-col bg-[#CEF9A9]">
+        
             {/* Imagem com Texto Sobreposto */}
-            <div className="relative w-full h-[50vh]">
-             <img
-              src="images/exercicio_topo.png"
-             alt="Imagem mulheres praticando exercício"
-                 className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-between">
-            <div className="absolute bottom-0 left-0 mb-4 ml-20 text-white text-8xl md:text-7xl sm:text-5xl font-bold">
-            Exercícios
-            </div>
-            </div>
-         </div>
+            <section 
+                    className="text-center py-52 bg-cover bg-center" 
+                    style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
+                >
+                        <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
+                            EXERCITE - SE                    
+                        </h2>
+                        <p className="text-white text-lg mt-4 max-w-3xl text-center mx-auto">
+                            Exercite Bons Hábitos 😊, Exercite Bons Pensamentos 🧘‍♀️, Exercite Disciplina 💪, EXERCITE-SE! ⛹️‍♂️
+                        </p>
 
+                    <div className="mx-auto brightness-80"></div>
+                </section>
 
+        <div className="w-full bg-[#CEF9A9]">
             {/*  Lista de Exercícios */}
-            <div className="flex justify-center w-full w-1/2 bg-[#CEF9A9]">
-                <div className="container flex flex-col">
+            <div className="w-full flex justify-center my-4">
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {exercicio.map((exercicio) => (
                             <CardExercicio key={exercicio.id} exercicio={exercicio} />
                         ))}
                     </div>
-                </div>
+                    
             </div>
-        </>
+        </div>    
+        
+        
+        </div>
+        
     );
 }
 

@@ -125,14 +125,16 @@ function ListaObesidade() {
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
                         Exercícios do Treino
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {exercicios.length > 0 ? (
-                            exercicios.map((exercicio) => (
-                                <CardExercicio key={exercicio.id} exercicio={exercicio} />
-                            ))
-                        ) : (
-                            <p className="text-center text-gray-700">Carregando exercícios...</p>
-                        )}
+                    <div className="w-full flex justify-center my-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {exercicios.length > 0 ? (
+                                exercicios.map((exercicio) => (
+                                    <CardExercicio key={exercicio.id} exercicio={exercicio} />
+                                ))
+                            ) : (
+                                <p className="text-center text-gray-700">Carregando exercícios...</p>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
