@@ -77,16 +77,16 @@ function FormExercicio() {
     return (
         <div className="bg-gray-100 min-h-screen">
             <section
-                className="text-center py-52 bg-cover bg-center"
-                style={{ backgroundImage: `url('/images/exercicio_topo.png')` }}
-            >
-                <h2 className="text-5xl font-bold text-white mb-4 brightness-70">
+                className="text-center py-16 bg-cover bg-center"
+                style={{ backgroundImage: `url('/images/exercicio_topo.png')` }}>
+                    
+                <h2 className="text-4xl font-bold text-white p-3 brightness-70">
                     {id === undefined ? 'Cadastrar Exercício' : 'Editar Exercício'}
                 </h2>
-            </section>
+            
 
-            <div className="flex justify-center w-full bg-[#CEF9A9] p-4">
-                <div className="container w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg">
+            <div className="flex justify-center w-full p-4">
+                <div className="container max-w-2xl p-4 bg-white rounded-lg shadow-lg">
                     <form onSubmit={gerarNovoExercicio}>
                         <div className="flex flex-col gap-4">
                             <div>
@@ -95,7 +95,7 @@ function FormExercicio() {
                                     type="text"
                                     name="nome"
                                     placeholder="Nome do exercício"
-                                    className="border border-gray-300 rounded w-full p-2"
+                                    className="border border-gray-300 rounded w-96 p-2"
                                     value={exercicio.nome || ""}
                                     onChange={atualizarEstado}
                                     required
@@ -108,7 +108,7 @@ function FormExercicio() {
                                     type="text"
                                     name="descricao"
                                     placeholder="Descreva o exercício"
-                                    className="border border-gray-300 rounded w-full p-2"
+                                    className="border border-gray-300 rounded w-96 p-2"
                                     value={exercicio.descricao || ""}
                                     onChange={atualizarEstado}
                                     required
@@ -121,7 +121,7 @@ function FormExercicio() {
                                     type="text"
                                     name="aparelho"
                                     placeholder="Informe o aparelho utilizado"
-                                    className="border border-gray-300 rounded w-full p-2"
+                                    className="border border-gray-300 rounded w-96 p-2"
                                     value={exercicio.aparelho || ""}
                                     onChange={atualizarEstado}
                                 />
@@ -134,7 +134,7 @@ function FormExercicio() {
                                         type="number"
                                         name="serie"
                                         placeholder="Número de séries"
-                                        className="border border-gray-300 rounded w-full p-2"
+                                        className="border border-gray-300 rounded w-60 p-2"
                                         value={exercicio.serie || ""}
                                         onChange={atualizarEstado}
                                         min={1}
@@ -147,7 +147,7 @@ function FormExercicio() {
                                         type="number"
                                         name="repeticao"
                                         placeholder="Número de repetições"
-                                        className="border border-gray-300 rounded w-full p-2"
+                                        className="border border-gray-300 rounded w-60 p-2"
                                         value={exercicio.repeticao || ""}
                                         onChange={atualizarEstado}
                                         min={1}
@@ -159,7 +159,7 @@ function FormExercicio() {
                                 <label htmlFor="categoria" className="block mb-1">Categoria</label>
                                 <select
                                     name="categoria"
-                                    className="border border-gray-300 rounded w-full p-2"
+                                    className="border border-gray-300 rounded w-96 p-2"
                                     value={exercicio.categoria?.id || ""}
                                     onChange={(e) =>
                                         setExercicio({
@@ -212,6 +212,7 @@ function FormExercicio() {
                     </form>
                 </div>
             </div>
+            </section>
         </div>
     );
 }

@@ -38,7 +38,7 @@ function ListaExercicios() {
         <>
             <div className="bg-gray-100 min-h-screen">
                 <section 
-                    className="text-center py-52 bg-cover bg-center" 
+                    className="text-center py-64 bg-cover bg-center" 
                     style={{ backgroundImage: `url('images/exercicio_topo.png')` }}
                 >
                     <h2 className="text-5xl font-bold text-white mb-4 brightness-70">EXERCÍCIOS</h2>

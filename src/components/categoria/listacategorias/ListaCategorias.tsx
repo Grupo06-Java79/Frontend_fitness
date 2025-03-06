@@ -43,16 +43,19 @@ function ListaExercicios() {
 
     return (
         <>
-            {/* Título no topo da página */}
-            <div className="flex justify-center w-full my-6">
-                <h1 className="text-3xl font-bold italic text-indigo-900">
+            <section className="text-center py-64 bg-cover bg-center " 
+                style={{ backgroundImage: `url('../../../../public/fundocategoria.png')` }}>
+
+                <h1 className="text-5xl font-bold text-white brightness-70">
                     Escolha sua categoria
                 </h1>
-            </div>
-
+            </section>
+            {/* Título no topo da página */}
+            <div className="bg-[#CEF9A9]">
+                
             {/* Grid de Exercícios */}
-            <div className="w-full flex justify-center my-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
+            <div className="w-full flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl my-10">
                     <CardCategoria/>
                     <CardCategoria2/>
                     <CardCategoria3/>
@@ -60,6 +63,7 @@ function ListaExercicios() {
                     <CardCategoria5/>
                     <CardCategoria6/>
                 </div>
+            </div>
             </div>
         </>
     );
