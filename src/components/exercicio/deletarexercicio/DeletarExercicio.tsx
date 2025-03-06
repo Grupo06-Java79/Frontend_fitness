@@ -69,52 +69,52 @@ function DeletarExercicio() {
     return (
         <div className="bg-gray-100 min-h-screen">
             <section
-                className="text-center py-52 bg-cover bg-center"
+                className="text-center py-16 bg-cover bg-center"
                 style={{ backgroundImage: `url('/images/exercicio_topo.png')` }}            >
-                <h2 className="text-5xl font-bold text-white mb-4 brightness-70">DELETAR EXERCÍCIO</h2>
-            </section>
+                <h2 className="text-4xl font-bold text-white brightness-70">DELETAR EXERCÍCIO</h2>
 
-            <div className="flex justify-center w-full bg-[#CEF9A9] p-4">
-                <div className="container w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-                    <p className="text-center font-semibold mb-4">
-                        Você tem certeza de que deseja apagar o exercício a seguir?
-                    </p>
-
-                    {exercicio && (
-                        <CardExercicio
-                            exercicio={exercicio}
-                            onDelete={deletarExercicio} 
-                            showActions={false}  // Aqui não vamos exibir os botões
-                        />
-                    )}
-
-                    {/* Botões de ação */}
-                    <div className="flex gap-4 mt-6">
-                        <button
-                            className="w-full text-slate-100 bg-gray-400 hover:bg-gray-600 py-2 rounded-lg"
-                            onClick={retornar}
-                        >
-                            Não
-                        </button>
-                        <button
-                            className="w-full text-slate-100 bg-red-600 hover:bg-red-800 py-2 rounded-lg flex items-center justify-center"
-                            onClick={deletarExercicio}
-                        >
-                            {isLoading ? (
-                                <RotatingLines
-                                    strokeColor="white"
-                                    strokeWidth="5"
-                                    animationDuration="0.75"
-                                    width="24"
-                                    visible={true}
+                <div className="flex justify-center w-full p-4">
+                    <div className="container max-w-md p-6 bg-white rounded-lg shadow-lg">
+                        <p className="text-center font-semibold">
+                            Você tem certeza que deseja apagar esse exercício?
+                        </p>
+                        <div className="flex justify-center">
+                            {exercicio && (
+                                <CardExercicio
+                                    exercicio={exercicio}
+                                    onDelete={deletarExercicio} 
+                                    showActions={false}  // Aqui não vamos exibir os botões
                                 />
-                            ) : (
-                                <span>Sim</span>
                             )}
-                        </button>
+                        </div>
+                        {/* Botões de ação */}
+                        <div className="flex gap-4 mt-6">
+                            <button
+                                className="w-full text-slate-100 bg-gray-400 hover:bg-gray-600 py-2 rounded-lg"
+                                onClick={retornar}
+                            >
+                                Não
+                            </button>
+                            <button
+                                className="w-full text-slate-100 bg-red-600 hover:bg-red-800 py-2 rounded-lg flex items-center justify-center"
+                                onClick={deletarExercicio}
+                            >
+                                {isLoading ? (
+                                    <RotatingLines
+                                        strokeColor="white"
+                                        strokeWidth="5"
+                                        animationDuration="0.75"
+                                        width="24"
+                                        visible={true}
+                                    />
+                                ) : (
+                                    <span>Sim</span>
+                                )}
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
