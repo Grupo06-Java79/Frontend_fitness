@@ -2,57 +2,67 @@ import { useNavigate } from "react-router-dom";
 import { buscar } from "../../../services/Service";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import Categoria from "../../../models/Categoria";
-import CardCategoria from "../cardcategoria/CardCategoria"
+import CardCategoria from "../cardcategoria/CardCategoria";
+import CardCategoria2 from "../cardcategoria/CardCategoria2";
+import CardCategoria3 from "../cardcategoria/CardCategoria3";
+import CardCategoria4 from "../cardcategoria/CardCategoria4";
+import CardCategoria5 from "../cardcategoria/CardCategoria5";
+import CardCategoria6 from "../cardcategoria/CardCategoria6";
+import Exercicio from "../../../models/Exercicio";
 
-function ListaCategorias() {
-
+function ListaExercicios() {
     const navigate = useNavigate();
-
-    const [categoria, setCategoria] = useState<Categoria[]>([]);
-
+    const [exercicios, setExercicios] = useState<Exercicio[]>([]);
     const { usuario, handleLogout } = useContext(AuthContext);
-        const token = usuario.token;
+    const token = usuario.token;
 
-    async function buscarCorridas() {
+    async function buscarExercicio() {
         try {
-            await buscar('/categorias', setCategoria, {
+            await buscar('/exercicios', setExercicios, {
                 headers: {
                     Authorization: token,
                 },
-            })
-
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            alert('Você precisa estar logado');
             navigate('/');
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarCorridas()
-    }, [categoria])
+        buscarExercicio();
+    }, []);
 
     return (
         <>
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 
-                        lg:grid-cols-3 gap-8">
-                        {categoria.map((categoria) => (
-                            <CardCategoria key={categoria.id} categoria={categoria} />
-                        ))}
-                    </div>
+            {/* Título no topo da página */}
+            <div className="flex justify-center w-full my-6">
+                <h1 className="text-3xl font-bold italic text-indigo-900">
+                    Escolha sua categoria
+                </h1>
+            </div>
+
+            {/* Grid de Exercícios */}
+            <div className="w-full flex justify-center my-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl">
+                    <CardCategoria/>
+                    <CardCategoria2/>
+                    <CardCategoria3/>
+                    <CardCategoria4/>
+                    <CardCategoria5/>
+                    <CardCategoria6/>
                 </div>
             </div>
         </>
-    )
+    );
 }
-export default ListaCategorias
+
+export default ListaExercicios;
