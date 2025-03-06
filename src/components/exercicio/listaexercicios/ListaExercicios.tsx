@@ -51,14 +51,18 @@ function ListaExercicios() {
                     <div className="mx-auto brightness-80"></div>
                 </section>
 
-        <div className="w-full bg-[#CEF9A9]">
-            {/*  Lista de Exercícios */}
-            <div className="w-full flex justify-center my-4">
-                    
+                {/* Lista de Exercícios */}
+                <div className="flex justify-center bg-[#CEF9A9] pt-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {exercicio.map((exercicio) => (
-                            <CardExercicio key={exercicio.id} exercicio={exercicio} />
-                        ))}
+                        {exercicio.length > 0 ? (
+                            exercicio.map((exercicio) => (
+                                <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
+                                    throw new Error("Function not implemented.");
+                                } } />
+                            ))
+                        ) : (
+                            <p>Carregando exercícios...</p>
+                        )}
                     </div>
                     
             </div>
