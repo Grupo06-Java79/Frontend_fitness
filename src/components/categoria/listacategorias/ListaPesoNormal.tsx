@@ -131,7 +131,7 @@ function ListaPesoNormal() {
             </div>
 
             {/* Lista de Exercícios */}
-            <div className="flex justify-center  bg-white py-8 min-h-screen">
+            <div className="flex justify-center bg-[#CEF9A9] py-8 min-h-screen">
                 <div className="">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
                         Exercícios do Treino

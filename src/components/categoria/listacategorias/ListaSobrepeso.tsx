@@ -124,8 +124,8 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             
 
             {/* Lista de Exercícios */}
-            <div className="flex justify-center w-full bg-white py-8 min-h-screen">
-                <div className="container flex flex-col">
+            <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
+                <div>
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
                         Exercícios do Treino
                     </h2>
