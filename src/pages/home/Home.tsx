@@ -2,6 +2,10 @@ import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, A11y  } from "swiper/modules";
 import fotosobre from "../../../public/fotosobre.png"
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import Usuario from "../../models/Usuario";
+import { buscar } from "../../services/Service";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,7 +24,40 @@ const images: string[] = [
     "/img/foto10.png",
 ];
 
+
+
 function Home() {
+
+    //pegamos os dados do usuario logado
+    const { usuario } = useContext(AuthContext);
+    // Criamos um objeto do tipo Usuario que usamos para acessar dados não disponiveis no authcontext
+    const [cliente, setCliente] = useState<Usuario>({
+        id: 0,
+        nome: "",
+        usuario: "",
+        senha: "",
+        foto: "",
+        imc:0,
+        peso: 0,
+        altura: 0,
+        idade: 0,
+    });
+
+    // Pegamos os dados do usuario logado
+    async function buscaDados() {
+        try {
+            await buscar(`usuarios/${usuario.id}`, setCliente, { headers: { Authorization: usuario.token } })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    // Pegamos os dados do usuario logado
+    useEffect(() => {
+        buscaDados()
+    }, [usuario.id])
+
+    
     return (
         <>
             <div className="">

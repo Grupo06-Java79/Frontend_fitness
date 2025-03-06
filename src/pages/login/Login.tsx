@@ -66,7 +66,7 @@ function Login() {
                             
                             <div className="title">Cadastrar</div>
                             <Cadastrar />
-                        </div>
+                            </div>
                     </div>
                 </label>
             </div>
