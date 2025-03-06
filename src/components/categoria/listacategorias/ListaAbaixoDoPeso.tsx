@@ -144,9 +144,7 @@ function ListaExercicios() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {exercicios.length > 0 ? (
                                 exercicios.map((exercicio) => (
-                                    <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
-                                        throw new Error("Function not implemented.");
-                                    } } />
+                                    <CardExercicio key={exercicio.id} exercicio={exercicio} />
                                 ))
                             ) : (
                                 <p className="text-center text-gray-700">Carregando exercícios...</p>
