@@ -28,6 +28,8 @@ const images: string[] = [
 
 function Home() {
 
+    
+
     //pegamos os dados do usuario logado
     const { usuario } = useContext(AuthContext);
     // Criamos um objeto do tipo Usuario que usamos para acessar dados não disponiveis no authcontext
@@ -63,7 +65,7 @@ function Home() {
             <div className="">
                 <section className="text-white bg-[url('../../../public/fundo.png')] bg-fixed bg-cover bg-center" >
                     <div className="flex flex-col justify-start p-20">
-                        <p className="pt-20">Treino na Praça</p>
+                        
                         <h2 className='text-5xl font-bold my-20'>
                             PRAÇAFit<br/> Seu treino livre
                         </h2>
@@ -74,7 +76,7 @@ function Home() {
                             <Link to={`/login`} 
                                 className='text-slate-100 bg-[#75BA23] hover:bg-[#61A514] 
                                     flex justify-center w-32 my-10 p-1'>
-                                <button>Monte agora...</button>
+                                <button>Veja o treino</button>
                             </Link>
                         </div>
                     </div>
@@ -82,7 +84,7 @@ function Home() {
                 <section className="flex">
                     <div className="bg-[#CEF9A9] w-full p-5 px-10">
                         <p className="text-3xl font-bold py-5">
-                            Monte seu<br/> Treino
+                            Veja o trieno para<br/> seu IMC
                         </p>
                         <p className="w-3/5">
                             Aqui você consegue montar seu treino de acordo com o seu objetivo. <br/>
@@ -90,7 +92,7 @@ function Home() {
                         </p>
                         <Link to={`/exercicios`}>
                             <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
-                                Exercícios
+                                Ver Treino
                             </button>
                         </Link>
                     </div>
