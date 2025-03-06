@@ -57,8 +57,8 @@ function Login() {
                                     value={usuarioLogin.senha || ''}
                                     onChange={atualizarEstado} 
                                 />
-                                <button className="flip-card__btn" type="submit" disabled={isLoading}>
-                                    {isLoading ? <RotatingLines strokeColor="#75BA23" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : "Entrar"}
+                                <button className='flip-card__btn flex justify-center' type="submit">
+                                    {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : "Entrar"}
                                 </button>
                             </form>
                         </div>
