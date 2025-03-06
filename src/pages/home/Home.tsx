@@ -73,13 +73,15 @@ function Home() {
                         <p className='text-xl'>
                             Liberte sua energia, abrace a natureza e transforme <br/> seu corpo ao ar livre. 
                         </p>
+                        {usuario.token !== "" &&
                         <div>
-                            <Link to={`/login`} 
+                            <Link to={`/exercicios`} 
                                 className='text-slate-100 bg-[#75BA23] hover:bg-[#61A514] 
                                     flex justify-center w-32 my-10 p-1'>
-                                <button>Veja o treino</button>
+                                <button>Veja os treinos</button>
                             </Link>
                         </div>
+                        }
                     </div>
                 </section>
                 <section className="flex">
