@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Exercicio from '../../../models/Exercicio';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { useContext } from 'react';
+
 
 interface CardExercicioProps {
     exercicio: Exercicio;
@@ -8,6 +11,12 @@ interface CardExercicioProps {
 }
 
 function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
+ 
+    const Navigate = useNavigate();
+
+    const { usuario} = useContext(AuthContext)
+
+ 
     return (
         <div className="relative flex flex-col w-full my-6 bg-white shadow-lg border border-slate-200 rounded-lg max-w-xs overflow-hidden">
             <div className="relative w-full h-56">
@@ -39,6 +48,7 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
 
                 {showActions && ( 
                     <div className="mt-4 flex gap-4">
+                        {usuario.id===1 && 
                         <Link
                             to={`/editarexercicio/${exercicio.id}`}
                             className="text-teal-600 font-semibold text-sm hover:underline flex items-center"
@@ -59,7 +69,8 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
                                 />
                             </svg>
                         </Link>
-
+                        }
+                        {usuario.id===1 &&
                         <Link
                             to={`/deletarexercicio/${exercicio.id}`} 
                             className="text-red-600 font-semibold text-sm hover:underline flex items-center"
@@ -80,6 +91,12 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
                                 />
                             </svg>
                         </Link>
+                        }
+                        {usuario.id>1 &&
+                            <div className='flex justify-center'>
+                                <input className='w-8 h-8' type="checkbox"></input> <span className='pt-1 pl-2'>CONCLUÍDO</span>
+                            </div>
+                        }
                     </div>
                 )}
             </div>
