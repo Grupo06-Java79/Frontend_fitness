@@ -40,7 +40,7 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
                     {exercicio.descricao}
                 </p>
 
-                <div className="text-sm text-slate-700 space-y-1">
+                <div className="text-sm text-center text-slate-700 space-y-1">
                     <p><strong>Aparelho:</strong> {exercicio.aparelho}</p>
                     <p><strong>Séries:</strong> {exercicio.serie}</p>
                     <p><strong>Repetições:</strong> {exercicio.repeticao}</p>
