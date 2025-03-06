@@ -92,6 +92,7 @@ function Cadastrar() {
             </div>
             <div className="flex justify-around w-full gap-8">
                 <button type='submit' className='flip-card__btn flex justify-center'>
+                    {/*  */}
                     {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Cadastrar</span>}
                 </button>
             </div>

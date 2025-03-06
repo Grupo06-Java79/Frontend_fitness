@@ -41,6 +41,7 @@ function Navbar() {
                     >
                         Sobre
                     </Link>
+                    <Link to='/perfil' className='hover:underline'>Perfil</Link>
                     <Link 
                         to={`/login`} 
                         className='text-slate-100 bg-[#75BA23] hover:bg-[#61A514]  
