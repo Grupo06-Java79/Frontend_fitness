@@ -64,7 +64,7 @@ function Home() {
     return (
         <>
             <div className="">
-                <section className="text-white bg-[url('../../../public/images/fundo.png')] bg-fixed bg-cover bg-center" >
+                <section style={{ backgroundImage: `url('images/fundo.png')` }} className="text-white bg-fixed bg-cover bg-center" >
                     <div className="flex flex-col justify-start p-20">
                         
                         <h2 className='text-5xl font-bold my-20'>

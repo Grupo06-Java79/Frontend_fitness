@@ -45,7 +45,7 @@ function ListaExercicios() {
         
         <>
             <section className="text-center py-64 bg-cover bg-center " 
-                style={{ backgroundImage: `url('../../../../public/images/fundocategoria.png')` }}>
+               style={{ backgroundImage: `url('images/fundocategoria.png')` }}>
 
                 <h1 className="text-5xl font-bold text-white brightness-70">
                     Escolha sua categoria
