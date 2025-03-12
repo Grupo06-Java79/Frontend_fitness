@@ -5,6 +5,7 @@ import Exercicio from "../../../models/Exercicio"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import CardExercicio from "../cardexercicio/CardExercicio"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarExercicio() {
     const navigate = useNavigate()
@@ -31,7 +32,7 @@ function DeletarExercicio() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta('Você precisa estar logado','info')
             navigate('/')
         }
     }, [token])
@@ -55,7 +56,7 @@ function DeletarExercicio() {
             if (error.toString().includes('403')) {
                 handleLogout()
             } else {
-                alert('Erro ao deletar o exercício.')
+                ToastAlerta('Erro ao deletar o exercício.','erro')
             }
         }
         setIsLoading(false)

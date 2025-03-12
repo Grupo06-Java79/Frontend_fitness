@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Exercicio from "../../../models/Exercicio";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import Categoria from "../../../models/Categoria";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormExercicio() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function FormExercicio() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado!",'sucesso');
       navigate("/");
     }
   }, [token]);
@@ -69,18 +70,18 @@ function FormExercicio() {
         await atualizar(`/exercicios`, exercicio, setExercicio, {
           headers: { Authorization: token },
         });
-        alert("O Exercício foi atualizado com sucesso!");
+        ToastAlerta("O Exercício foi atualizado com sucesso!",'sucesso');
       } else {
         await cadastrar(`/exercicios`, exercicio, setExercicio, {
           headers: { Authorization: token },
         });
-        alert("O Exercício foi cadastrado com sucesso!");
+        ToastAlerta("O Exercício foi cadastrado com sucesso!",'sucesso');
       }
     } catch (error: any) {
       if (error.toString().includes("403")) {
         handleLogout();
       } else {
-        alert(`Erro ao ${id !== undefined ? "atualizar" : "cadastrar"} o Exercício.`);
+        ToastAlerta(`Erro ao ${id !== undefined ? "atualizar" : "cadastrar"} o Exercício.`,'erro');
       }
     } finally {
       setIsLoading(false);

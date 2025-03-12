@@ -1,27 +1,22 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
     const navigate = useNavigate();
     const { usuario, handleLogout } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
-    const [hasMargin, setHasMargin] = useState(false);
 
     function logout() {
         handleLogout();
-        alert('O Usuário foi desconectado com sucesso!');
+        ToastAlerta("O Usuário foi desconectado com sucesso!","sucesso");
         navigate('/login');
-    }
-
-    function toggleMenu() {
-        setIsOpen(!isOpen);
-        setHasMargin(!hasMargin);
     }
 
     return (
         <>
-            <div className={`w-full flex justify-between items-center py-4 fixed top-0 left-0 right-0 text-white shadow-lg backdrop-blur-sm z-50 ${hasMargin ? 'mb-16' : ''}`}>
+            <div className='w-full flex justify-between items-center py-4 fixed top-0 left-0 right-0 text-white shadow-lg backdrop-blur-sm z-50'>
                 <Link 
                     to='/home' 
                     className="text-2xl font-bold ml-10"
@@ -83,7 +78,7 @@ function Navbar() {
                     }
                 </div>
                 <div className="md:hidden flex items-center mr-10">
-                    <button onClick={toggleMenu} className="text-white focus:outline-none">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
