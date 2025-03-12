@@ -21,6 +21,8 @@ import ListaObesidade from "./components/categoria/listacategorias/ListaObesidad
 import Alongamento from "./components/categoria/listacategorias/Alongamento";
 import Aquecimento from "./components/categoria/listacategorias/Aquecimento";
 import Sobre from './pages/sobre/Sobre'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 
 
@@ -28,6 +30,7 @@ function App() {
   return (
     <>  
       <AuthProvider>
+      <ToastContainer />
         <BrowserRouter>
           <Navbar />
           <div className="min-h-[80vh]">
