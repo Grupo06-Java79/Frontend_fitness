@@ -1,7 +1,7 @@
 body.login-page {
-    background-image: linear-gradient(68.15deg, #cef9a9 5%, #adf07c 95%);
+    background-image: linear-gradient(68.15deg, #d5fcb1 10%, #adf07c 90%);
     background-size: 300% 100%;
-    animation: gradientAnimation 3s infinite alternate;
+    animation: gradientAnimation 2s infinite alternate;
     font-family: 'Fugaz One', sans-serif;  
 }
 
