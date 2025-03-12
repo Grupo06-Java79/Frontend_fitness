@@ -18,7 +18,7 @@ function Footer() {
                             <FacebookLogo size={36} weight='bold' />
                         </a>
                         <p className='text-xl font-bold px-5'>
-                            PraçaFit
+                            PRAÇAFit
                         </p>
                         <p className='text-xl font-bold '>
                             {data}

@@ -5,6 +5,7 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 import Cadastrar from '../cadastrar/Cadastrar';
+import logo from '../../../public/images/logopraca.png';
 
 function Login() {
 
@@ -40,7 +41,9 @@ function Login() {
     }
 
     return (
+      
         <div className="login-container">
+            <img src={logo} alt="Logo" className="logo"/>
             <div className="wrapper flex items-center justify-center py-56">
                 <div className="card-switch">
                     <label className="switch">

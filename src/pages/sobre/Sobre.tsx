@@ -12,7 +12,7 @@ function Sobre() {
         <>
             <div className="bg-gray-100 min-h-screen">
                 <section className="text-center  py-52 bg-cover bg-center" style={{ backgroundImage: `url(${fundo})` }}>
-                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">PRAÇA FIT</h2>
+                    <h2 className="text-5xl font-bold text-white mb-4 brightness-70">PRAÇAFit</h2>
                     <div className="mx-auto brightness-80">
                         <p className="text-xl text-white mb-8 lg:pl-32 lg:pr-32  brightness-10">
                             Conectamos pessoas e promovemos saúde! Nossa plataforma revoluciona a forma como você cuida do seu bem-estar, oferecendo recomendações personalizadas de exercícios com base no seu IMC. De maneira acessível e segura, ajudamos você a aproveitar os aparelhos públicos e a manter um estilo de vida ativo e equilibrado.

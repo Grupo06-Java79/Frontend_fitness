@@ -168,7 +168,7 @@ function Home() {
                 </section>
                 <section >
                     <p className="text-3xl text-center font-bold py-10 ">
-                        SOBRE PRAÇA FIT
+                        SOBRE PRAÇAFit
                     </p>
                     <div className="flex justify-around">
                         <div className="grid justify-items-center m-20">
