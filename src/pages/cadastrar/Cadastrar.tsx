@@ -79,7 +79,7 @@ function Cadastrar() {
                 <div className="grid-container">
                     <div className="column">
                         <input type="text" placeholder="Nome" name="nome" className="flip-card__input" value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-                        <input type="text" placeholder="Usuário" name="usuario" className="flip-card__input" value={usuario.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+                        <input type="text" placeholder="E-mail" name="usuario" className="flip-card__input" value={usuario.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                         <input type="text" placeholder="Foto" name="foto" className="flip-card__input" value={usuario.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                         <input type="number" placeholder="Idade" name="idade" className="flip-card__input" value={usuario.idade} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                     </div>

@@ -34,18 +34,18 @@ function Perfil() {
 
   function classificarIMC(imc: number): string {
     if (imc < 18.5) {
-      return "Abaixo do peso";
+      return "Necessita de atenção nutricional";
     } else if (imc >= 18.5 && imc < 24.9) {
-      return "Peso normal";
+      return "Saúde equilibrada";
     } else if (imc >= 25 && imc < 29.9) {
-      return "Sobrepeso";
+      return "Em processo de equilíbrio";
     } else if (imc >= 30 && imc < 34.9) {
-      return "Obesidade grau 1";
+      return "Atenção à saúde";
     } else if (imc >= 35 && imc < 39.9) {
-      return "Obesidade grau 2";
+      return "Saúde em foco";
     } else {
-      return "Obesidade grau 3";
-    }
+      return "Atenção à saúde integral";
+    }    
   }
 
   return (

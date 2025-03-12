@@ -56,7 +56,7 @@ function Login() {
                                 <form onSubmit={login} className="flip-card__form flex flex-col items-center">
                                     <input
                                         type="text"
-                                        placeholder="Usuário"
+                                        placeholder="E-mail"
                                         name="usuario"
                                         className="flip-card__input"
                                         value={usuarioLogin.usuario || ''}
