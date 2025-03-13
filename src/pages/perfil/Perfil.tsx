@@ -35,18 +35,20 @@ function Perfil() {
   function classificarIMC(imc: number): string {
     if (imc < 18.5) {
       return "Necessita de atenção nutricional";
-    } else if (imc >= 18.5 && imc < 24.9) {
+    } else if (imc >= 18.5 && imc < 24.99) {
       return "Saúde equilibrada";
-    } else if (imc >= 25 && imc < 29.9) {
+    } else if (imc >= 25 && imc < 29.99) {
       return "Em processo de equilíbrio";
-    } else if (imc >= 30 && imc < 34.9) {
+    } else if (imc >= 30 && imc < 34.99) {
       return "Atenção à saúde";
-    } else if (imc >= 35 && imc < 39.9) {
+    } else if (imc >= 35 && imc < 39.99) {
       return "Saúde em foco";
     } else {
       return "Atenção à saúde integral";
     }    
   }
+
+  const fotoPerfil = usuario.foto || "https://img.freepik.com/free-vector/user-circles-set_78370-4704.jpg?t=st=1741890600~exp=1741894200~hmac=8a60a25fe22ba7f27d4d9b46d7488678c3eb4bb67fbbeb7b308087476a77c34b&w=740";
 
   return (
     <div className="flex justify-center mx-4 min-h-screen">
@@ -59,7 +61,7 @@ function Perfil() {
 
         <img
           className="rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10"
-          src={usuario.foto}
+          src={fotoPerfil}
           alt={`Foto de perfil de ${usuario.nome}`}
         />
 
