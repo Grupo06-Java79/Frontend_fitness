@@ -14,14 +14,12 @@ function ListaPesoNormal() {
     const token = usuario.token;
 
     const imagens = [
-        { src: "/img/Surf.png" },
-        { src: "/img/Simulador de Remo.png" },
-        { src: "/img/Simulador de Cavalgada.png" },
-        { src: "/img/Simulador de Caminhada.png" },
-        { src: "/img/Rotação Vertical.png" },
-        { src: "/img/Leg Press.png" },
-        { src: "/img/Esqui.png" },
-        { src: "/img/Alongador.png" }
+        { src: "/img/abdominal.jpg" },
+        { src: "/img/esqui.jpg" },
+        { src: "/img/caminhada.jpg" },
+        { src: "/img/cavalgada.jpg" },
+        { src: "/img/rotacao.jpg" },
+        { src: "/img/barras.jpg" }
     ];
 
     async function buscarExercicio() {

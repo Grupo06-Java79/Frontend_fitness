@@ -14,14 +14,12 @@ function ListaObesidade() {
     const token = usuario.token;
 
     const imagens = [ 
-        { src: "/img/Surf.png" },
-        { src: "/img/Simulador de Remo.png" },
-        { src: "/img/Simulador de Cavalgada.png" },
-        { src: "/img/Simulador de Caminhada.png" },
-        { src: "/img/Rotação Vertical.png" },
-        { src: "/img/Leg Press.png" },
-        { src: "/img/Esqui.png" },
-        { src: "/img/Alongador.png" }
+        { src: "/img/caminhada.jpg" },
+        { src: "/img/remada.jpg" },
+        { src: "/img/legpress.jpg" },
+        { src: "/img/multi.jpg" },
+        { src: "/img/rotacao.jpg" },
+        { src: "/img/cavalgada.jpg" }
     ];
 
     async function buscarExercicio() {
@@ -89,6 +87,9 @@ function ListaObesidade() {
                     <p>Ajuda na mobilidade, queima de calorias e melhora da resistência física sem sobrecarregar o corpo. 🌱🏃‍♂️</p>
                 </div>
             </div>
+
+            <div className="bg-gray-100 text-center">
+                <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
             {/* Carrossel */}
             <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
                 <Swiper
@@ -111,6 +112,7 @@ function ListaObesidade() {
                     ))}
                 </Swiper>
             </div>
+        </div>
 
             {/* Lista de Exercícios */}
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">

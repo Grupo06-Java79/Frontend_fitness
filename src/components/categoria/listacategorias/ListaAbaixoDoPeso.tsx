@@ -15,14 +15,12 @@ function ListaExercicios() {
     const token = usuario.token;
 
     const imagens = [
-        { src: "/img/Surf.png"},
-        { src: "/img/Simulador de Remo.png"},
-        { src: "/img/Simulador de Cavalgada.png"},
-        { src: "/img/Simulador de Caminhada.png"},
-        { src: "/img/Rotação Vertical.png"},
-        { src: "/img/Leg Press.png"},
-        { src: "/img/Esqui.png"},
-        { src: "/img/Alongador.png"}
+        { src: "/img/abdominal.jpg"},
+        { src: "/img/remada.jpg"},
+        { src: "/img/barras.jpg"},
+        { src: "/img/extensordepernas.jpg"},
+        { src: "/img/legpress.jpg"},
+        { src: "/img/puxadorcostas.jpg"}
     ];
 
     async function buscarExercicio() {
