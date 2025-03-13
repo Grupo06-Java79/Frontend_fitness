@@ -47,6 +47,9 @@ function ListaObesidade() {
         buscarExercicio();
     }, []);
 
+    //Filtrando Exercicios por categoria
+    const exerciciosObesidade = exercicios.filter(exercicio => exercicio.categoria.id === 5);
+
     return (
         <>
             {/* Banner da página */}
@@ -122,8 +125,8 @@ function ListaObesidade() {
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicios.length > 0 ? (
-                                exercicios.map((exercicio) => (
+                            {exerciciosObesidade.length > 0 ? (
+                                exerciciosObesidade.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
                                     } } />

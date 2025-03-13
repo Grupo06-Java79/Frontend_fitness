@@ -42,5 +42,18 @@ export function ToastAlerta(mensagem: string, tipo: string) {
                 progress: undefined,
             });
             break;
+
+            case 'alerta':
+            toast.warning(mensagem, {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
+            break;
     }
 }

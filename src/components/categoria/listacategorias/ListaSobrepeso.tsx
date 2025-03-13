@@ -47,6 +47,9 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
         buscarExercicio();
     }, []);
 
+    //Filtrando Exercicios por categoria
+    const exerciciosSobrePeso = exercicios.filter(exercicio => exercicio.categoria.id === 4);
+
     return (
         <>
             {/* Banner da página */}
@@ -133,8 +136,8 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicios.length > 0 ? (
-                                exercicios.map((exercicio) => (
+                            {exerciciosSobrePeso.length > 0 ? (
+                                exerciciosSobrePeso.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
                                     } } />

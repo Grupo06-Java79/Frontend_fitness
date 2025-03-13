@@ -48,6 +48,9 @@ function ListaExercicios() {
         buscarExercicio();
     }, []);
 
+    // Filtrar exercícios para abaixo do peso
+    const exerciciosAbaixoDoPeso = exercicios.filter(exercicio => exercicio.categoria.id === 2);
+
     return (
         <>
             {/* Imagem com Texto Sobreposto */}
@@ -140,8 +143,8 @@ function ListaExercicios() {
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicios.length > 0 ? (
-                                exercicios.map((exercicio) => (
+                            {exerciciosAbaixoDoPeso.length > 0 ? (
+                                exerciciosAbaixoDoPeso.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
                                     } } />
