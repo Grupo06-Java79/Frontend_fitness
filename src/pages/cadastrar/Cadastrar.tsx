@@ -66,7 +66,7 @@ function Cadastrar() {
                 ToastAlerta('Erro ao cadastrar o usuário!','erro');
             }
         } else {
-            ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.','info');
+            ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.','alerta');
             setUsuario({ ...usuario, senha: '' });
             setConfirmaSenha('');
         }

@@ -49,6 +49,11 @@ function ListaPesoNormal() {
         buscarExercicio();
     }, []);
 
+
+    // Filtrar exercícios para abaixo do peso
+    const exerciciosPesoNormal = exercicios.filter(exercicio => exercicio.categoria.id === 3);
+
+
     return (
         <>
             {/* Banner da página */}
@@ -138,8 +143,8 @@ function ListaPesoNormal() {
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {exercicios.length > 0 ? (
-                                exercicios.map((exercicio) => (
+                            {exerciciosPesoNormal.length > 0 ? (
+                                exerciciosPesoNormal.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
                                     } } />

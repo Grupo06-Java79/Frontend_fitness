@@ -6,8 +6,13 @@ import fundo from '../../assets/images/praca.png'
 import CardSaude from "./cardsaude/CardSaude";
 import HistoriaPracaFit from "./historiapracafit/HistoriaPracaFit";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
 function Sobre() {
+
+    const {usuario} = useContext(AuthContext)
+
     return (
         <>
             <div className="bg-gray-100 min-h-screen">
@@ -18,9 +23,12 @@ function Sobre() {
                             Conectamos pessoas e promovemos saúde! Nossa plataforma revoluciona a forma como você cuida do seu bem-estar, oferecendo recomendações personalizadas de exercícios com base no seu IMC. De maneira acessível e segura, ajudamos você a aproveitar os aparelhos públicos e a manter um estilo de vida ativo e equilibrado.
                         </p>
                     </div>
-                    <Link to='/login' className='hover:underline'>
+                    {
+                        usuario.token == '' && <Link to='/login' className='hover:underline'>
                         <button className="bg-green-900 hover:bg-slate-900 text-white px-8 py-3 rounded-full font-semibold">COMEÇAR</button>
                     </Link>
+                    }
+                    
                 </section>
 
                 <HistoriaPracaFit />
