@@ -54,7 +54,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         //   setUsuario(resposta.data);
         ToastAlerta('Usuário cadastrado com sucesso!','sucesso');
         } catch (error) {
-          ToastAlerta('Erro ao cadastrar o usuário!','sucesso');
+          ToastAlerta('Erro ao cadastrar o usuário!','erro');
         }
         setIsLoading(false);
       }
