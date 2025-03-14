@@ -61,7 +61,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
-                        Emagrecimento Leve {/* Alterado de "Condicionamento Físico" para "Emagrecimento Leve" */}
+                        EMAGRECIMENTO LEVE {/* Alterado de "Condicionamento Físico" para "Emagrecimento Leve" */}
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl">
                         Treino focado na perda de peso gradual e sustentável, combinando exercícios aeróbicos e de resistência para promover saúde e bem-estar. {/* Texto atualizado para refletir o emagrecimento */}
@@ -74,21 +74,20 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                 <div className="bg-[#CEF9A9] w-full p-10">
                     {/* Seção Esquerda */}
                     <div className="flex items-center gap-2">
-                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">30 a 45 minutos</p> {/* Alterado de "40 a 55 minutos" para "30 a 45 minutos" */}
+                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 30 a 45 minutos</h2>
                     </div>
                     <div className="flex items-center gap-2 mt-4 md:mt-0">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">Moderada</p> {/* Alterado de "Alta" para "Moderada" */}
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
                     </div>
-                    <p>Descansos alternados de 5 a 8 minutos.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
+                    <br></br>
+                    <p>Descansos de 1 a 3 minutos entre as séries.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
                     <p>Realize o aquecimento adequadamente para evitar lesões.</p> {/* Texto atualizado para enfatizar a prevenção de lesões */}
                 </div> 
                 {/* Seção Direita */}
                 <div className="bg-[#A0E080] w-full p-10">
-                    <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do Treino</h2>
-                    <p>Promove a perda de peso saudável com atividades aeróbicas, fortalecendo o corpo e melhorando o condicionamento físico. 🌱🏃‍♂️. {/* Texto alterado para focar no emagrecimento saudável */}
-                    </p>
+                    <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do treino</h2>
+                    <br></br>
+                    <p>Perda de gordura | Melhor condicionamento | Ganho de força</p>
                 </div>
             </div>
 
@@ -132,7 +131,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
                 <div>
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Exercícios do Treino
+                        Exercícios do treino
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -156,11 +155,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    🔙 Voltar para Categorias
-                </button>
-
-                <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-                    ✅ CONCLUIR TREINO ✅
+                    Voltar para Categorias
                 </button>
             </div>
         </>

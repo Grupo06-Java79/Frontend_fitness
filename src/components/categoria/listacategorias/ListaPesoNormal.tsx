@@ -63,10 +63,10 @@ function ListaPesoNormal() {
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
-                        Condicionamento Físico
+                        CONDICIONAMENTO FÍSICO
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl">
-                        Treino focado na resistência e bem-estar, ideal para manter a boa forma e um estilo de vida equilibrado.
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                        Treino focado na resistência, ideal para manter a boa forma e um estilo de vida equilibrado.
                     </p>
                 </div>
             </div>
@@ -77,23 +77,22 @@ function ListaPesoNormal() {
                     {/* Seção Esquerda */}
                     <div>
                         <div className="flex items-center gap-2 p-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">40 a 55 minutos</p>
+                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 40 a 55 minutos</h2>
                         </div>
 
                         <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                            <p className="text-black text-lg md:text-xl font-bold">Alta</p>
+                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>           
                         </div>
-
-                        <p>Descansos alternados de 5 a 10 minutos.</p>
+                        <br></br>
+                        <p>Descansos de 1 a 3 minutos entre as séries.</p>
                         <p>Realize o aquecimento adequadamente.</p>
                     </div>
                 </div>
                 {/* Seção Direita */}
                 <div className="bg-[#A0E080] w-full p-10">
-                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Treino</h2>
-                    <p>Mantenha a boa forma de maneira saudável com um treino dinâmico, desafiador e conectado à natureza. 💪🌿.</p>
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
+                    <br></br>
+                    <p>Manter a boa forma | Manter a força | Bom condicionamento</p>
                 </div>
             </div>
             
@@ -137,7 +136,7 @@ function ListaPesoNormal() {
             <div className="flex justify-center bg-[#CEF9A9] py-8 min-h-screen">
                 <div className="">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Exercícios do Treino
+                        Exercícios do treino
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -161,11 +160,7 @@ function ListaPesoNormal() {
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    🔙 Voltar para Categorias
-                </button>
-
-                <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-                    ✅ CONCLUIR TREINO ✅
+                    Voltar para categorias
                 </button>
             </div>
         </>

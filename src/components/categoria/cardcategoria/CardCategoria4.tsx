@@ -12,12 +12,12 @@ export default function CardExercicio() {
 
     // Lista de exercícios recomendados
     const exercicios = [
-        "Simulador de Caminhada",
-        "Remada Sentada",
-        "Stepper",
-        "Alongador de Pernas",
-        "Extensor de Pernas",
-        "Volante de Rotação"
+        "Simulador de caminhada",
+        "Remada",
+        "LegPress",
+        "Multi exercitador",
+        "Cavalgada",
+        "Volante de rotação"
     ];
 
     return (
@@ -51,12 +51,12 @@ export default function CardExercicio() {
 
                 {/* Descrição */}
                 <p className="text-gray-700 text-sm mb-4">
-                Este programa combina cardio, mobilidade e força leve para acelerar o metabolismo e maximizar a queima de gordura
+                Com duração de aproximadamente 30 minutos combinamos cardio, mobilidade e força para acelerar o metabolismo e maximizar a queima de gordura.
                 </p>
 
                 {/* Lista de exercícios */}
                 <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
-                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do treino</h3>
                     <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
                         {exercicios.map((exercicio, index) => (
                             <li key={index}>{exercicio}</li>
@@ -67,8 +67,7 @@ export default function CardExercicio() {
                 {/* Botão de ação */}
                 <button 
                     className="w-full text-green-600 font-semibold text-sm py-2 mt-4 hover:underline"
-                    onClick={() => navigate('/listacategorias/ListaObesidade')}
->
+                    onClick={() => navigate('/listacategorias/ListaSaudeEmFoco')}>
                         Saiba mais
                 </button>
             </div>

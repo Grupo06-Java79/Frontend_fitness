@@ -51,8 +51,8 @@ function App() {
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/listacategorias/ListaAbaixoDoPeso" element={<ListaAbaixoDoPeso />} />
               <Route path="/listacategorias/ListaPesoNormal" element={<ListaPesoNormal />} />
-              <Route path="/listacategorias/ListaSobrepeso" element={<ListaSobrepeso />} />
-              <Route path="/listacategorias/ListaObesidade" element={<ListaObesidade />} />
+              <Route path="/listacategorias/ListaAtencaoSaude" element={<ListaSobrepeso />} />
+              <Route path="/listacategorias/ListaSaudeEmFoco" element={<ListaObesidade />} />
               <Route path="/listacategorias/Alongamento" element={<Alongamento />} /> 
               <Route path="/listacategorias/Aquecimento" element={<Aquecimento />} /> 
               <Route path='/sobre' element={<Sobre />} />         

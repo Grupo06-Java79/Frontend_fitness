@@ -5,12 +5,12 @@ export default function CardCategoria() {
 
     // Lista de exercícios recomendados
     const exercicios = [
-        "Leg Press",
-        "Extensor de Pernas",
-        "Remada Sentada",
-        "Puxador Costas",
-        "Barras Paralelas",
-        "Banco para Abdominais"
+        "Barras",
+        "Puxador costas",
+        "Remada",
+        "Abdominal",
+        "Extensor de pernas",
+        "LegPress"
     ];
 
     return (
@@ -33,7 +33,7 @@ export default function CardCategoria() {
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⏳</span>
                         <span className="text-gray-700 font-semibold">Duração</span>
-                        <span className="text-gray-600">30 min</span>
+                        <span className="text-gray-600">45 min</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⚡</span>
@@ -44,12 +44,12 @@ export default function CardCategoria() {
 
                 {/* Descrição */}
                 <p className="text-gray-700 text-sm mb-4">
-                    Com duração de aproximadamente 30 minutos e uma combinação de vários exercícios, fortaleça seus músculos e aumente sua resistência.
+                    Com duração de aproximadamente 45 minutos e uma combinação de vários exercícios, fortaleça seus músculos e aumente sua resistência.
                 </p>
 
                 {/* Lista de exercícios */}
                 <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
-                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do treino</h3>
                     <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
                         {exercicios.map((exercicio, index) => (
                             <li key={index}>{exercicio}</li>

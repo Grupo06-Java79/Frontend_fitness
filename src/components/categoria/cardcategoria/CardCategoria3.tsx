@@ -12,13 +12,12 @@ export default function CardExercicio() {
 
     // Lista de exercícios recomendados
     const exercicios = [
-        "Simulador de Caminhada",
-        "Esqui Simulador",
-        "Stepper",
-        "Alongador de Pernas",
-        "Multi Exercitador",
-        "Leg Press",
-        "Volante de Rotação"
+        "Simulador de caminhada",
+        "Esqui",
+        "LegPress",
+        "Multi exercitador",
+        "Peitoral",
+        "Triceps"
     ];
 
     return (
@@ -41,7 +40,7 @@ export default function CardExercicio() {
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⏳</span>
                         <span className="text-gray-700 font-semibold">Duração</span>
-                        <span className="text-gray-600">30 min</span>
+                        <span className="text-gray-600">40 min</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⚡</span>
@@ -52,12 +51,12 @@ export default function CardExercicio() {
 
                 {/* Descrição */}
                 <p className="text-gray-700 text-sm mb-4">
-                Este programa é ideal para quem busca reduzir gordura corporal e melhorar a mobilidade, combinando exercícios aeróbicos, de força e alongamento para um treino completo
+                Com duração de aproximadamente 40 minutos e uma combinação de vários exercícios, perca gordura corporal e melhore a mobilidade.
                 </p>
 
                 {/* Lista de exercícios */}
                 <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
-                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do treino</h3>
                     <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
                         {exercicios.map((exercicio, index) => (
                             <li key={index}>{exercicio}</li>
@@ -67,7 +66,7 @@ export default function CardExercicio() {
 
                 <button 
                     className="w-full text-green-600 font-semibold text-sm py-2 mt-4 hover:underline"
-                    onClick={() => navigate('/listacategorias/ListaSobrepeso')}
+                    onClick={() => navigate('/listacategorias/ListaAtencaoSaude')}
 >
                         Saiba mais
                 </button>

@@ -67,10 +67,10 @@ function ListaExercicios() {
                     <h1 className="text-white text-6xl md:text-5xl sm:text-4xl font-extrabold">
                         GANHO DE MASSA
                     </h1>
-                    <p className="text-white text-xl md:text-lg font-medium mt-20 max-w-3xl text-justify">
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
                         Este treino foi cuidadosamente desenvolvido para pessoas abaixo do peso que desejam ganhar massa muscular de maneira saudável e eficiente. 
                         Combinando exercícios compostos e progressão de carga, você fortalecerá seu corpo enquanto se conecta com a natureza, 
-                        unindo movimento e bem-estar em cada treino. 💪
+                        unindo movimento e bem-estar em cada treino. 
                     </p>
                 </div>
             </div>
@@ -80,21 +80,19 @@ function ListaExercicios() {
                 <div className="w-full p-10 bg-[#CEF9A9]">
                 {/* Seção Esquerda */}
                     <div className="flex items-center gap-2 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">40 a 55 minutos</p>
+                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 40 a 55 minutos</h2>
                     </div>
 
                     <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">Alta</p>
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
                     </div>
-                    <p>Descansos alternados de 5 a 10 minutos.</p>
+                    <p>Descansos de 1 a 3 minutos entre as séries.</p>
                     <p>Realize o aquecimento adequadamente.</p>
                 </div>
                 {/* Seção Direita */}
                 <div className="w-full p-16 bg-[#A0E080] ">
-                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Treino</h2>
-                    <p className="p-2">Ganhe força e massa muscular de forma saudável com um treino dinâmico, desafiador e conectado à natureza. 💪🌿.</p>
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
+                    <p className="p-2">Ganho de força | Ganho de massa muscular | Ganho de resistência</p>
                 </div>
             </div>
 
@@ -139,7 +137,7 @@ function ListaExercicios() {
             <div className="flex justify-center bg-[#CEF9A9] pt-16">
                 <div >
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Lista de exercícios
+                        Exercícios do treino
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -163,11 +161,7 @@ function ListaExercicios() {
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    🔙 Voltar para Categorias
-                </button>
-
-                <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-                    ✅ CONCLUIR TREINO ✅
+                    Voltar para categorias
                 </button>
             </div>
         </>

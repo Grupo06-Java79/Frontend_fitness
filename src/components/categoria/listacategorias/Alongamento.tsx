@@ -26,10 +26,10 @@ function Alongamento() {
 
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
-                        🧘‍♂️ Alongamento & Relaxamento
+                        Alongamento
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl">
-                        Sessão essencial para melhorar a flexibilidade, 🏃‍♂️ evitar lesões e 🛀 relaxar os músculos, promovendo bem-estar e alívio do estresse.
+                        Sessão essencial para melhorar a flexibilidade, evitar lesões e alongar os músculos, promovendo bem-estar e alívio do estresse.
                     </p>
                 </div>
             </div>
@@ -39,21 +39,21 @@ function Alongamento() {
                 <div className="w-full p-10 bg-[#F9D9A9]"> {/* Mesma cor do aquecimento */}
                     {/* Seção Esquerda */}
                     <div className="flex items-center gap-2 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">10 a 20 minutos</p>
+                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 10 a 20 minutos</h2>
                     </div>
 
                     <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">Baixa</p> 
+                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Baixa</h2>
                     </div>
-                    <p>🏋️‍♂️ **Melhora a elasticidade muscular** e reduz tensões pós-treino.</p>
-                    <p>🌬️ **Mantenha uma respiração controlada** para potencializar o relaxamento.</p>
+                    <br></br>
+                    <p>Melhora a elasticidade muscular e reduz tensões pré-treino.</p>
+                    <p>Mantenha uma respiração controlada para potencializar o relaxamento.</p>
                 </div>
                 {/* Seção Direita */}
                 <div className="bg-[#E0B878] w-full p-16 "> {/* Mesma cor do aquecimento */}
-                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Alongamento</h2>
-                    <p>🦵 Aumenta a flexibilidade | 💪 **Melhora a circulação | 🧘‍♀️ Reduz o estresse e as tensões musculares</p>
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do alongamento</h2>
+                    <br></br>
+                    <p>Aumenta a flexibilidade | Melhora a circulação | Reduz o estresse muscular</p>
                 </div>
             </div>
 
@@ -61,17 +61,17 @@ function Alongamento() {
             <div className="flex justify-center w-full py-8 min-h-screen">
                 <div className="container flex flex-col">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        🏋️‍♂️ Passo a Passo para um Alongamento Completo 🏋️‍♀️
+                        Passo a passo para um alongamento completo 
                     </h2>
                     <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto text-gray-800 text-lg">
                         <ul className="list-decimal list-inside space-y-4">
-                            <li><strong>🔥 Aquecimento Leve:</strong> Antes de alongar, **faça uma caminhada leve** ou um pequeno aquecimento de **2 minutos**.</li>
-                            <li><strong>🦵 Pernas e Panturrilhas:</strong> **Mantenha os pés afastados**, incline o corpo à frente e tente tocar os pés. **Segure por 20 segundos**.</li>
-                            <li><strong>💪 Ombros e Pescoço:</strong> Gire os ombros para trás e para frente. Depois, incline a cabeça para os lados, **mantendo 15 segundos em cada lado**.</li>
-                            <li><strong>🙆‍♂️ Alongamento de Braços:</strong> Estique um braço sobre o peito e puxe suavemente com a outra mão. **Troque de lado após 15 segundos**.</li>
-                            <li><strong>🔄 Rotação de Tronco:</strong> De pé, gire o tronco de um lado para o outro lentamente, mantendo os pés fixos no chão.</li>
-                            <li><strong>🦵 Quadríceps:</strong> Em pé, segure o tornozelo e traga o calcanhar em direção ao glúteo, alongando a coxa. **Troque de perna após 20 segundos**.</li>
-                            <li><strong>🛀 Relaxamento Final:</strong> Inspire profundamente e solte o ar lentamente. Faça **3 respirações profundas** para finalizar o alongamento.</li>
+                            <li><strong>Aquecimento Leve:</strong> Antes de alongar, faça uma caminhada leve ou um pequeno aquecimento de 2 minutos.</li>
+                            <li><strong>Pernas e Panturrilhas:</strong> Mantenha os pés afastados, incline o corpo à frente e tente tocar os pés. Segure por 20 segundos.</li>
+                            <li><strong>Ombros e Pescoço:</strong> Gire os ombros para trás e para frente. Depois, incline a cabeça para os lados, mantendo 15 segundos em cada lado.</li>
+                            <li><strong>Alongamento de Braços:</strong> Estique um braço sobre o peito e puxe suavemente com a outra mão. Troque de lado após 15 segundos.</li>
+                            <li><strong>Rotação de Tronco:</strong> De pé, gire o tronco de um lado para o outro lentamente, mantendo os pés fixos no chão.</li>
+                            <li><strong>Quadríceps:</strong> Em pé, segure o tornozelo e traga o calcanhar em direção ao glúteo, alongando a coxa. Troque de perna após 20 segundos.</li>
+                            <li><strong>Relaxamento final:</strong> Inspire profundamente e solte o ar lentamente. Faça 3 respirações profundas para finalizar o alongamento.</li>
                         </ul>
                     </div>
                 </div>
@@ -83,11 +83,7 @@ function Alongamento() {
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    🔙 Voltar para Categorias
-                </button>
-
-                <button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-700 transition">
-                    ✅ CONCLUIR ALONGAMENTO ✅
+                    Voltar para categorias
                 </button>
             </div>
         </>

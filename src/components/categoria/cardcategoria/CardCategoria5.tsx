@@ -12,12 +12,12 @@ export default function CardExercicio() {
 
     // Lista de exercícios recomendados
     const exercicios = [
-        "Simulador de Caminhada com suporte",
-        "Remada Sentada",
-        "Stepper",
-        "Alongador de Pernas",
-        "Leg Press (carga reduzida)",
-        "Rotação Vertical"
+        "Caminhada",
+        "Pernas e panturrilhas",
+        "Ombros e pescoço",
+        "Braços",
+        "Rotação de Tronco",
+        "Quadríceps"
     ];
 
     return (
@@ -40,23 +40,23 @@ export default function CardExercicio() {
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⏳</span>
                         <span className="text-gray-700 font-semibold">Duração</span>
-                        <span className="text-gray-600">30 min</span>
+                        <span className="text-gray-600">20 min</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⚡</span>
                         <span className="text-gray-700 font-semibold">Intensidade</span>
-                        <span className="text-gray-600">Alta</span>
+                        <span className="text-gray-600">Baixa</span>
                     </div>
                 </div>
 
                 {/* Descrição */}
                 <p className="text-gray-700 text-sm mb-4">
-                Este programa foi desenvolvido para quem deseja iniciar a prática de exercícios com segurança, focando na redução de impacto, fortalecimento muscular e melhora da mobilidade
+                O alongamento é essencial para manter a flexibilidade, melhorar a mobilidade e prevenir lesões, especialmente para começar com o pé direito.
                 </p>
 
                 {/* Lista de exercícios */}
                 <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
-                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do alongamento</h3>
                     <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
                         {exercicios.map((exercicio, index) => (
                             <li key={index}>{exercicio}</li>

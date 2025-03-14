@@ -12,12 +12,12 @@ export default function CardExercicio() {
 
     // Lista de exercícios recomendados
     const exercicios = [
-        "Alongador de Pernas",
-        "Rotação Vertical",
-        "Stepper",
-        "Alongador de Pernas",
-        "Extensor de Pernas",
-        "Volante de Rotação"
+        "Movimentação articular",
+        "Caminhada",
+        "Elevação de joelhos",
+        "Polichinelos",
+        "Flexões de braço",
+        "Rotação de Tronco"
     ];
 
     return (
@@ -40,23 +40,23 @@ export default function CardExercicio() {
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⏳</span>
                         <span className="text-gray-700 font-semibold">Duração</span>
-                        <span className="text-gray-600">30 min</span>
+                        <span className="text-gray-600">20 min</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-lg">⚡</span>
                         <span className="text-gray-700 font-semibold">Intensidade</span>
-                        <span className="text-gray-600">Alta</span>
+                        <span className="text-gray-600">Média</span>
                     </div>
                 </div>
 
                 {/* Descrição */}
                 <p className="text-gray-700 text-sm mb-4">
-                O alongamento é essencial para manter a flexibilidade, melhorar a mobilidade e prevenir lesões, especialmente para começar com o pé direito.
+                O aquecimento é essencial para a prática de exercícios com segurança, focando na redução de impacto, fortalecimento muscular e melhora da mobilidade.
                 </p>
 
                 {/* Lista de exercícios */}
                 <div className="bg-gray-100 p-3 rounded-lg shadow-sm">
-                    <h3 className="text-md font-semibold text-gray-800">Exercícios do Treino</h3>
+                    <h3 className="text-md font-semibold text-gray-800">Exercícios do aquecimento</h3>
                     <ul className="mt-2 text-gray-600 text-sm list-disc list-inside">
                         {exercicios.map((exercicio, index) => (
                             <li key={index}>{exercicio}</li>

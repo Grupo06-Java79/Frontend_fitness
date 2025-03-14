@@ -10,7 +10,7 @@ import CardCategoria5 from "../cardcategoria/CardCategoria5";
 import CardCategoria6 from "../cardcategoria/CardCategoria6";
 import Exercicio from "../../../models/Exercicio";
 
-function ListaExercicios() {
+function ListaCategorias() {
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
     const { usuario, handleLogout } = useContext(AuthContext);
@@ -57,12 +57,12 @@ function ListaExercicios() {
             {/* Grid de Exercícios */}
             <div className="w-full flex justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl my-10">
+                    <CardCategoria5/>
+                    <CardCategoria6/>
                     <CardCategoria/>
                     <CardCategoria2/>
                     <CardCategoria3/>
                     <CardCategoria4/>
-                    <CardCategoria5/>
-                    <CardCategoria6/>
                 </div>
             </div>
             </div>
@@ -70,4 +70,4 @@ function ListaExercicios() {
     );
 }
 
-export default ListaExercicios;
+export default ListaCategorias;

@@ -45,7 +45,7 @@ function ListaExercicios() {
                             EXERCITE - SE                    
                         </h2>
                         <p className="text-white text-lg mt-4 max-w-4xl text-center mx-auto">
-                            Exercite Bons Hábitos 😊, Exercite Bons Pensamentos 🧘‍♀️, Exercite Disciplina 💪, EXERCITE-SE! ⛹️‍♂️
+                            exercite bons hábitos, exercite bons pensamentos, exercite disciplina, EXERCITE-SE! ⛹️‍♂️
                         </p>
 
                     <div className="mx-auto brightness-80"></div>

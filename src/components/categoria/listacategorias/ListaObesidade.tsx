@@ -61,7 +61,7 @@ function ListaObesidade() {
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-white text-5xl font-extrabold">
-                        Treino para Obesidade
+                        EMAGRECIMENTO INTENSO
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl">
                         Exercícios planejados para perda de peso segura e eficaz, priorizando baixa intensidade e adaptação progressiva.
@@ -74,20 +74,20 @@ function ListaObesidade() {
                 <div className="w-full p-10 bg-[#CEF9A9]">
                     {/* Seção Esquerda */}
                     <div className="flex items-center gap-2">
-                        <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">20 a 40 minutos</p> 
+                        <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração: 20 a 40 minutos</h2>
                     </div>
                     <div className="flex items-center gap-2 mt-4 md:mt-0">
-                        <h2 className="text-3xl font-bold text-gray-900 p-2">⚡ Intensidade:</h2>
-                        <p className="text-black text-lg md:text-xl font-bold">Baixa a Moderada</p> 
+                        <h2 className="text-3xl font-bold text-gray-900 p-2">⚡ Intensidade: Alta</h2>
                     </div>
-                    <p>Descansos de 10 a 15 minutos entre as séries.</p>
+                    <br></br>
+                    <p>Descansos de 1 a 3 minutos entre as séries.</p>
                     <p>Exercícios de baixo impacto para reduzir sobrecarga nas articulações.</p>
                 </div>
                 {/* Seção Direita */}
                 <div className="bg-[#A0E080] w-full p-10">
-                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do Treino</h2>
-                    <p>Ajuda na mobilidade, queima de calorias e melhora da resistência física sem sobrecarregar o corpo. 🌱🏃‍♂️</p>
+                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
+                    <br></br>
+                    <p>Perca de peso | Ganho de mobilidade | Ganho de resistência</p>
                 </div>
             </div>
 
@@ -121,7 +121,7 @@ function ListaObesidade() {
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
                 <div >
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Exercícios do Treino
+                        Exercícios do treino
                     </h2>
                     <div className="w-full flex justify-center my-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -145,11 +145,7 @@ function ListaObesidade() {
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    🔙 Voltar para Categorias
-                </button>
-
-                <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-                    ✅ CONCLUIR TREINO ✅
+                    Voltar para categorias
                 </button>
             </div>
         </>
