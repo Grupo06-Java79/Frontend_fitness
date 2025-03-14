@@ -8,6 +8,8 @@ export default interface Exercicio {
     aparelho: string;
     serie: number;
     repeticao: number;
+    foto:string;
     categoria: Categoria | null;
     usuario: Usuario | null;
+
 }

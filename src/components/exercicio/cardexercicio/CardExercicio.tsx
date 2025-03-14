@@ -22,8 +22,8 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
             <div className="relative w-full h-56">
                 <img
                     className="h-full w-full object-cover"
-                    src="/images/exer_01.jpg"
-                    alt="Imagem do exercício"
+                    src={exercicio.foto}
+                    alt={'Foto do exercicio ${exercicio.nome}'}
                 />
             </div>
 
