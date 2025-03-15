@@ -97,7 +97,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
             {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
+            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -108,24 +108,28 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                         }}
                         pagination={{
                             clickable: true,
+                            el: '.swiper-pagination',
                             bulletClass: 'swiper-pagination-bullet',
                             bulletActiveClass: 'swiper-pagination-bullet-active',
                         }}
-                        autoplay={{ delay: 3000 }}
+                        autoplay={{ delay: 2500 }}
                         loop={true}
                         className="rounded-lg shadow-lg"
                     >
                         {imagens.map((imagem, index) => (
                            <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                               <img 
-                                   src={imagem.src} 
-                                   className="w-auto h-[45vh] object-cover rounded-lg"
-                               />
-                           </SwiperSlide>                       
+                           {/* Imagem */}
+                           <img 
+                               src={imagem.src} 
+                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                           />
+                       </SwiperSlide>                       
+                        
                         ))}
                     </Swiper>
                 </div>
             </div>
+
 
             
 

@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import foto from "../../../../public/images/categoriasfotos/fundoganhomassa.png";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { b } from "framer-motion/client";
 
 function ListaExercicios() {
     const navigate = useNavigate();
@@ -87,12 +88,14 @@ function ListaExercicios() {
                     <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
                         <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
                     </div>
+                    <br></br>
                     <p>Descansos de 1 a 3 minutos entre as séries.</p>
                     <p>Realize o aquecimento adequadamente.</p>
                 </div>
                 {/* Seção Direita */}
                 <div className="w-full p-16 bg-[#A0E080] ">
                     <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
+                    <br></br>
                     <p className="p-2">Ganho de força | Ganho de massa muscular | Ganho de resistência</p>
                 </div>
             </div>
@@ -102,7 +105,7 @@ function ListaExercicios() {
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
                 {/* Carrossel */}
-                <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -113,12 +116,13 @@ function ListaExercicios() {
                         }}
                         pagination={{
                             clickable: true,
+                            el: '.swiper-pagination',
                             bulletClass: 'swiper-pagination-bullet',
                             bulletActiveClass: 'swiper-pagination-bullet-active',
                         }}
-                        autoplay={{ delay: 3000 }}
+                        autoplay={{ delay: 2500 }}
                         loop={true}
-                        className="rounded-lg shadow-lg"
+                        className="rounded-lg shadow-lg align-middle"
                     >
                         {imagens.map((imagem, index) => (
                            <SwiperSlide key={index} className="flex justify-center items-center relative w-full">

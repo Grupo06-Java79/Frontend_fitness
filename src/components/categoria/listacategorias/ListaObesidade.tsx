@@ -97,28 +97,39 @@ function ListaObesidade() {
             <div className="bg-gray-100 text-center">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
             {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                     
-                <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={20}
-                    slidesPerView={3}
-                    navigation={true}
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 3000 }}
-                    loop={true}
-                    className="rounded-lg shadow-lg"
-                >
-                    {imagens.map((imagem, index) => (
-                        <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                            <img 
-                                src={imagem.src} 
-                                className="w-auto h-[45vh] object-cover rounded-lg"
-                            />
-                        </SwiperSlide>                       
-                    ))}
-                </Swiper>
+            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={20} // Espaçamento entre os slides
+                        slidesPerView={3} // Exibe 3 slides por vez
+                        navigation={{
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }}
+                        pagination={{
+                            clickable: true,
+                            el: '.swiper-pagination',
+                            bulletClass: 'swiper-pagination-bullet',
+                            bulletActiveClass: 'swiper-pagination-bullet-active',
+                        }}
+                        autoplay={{ delay: 2500 }}
+                        loop={true}
+                        className="rounded-lg shadow-lg align-middle"
+                    >
+                        {imagens.map((imagem, index) => (
+                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
+                           {/* Imagem */}
+                           <img 
+                               src={imagem.src} 
+                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                           />
+                       </SwiperSlide>                       
+                        
+                        ))}
+                    </Swiper>
+                </div>
             </div>
-        </div>
+
 
             {/* Lista de Exercícios */}
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
