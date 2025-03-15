@@ -134,6 +134,20 @@ function FormExercicio() {
                 </div>
 
                 <div>
+                  <label htmlFor="foto" className="block mb-1">
+                    Foto
+                  </label>
+                  <input
+                    type="text"
+                    name="foto"
+                    placeholder="Informe a foto do exercicio"
+                    className="border border-gray-300 rounded w-96 p-2"
+                    value={exercicio.foto}
+                    onChange={atualizarEstado}
+                  />
+                </div>
+
+                <div>
                   <label htmlFor="aparelho" className="block mb-1">
                     Aparelho
                   </label>
