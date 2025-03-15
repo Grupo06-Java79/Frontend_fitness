@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Exercicio from '../../../models/Exercicio';
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import foto from "../../../assets/images/imagemcardcategoria5.jpg";
 
 interface CardExercicioProps {
     exercicio: Exercicio;

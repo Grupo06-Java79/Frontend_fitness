@@ -6,12 +6,14 @@ import Exercicio from "../../../models/Exercicio";
 import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentoleve.png";
 
 function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
+
 
     const imagens = [
         { src: "/img/caminhada.jpg" },
@@ -55,7 +57,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
                 <img
-                    src="/images/exercicio_topo.png"
+                    src={foto}
                     alt="Imagem de treino"
                     className="absolute w-full h-full object-cover"
                 />

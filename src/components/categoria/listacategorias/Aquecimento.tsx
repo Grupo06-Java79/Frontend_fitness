@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import foto from "../../../../public/images/categoriasfotos/fundoaquecimento.png";
 
 function Aquecimento() {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Aquecimento() {
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
             <img
-                    src="https://img.freepik.com/fotos-gratis/homem-correndo-em-um-beco-no-parque_23-2148297573.jpg?t=st=1741210817~exp=1741214417~hmac=5a00c7d2c3d50d139d9b474fe4cdbf2a9c4e2e8ebb8cd296b852e680fac6ad14&w=1380"
+                    src={foto}
                     alt="Homem correndo no parque"
                     className="absolute w-full h-full object-cover"
                 />

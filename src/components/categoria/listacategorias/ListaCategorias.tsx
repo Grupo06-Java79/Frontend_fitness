@@ -10,6 +10,7 @@ import CardCategoria5 from "../cardcategoria/CardCategoria5";
 import CardCategoria6 from "../cardcategoria/CardCategoria6";
 import Exercicio from "../../../models/Exercicio";
 
+
 function ListaCategorias() {
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
@@ -45,7 +46,7 @@ function ListaCategorias() {
         
         <>
             <section className="text-center py-64 bg-cover bg-center " 
-               style={{ backgroundImage: `url('images/fundocategoria.png')` }}>
+               style={{ backgroundImage: `url('../../../../public/images/categoriasfotos/fundocategorias.png')` }}>
 
                 <h1 className="text-5xl font-bold text-white brightness-70">
                     Escolha sua categoria

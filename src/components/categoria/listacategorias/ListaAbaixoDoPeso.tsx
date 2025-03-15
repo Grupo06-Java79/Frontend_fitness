@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import CardExercicio from "../../exercicio/cardexercicio/CardExercicio";
 import Exercicio from "../../../models/Exercicio";
 import { Swiper, SwiperSlide } from "swiper/react";
+import foto from "../../../../public/images/categoriasfotos/fundoganhomassa.png";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -56,7 +57,7 @@ function ListaExercicios() {
             {/* Imagem com Texto Sobreposto */}
             <div className="bg-gray-100 min-h-screen">
                 <img
-                    src="/images/exercicio_topo.png"
+                    src={foto}
                     alt="Imagem mulheres praticando exercício"
                     className="absolute w-full h-full object-cover"
                     onError={(e) => {

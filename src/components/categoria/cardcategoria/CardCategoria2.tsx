@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Exercicio from "../../../models/Exercicio";
+import foto from "../../../assets/images/imagemcardcategoria2.png";
 
 interface CardExercicioProps {
     exercicio?: Exercicio;  // Torna o prop opcional para evitar erro
@@ -22,7 +23,7 @@ export default function CardExercicio({ exercicio }: CardExercicioProps) {
         <div className="w-full max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Imagem do treino */}
             <img 
-                src="https://img.freepik.com/fotos-gratis/mulher-bonita-fazendo-flexoes_23-2148343662.jpg?t=st=1741118614~exp=1741122214~hmac=3ca0e7b31b06156c670127c606b0a8b72467cc83009b5ffa39c5a0be18ddc5bb&w=1380" 
+                src={foto} 
                 alt="Treinamento ao Ar Livre"
                 className="w-full h-48 object-cover"
             />

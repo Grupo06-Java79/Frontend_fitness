@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import foto from "../../../assets/images/imagemcardcategoria1.png";
 
 export default function CardCategoria() {
     const navigate = useNavigate();
@@ -13,11 +14,12 @@ export default function CardCategoria() {
         "LegPress"
     ];
 
+
     return (
         <div className="w-full max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Imagem do treino */}
             <img 
-                src="https://img.freepik.com/fotos-gratis/fitness-homem-treinamento-ao-ar-livre-vida-ativo-saudavel_1328-2922.jpg?t=st=1741034358~exp=1741037958~hmac=482c9534c23385e61b32315118ab7305361f9a274930c7aa2e8016c9d437e652&w=1800" 
+                src={foto} 
                 alt="Treinamento ao Ar Livre"
                 className="w-full h-48 object-cover"
             />

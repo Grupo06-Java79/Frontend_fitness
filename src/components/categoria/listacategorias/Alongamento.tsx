@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import foto from "../../../../public/images/categoriasfotos/fundoalongamento.png";
 
 function Alongamento() {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Alongamento() {
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
                 <img
-                    src="https://img.freepik.com/fotos-gratis/uma-mulher-saudavel-esta-fazendo-exercicios-ao-ar-livre_344912-1989.jpg?t=st=1741210520~exp=1741214120~hmac=6f43812d2939615aa386e2260fa7e021815f3db92d932ded062ebdcf264e402b&w=1380"
+                    src={foto}
                     alt="Mulher fazendo alongamento ao ar livre"
                     className="absolute w-full h-full object-cover"
                 />

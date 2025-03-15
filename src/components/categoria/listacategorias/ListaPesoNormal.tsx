@@ -6,6 +6,8 @@ import Exercicio from "../../../models/Exercicio";
 import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import foto from "../../../../public/images/categoriasfotos/fundopesoideal.png";
+
 
 function ListaPesoNormal() {
     const navigate = useNavigate();
@@ -57,7 +59,7 @@ function ListaPesoNormal() {
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
                 <img
-                    src="/images/exercicio_topo.png"
+                    src={foto}
                     alt="Imagem de treino"
                     className="absolute w-full h-full object-cover"
                 />

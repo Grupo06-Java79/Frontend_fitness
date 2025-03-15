@@ -7,6 +7,9 @@ import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentopesado.png";
+
+
 function ListaObesidade() {
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
@@ -55,7 +58,7 @@ function ListaObesidade() {
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
                 <img
-                    src="/images/exercicio_topo.png"
+                    src={foto}
                     alt="Imagem de treino"
                     className="absolute w-full h-full object-cover"
                 />
