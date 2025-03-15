@@ -71,7 +71,7 @@ function Alongamento() {
                             <li><strong>Alongamento de Braços:</strong> Estique um braço sobre o peito e puxe suavemente com a outra mão. Troque de lado após 15 segundos.</li>
                             <li><strong>Rotação de Tronco:</strong> De pé, gire o tronco de um lado para o outro lentamente, mantendo os pés fixos no chão.</li>
                             <li><strong>Quadríceps:</strong> Em pé, segure o tornozelo e traga o calcanhar em direção ao glúteo, alongando a coxa. Troque de perna após 20 segundos.</li>
-                            <li><strong>Relaxamento final:</strong> Inspire profundamente e solte o ar lentamente. Faça 3 respirações profundas para finalizar o alongamento.</li>
+                            <li><strong>Respiração final:</strong> Inspire profundamente e solte o ar lentamente. Faça 3 respirações profundas para finalizar o alongamento.</li>
                         </ul>
                     </div>
                 </div>

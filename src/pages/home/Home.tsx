@@ -100,22 +100,22 @@ function Home() {
                             </button>
                         </Link>
                         }
-                        {cliente.imc >= 18.5 && cliente.imc <= 24.9 &&
+                        {cliente.imc >= 18.5 && cliente.imc <= 24.99 &&
                         <Link to={`/listacategorias/ListaPesoNormal`}>
                             <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
                                 Ver Treino
                             </button>
                         </Link>
                         }
-                        {cliente.imc >= 25 && cliente.imc <= 29.9 &&
-                        <Link to={`/listacategorias/ListaSobrepeso`}>
+                        {cliente.imc >= 25 && cliente.imc <= 29.99 &&
+                        <Link to={`/listacategorias/ListaAtencaoSaude`}>
                             <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
                                 Ver Treino
                             </button>
                         </Link>
                         }
-                        {cliente.imc > 29.9 &&
-                        <Link to={`/listacategorias/ListaObesidade`}>
+                        {cliente.imc > 29.99 &&
+                        <Link to={`/listacategorias/ListaSaudeEmFoco`}>
                             <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
                                 Ver Treino
                             </button>
@@ -142,16 +142,20 @@ function Home() {
                         <p className="text-xl">
                             Veja alguns exercícios na praça para você incluir no seu treino:
                         </p>
-                        <div className="flex p-10 relative">
+                        <div className="flex p-10 relative rounded-lg shadow-lg">
                             <Swiper
                                 modules={[Navigation, Pagination, Autoplay , A11y]}
                                 slidesPerView={4}
-                                navigation
-                                pagination={{ clickable: true }}
+                                navigation={{
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                }}
+                                pagination={{ clickable: true, el: '.swiper-pagination' }}
                                 scrollbar={{ draggable: true }}
                                 onSwiper={(swiper) => console.log(swiper)}
                                 onSlideChange={() => console.log('slide change')}
-                                autoplay={{ delay: 1000, disableOnInteraction: false }}
+                                autoplay={{ delay: 1000}}
+                                loop={true}
                             >
                                 {images.map((src, index) => (
                                 <SwiperSlide key={index}>
@@ -172,9 +176,10 @@ function Home() {
                     </p>
                     <div className="flex justify-around">
                         <div className="grid justify-items-center m-20">
-                            <p className="text-xl text-center ">
+                            <p className="text-xl">
                                 Quer mais praticidade e eficiência na sua jornada fitness? <br/>
-                                Com o Praça Fit, você tem uma plataforma exclusiva para monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva. 📊💪
+                                Com o Praça Fit, você tem uma plataforma exclusiva para
+                                monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva. 📊💪
                             </p>
                             <Link to={`/sobre`} className="flex justify-center m-10">
                                 <button className='text-slate-100 p-2 bg-[#14B467] hover:bg-[#129858]'>
