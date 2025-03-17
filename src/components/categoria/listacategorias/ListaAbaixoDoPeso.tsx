@@ -159,7 +159,7 @@ function ListaExercicios() {
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
                                     }} />
-                                    }} />
+                                   
                                 ))
                             ) : (
                                 <Oval

@@ -9,12 +9,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentoleve.png";
 import { Oval } from "react-loader-spinner";
 
-function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
+function ListaSobrepeso() {
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
-
 
     const imagens = [
         { src: "/img/caminhada.jpg" },
@@ -27,7 +26,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
 
     async function buscarExercicio() {
         try {
-            await buscar('/exercicios?categoria=emagrecimento', setExercicios, { // Alterado para 'emagrecimento' ao invés de 'condicionamento'
+            await buscar('/exercicios?categoria=emagrecimento', setExercicios, {
                 headers: {
                     Authorization: token,
                 },
@@ -50,7 +49,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
         buscarExercicio();
     }, []);
 
-    //Filtrando Exercicios por categoria
+    // Filtrando Exercicios por categoria
     const exerciciosSobrePeso = exercicios.filter(exercicio => exercicio.categoria.id === 4);
 
     return (
@@ -67,10 +66,10 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                         EMAGRECIMENTO LEVE
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl text-justify">
-                    O treino ao ar livre para emagrecimento leve combina movimentos dinâmicos que estimulam 
-                    o gasto calórico de forma equilibrada. Aproveitando o ambiente aberto e os equipamentos
-                    disponíveis, é possível manter uma rotina ativa, melhorar a resistência 
-                    e promover o bem-estar de maneira leve e sustentável.
+                        O treino ao ar livre para emagrecimento leve combina movimentos dinâmicos que estimulam 
+                        o gasto calórico de forma equilibrada. Aproveitando o ambiente aberto e os equipamentos
+                        disponíveis, é possível manter uma rotina ativa, melhorar a resistência 
+                        e promover o bem-estar de maneira leve e sustentável.
                     </p>
                 </div>
             </div>
@@ -98,12 +97,9 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                 </div>
             </div>
 
-
             <div className="bg-gray-100 text-center hidden lg:block">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
-                {/* Carrossel */}
-                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                 {/* Carrossel */}
                 <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
@@ -132,14 +128,10 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                                     className="w-auto h-72 mx-auto object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
                                 />
                             </SwiperSlide>
-
                         ))}
                     </Swiper>
                 </div>
             </div>
-
-
-
 
             {/* Lista de Exercícios */}
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
@@ -156,17 +148,17 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                                     }} />
                                 ))
                             ) : (
-
-                                <Oval
-                                    visible={false}
-                                    height="80"
-                                    width="80"
-                                    color="#4fa94d"
-                                    ariaLabel="oval-loading"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                />
-
+                                <div className="flex justify-center items-center w-full h-full">
+                                    <Oval
+                                        visible={true}
+                                        height="80"
+                                        width="80"
+                                        color="#4fa94d"
+                                        ariaLabel="oval-loading"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                    />
+                                </div>
                             )}
                         </div>
                     </div>
@@ -186,4 +178,4 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
     );
 }
 
-export default ListaSobrepeso; // Alterado o nome do componente para ListaSobrepeso
+export default ListaSobrepeso;
