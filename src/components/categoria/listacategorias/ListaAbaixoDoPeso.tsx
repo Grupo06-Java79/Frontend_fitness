@@ -17,12 +17,12 @@ function ListaExercicios() {
     const token = usuario.token;
 
     const imagens = [
-        { src: "/img/abdominal.jpg"},
-        { src: "/img/remada.jpg"},
-        { src: "/img/barras.jpg"},
-        { src: "/img/extensordepernas.jpg"},
-        { src: "/img/legpress.jpg"},
-        { src: "/img/puxadorcostas.jpg"}
+        { src: "/img/abdominal.jpg" },
+        { src: "/img/remada.jpg" },
+        { src: "/img/barras.jpg" },
+        { src: "/img/extensordepernas.jpg" },
+        { src: "/img/legpress.jpg" },
+        { src: "/img/puxadorcostas.jpg" }
     ];
 
     async function buscarExercicio() {
@@ -70,42 +70,48 @@ function ListaExercicios() {
                         GANHO DE MASSA
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl text-justify">
-                        Este treino foi cuidadosamente desenvolvido para pessoas abaixo do peso que desejam ganhar massa muscular de maneira saudável e eficiente. 
-                        Combinando exercícios compostos e progressão de carga, você fortalecerá seu corpo enquanto se conecta com a natureza, 
-                        unindo movimento e bem-estar em cada treino. 
+                        Este treino foi cuidadosamente desenvolvido para pessoas abaixo do peso que desejam ganhar massa muscular de maneira saudável e eficiente.
+                        Combinando exercícios compostos e progressão de carga, você fortalecerá seu corpo enquanto se conecta com a natureza,
+                        unindo movimento e bem-estar em cada treino.
                     </p>
                 </div>
             </div>
 
-            {/* Seção introdutória com fundo verde claro */}
-            <div className="flex">
-                <div className="w-full p-10 bg-[#CEF9A9]">
-                {/* Seção Esquerda */}
-                    <div className="flex items-center gap-2 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 40 a 55 minutos</h2>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
-                    </div>
-                    <br></br>
-                    <p>Descansos de 1 a 3 minutos entre as séries.</p>
-                    <p>Realize o aquecimento adequadamente.</p>
+            <div className="flex flex-col lg:flex-row gap-0">
+                {/* Seção Esquerda (Sempre visível) */}
+                <div className="w-full p-10 sm:p-16 bg-white lg:bg-[#CEF9A9] flex flex-col items-center text-center lg:items-start lg:text-left lg:mt-0">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        🕑 Duração: 40 a 55 minutos
+                    </h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        ⚡ Intensidade: Alta
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
+                        Descansos de 1 a 3 minutos entre as séries.
+                    </p>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md mt-2">
+                        Realize o aquecimento adequadamente.
+                    </p>
                 </div>
-                {/* Seção Direita */}
-                <div className="w-full p-16 bg-[#A0E080] ">
+
+                {/* Seção Direita (Oculta em telas pequenas, aparece em grandes) */}
+                <div className="w-full p-10 bg-[#A0E080] hidden lg:block">
                     <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
-                    <br></br>
-                    <p className="p-2">Ganho de força | Ganho de massa muscular | Ganho de resistência</p>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                        Ganho de força | Ganho de massa muscular | Ganho de resistência
+                    </p>
                 </div>
             </div>
+            
+
+
 
             {/* Separação visual com Carrossel */}
-            <div className="bg-gray-100 text-center">
+            <div className="bg-gray-100 text-center hidden lg:block">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
                 {/* Carrossel */}
-                <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -125,14 +131,14 @@ function ListaExercicios() {
                         className="rounded-lg shadow-lg align-middle"
                     >
                         {imagens.map((imagem, index) => (
-                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                           {/* Imagem */}
-                           <img 
-                               src={imagem.src} 
-                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
-                           />
-                       </SwiperSlide>                       
-                        
+                            <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
+                                {/* Imagem */}
+                                <img
+                                    src={imagem.src}
+                                    className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                                />
+                            </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
@@ -150,7 +156,7 @@ function ListaExercicios() {
                                 exerciciosAbaixoDoPeso.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
-                                    } } />
+                                    }} />
                                 ))
                             ) : (
                                 <p className="text-center text-gray-700">Carregando exercícios...</p>
@@ -162,7 +168,7 @@ function ListaExercicios() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >

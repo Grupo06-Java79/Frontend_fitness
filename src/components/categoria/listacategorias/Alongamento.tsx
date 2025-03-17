@@ -36,33 +36,40 @@ function Alongamento() {
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="flex">
-                <div className="w-full p-10 bg-[#F9D9A9]"> {/* Mesma cor do aquecimento */}
-                    {/* Seção Esquerda */}
-                    <div className="flex items-center gap-2 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 10 a 20 minutos</h2>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Baixa</h2>
-                    </div>
-                    <br></br>
-                    <p>Melhora a elasticidade muscular e reduz tensões pré-treino.</p>
-                    <p>Mantenha uma respiração controlada para potencializar o relaxamento.</p>
+            <div className="flex flex-col lg:flex-row">
+                {/* Seção Esquerda (Sempre visível) */}
+                <div className="w-full p-10 sm:p-16 bg-[#F9D9A9] flex flex-col items-center text-center lg:items-start lg:text-left">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        🕑 Duração: 10 a 20 minutos
+                    </h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        ⚡ Intensidade: Baixa
+                    </h2>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
+                        Melhora a elasticidade muscular e reduz tensões pré-treino.
+                    </p>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md mt-2">
+                        Mantenha uma respiração controlada para potencializar o relaxamento.
+                    </p>
                 </div>
-                {/* Seção Direita */}
-                <div className="bg-[#E0B878] w-full p-16 "> {/* Mesma cor do aquecimento */}
+
+                {/* Seção Direita (Oculta em telas pequenas, aparece em grandes) */}
+                <div className="w-full p-10 bg-[#E0B878] hidden lg:block">
                     <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do alongamento</h2>
-                    <br></br>
-                    <p>Aumenta a flexibilidade | Melhora a circulação | Reduz o estresse muscular</p>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                        Aumenta a flexibilidade | Melhora a circulação | Reduz o estresse muscular
+                    </p>
                 </div>
             </div>
+
 
             {/* Passo a Passo do Alongamento */}
             <div className="flex justify-center w-full py-8 min-h-screen">
                 <div className="container flex flex-col">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Passo a passo para um alongamento completo 
+                        Passo a passo para um alongamento completo
                     </h2>
                     <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto text-gray-800 text-lg">
                         <ul className="list-decimal list-inside space-y-4">
@@ -80,7 +87,7 @@ function Alongamento() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >

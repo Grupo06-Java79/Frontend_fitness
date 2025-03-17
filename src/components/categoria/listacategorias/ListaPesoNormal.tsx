@@ -56,54 +56,65 @@ function ListaPesoNormal() {
 
     return (
         <>
-            {/* Banner da página */}
-            <div className="bg-gray-100 min-h-screen">
+            <div className="bg-gray-100 min-h-screen relative overflow-hidden">
                 <img
                     src={foto}
                     alt="Imagem de treino"
-                    className="absolute w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover sm:h-auto sm:max-h-screen"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
-                    <h1 className="text-white text-5xl font-extrabold">
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
+                    <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold">
                         CONDICIONAMENTO FÍSICO
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                    <p className="text-white text-sm sm:text-base md:text-lg mt-4 max-w-xs sm:max-w-md md:max-w-3xl text-center sm:text-justify">
                         Treino focado na resistência, ideal para manter a boa forma e um estilo de vida equilibrado.
                     </p>
                 </div>
             </div>
 
-            {/* Informações sobre o treino */}
-            <div className="flex">
-                <div className="bg-[#CEF9A9] w-full p-10">
-                    {/* Seção Esquerda */}
-                    <div>
-                        <div className="flex items-center gap-2 p-2">
-                            <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 40 a 55 minutos</h2>
-                        </div>
 
-                        <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>           
-                        </div>
-                        <br></br>
-                        <p>Descansos de 1 a 3 minutos entre as séries.</p>
-                        <p>Realize o aquecimento adequadamente.</p>
+            {/* Informações sobre o treino */}
+            <div className="flex flex-col md:flex-row">
+                {/* Seção Esquerda (Visível sempre) */}
+                <div className="w-full p-6 sm:p-8 md:p-10 bg-white md:bg-[#CEF9A9] flex flex-col items-center text-center md:items-start md:text-left">
+                    <div className="flex flex-col md:flex-row items-center gap-2">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                            🕑 Duração: 40 a 55 minutos
+                        </h2>
                     </div>
+                    <div className="flex flex-col md:flex-row items-center gap-2 mt-4">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                            ⚡ Intensidade: Alta
+                        </h2>
+                    </div>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md sm:max-w-lg mx-auto md:mx-0">
+                        Descansos de 1 a 3 minutos entre as séries.
+                    </p>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md sm:max-w-lg mx-auto md:mx-0 mt-2">
+                        Realize o aquecimento adequadamente.
+                    </p>
                 </div>
-                {/* Seção Direita */}
-                <div className="bg-[#A0E080] w-full p-10">
-                    <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do treino</h2>
-                    <br></br>
-                    <p>Manter a boa forma | Manter a força | Bom condicionamento</p>
+
+                {/* Seção Direita (Aparece apenas em telas grandes) */}
+                <div className="bg-[#A0E080] w-full p-6 sm:p-8 md:p-10 hidden lg:block">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        📌 Benefícios do treino
+                    </h2>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
+                        Manter a boa forma | Manter a força | Bom condicionamento
+                    </p>
                 </div>
             </div>
-            
+
+
             {/* Separação visual com Carrossel */}
-            <div className="bg-gray-100 text-center">
+            <div className="bg-gray-100 text-center hidden lg:block">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
                 {/* Carrossel */}
-                <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -123,14 +134,14 @@ function ListaPesoNormal() {
                         className="rounded-lg shadow-lg align-middle"
                     >
                         {imagens.map((imagem, index) => (
-                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                           {/* Imagem */}
-                           <img 
-                               src={imagem.src} 
-                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
-                           />
-                       </SwiperSlide>                       
-                        
+                            <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
+                                {/* Imagem */}
+                                <img
+                                    src={imagem.src}
+                                    className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                                />
+                            </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
@@ -149,7 +160,7 @@ function ListaPesoNormal() {
                                 exerciciosPesoNormal.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
-                                    } } />
+                                    }} />
                                 ))
                             ) : (
                                 <p className="text-center text-gray-700">Carregando exercícios...</p>
@@ -161,7 +172,7 @@ function ListaPesoNormal() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
