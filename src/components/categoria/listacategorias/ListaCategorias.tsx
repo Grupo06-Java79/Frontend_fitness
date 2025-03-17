@@ -10,7 +10,6 @@ import CardCategoria5 from "../cardcategoria/CardCategoria5";
 import CardCategoria6 from "../cardcategoria/CardCategoria6";
 import Exercicio from "../../../models/Exercicio";
 
-
 function ListaCategorias() {
     const navigate = useNavigate();
     const [exercicios, setExercicios] = useState<Exercicio[]>([]);
@@ -43,10 +42,9 @@ function ListaCategorias() {
     }, []);
 
     return (
-        
         <>
-            <section className="text-center py-64 bg-cover bg-center " 
-               style={{ backgroundImage: `url('../../../../public/images/categoriasfotos/fundocategorias.png')` }}>
+            <section className="text-center py-64 bg-cover bg-center"
+                style={{ backgroundImage: `url('../../../../public/images/categoriasfotos/fundocategorias.png')` }}>
 
                 <h1 className="text-5xl font-bold text-white brightness-70">
                     Escolha sua categoria
@@ -54,18 +52,18 @@ function ListaCategorias() {
             </section>
             {/* Título no topo da página */}
             <div className="bg-[#CEF9A9]">
-                
-            {/* Grid de Exercícios */}
-            <div className="w-full flex justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl my-10">
-                    <CardCategoria5/>
-                    <CardCategoria6/>
-                    <CardCategoria/>
-                    <CardCategoria2/>
-                    <CardCategoria3/>
-                    <CardCategoria4/>
+
+                {/* Grid de Exercícios */}
+                <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl my-10 justify-items-center">
+                        <CardCategoria5 />
+                        <CardCategoria6 />
+                        <CardCategoria />
+                        <CardCategoria2 />
+                        <CardCategoria3 />
+                        <CardCategoria4 />
+                    </div>
                 </div>
-            </div>
             </div>
         </>
     );

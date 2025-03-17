@@ -59,7 +59,7 @@ function Sobre() {
                             </p>
                         </div>
                         {/* Coluna do Título e Texto 2 */}
-                        <div className="text-center md:text-left lg:pl-24">
+                        <div className="text-center md:text-left lg:pl-24 hidden lg:block">
                             <h2 className="text-3xl font-bold text-gray-800 mb-4">Tenha uma lista de exercícios</h2>
                             <p className="text-gray-600 text-xl text-justify">
                                 Chega de dúvidas sobre quais exercícios fazer! O Praça Fit te guia na escolha do melhor treino, ajudando você a manter uma vida mais ativa e saudável. Comece agora e cuide do seu corpo com tecnologia e inovação! 🚀🔥
@@ -75,7 +75,7 @@ function Sobre() {
                     </div>
                 </div>
                 {/* Fitness Experience Section */}
-                <section className="lg:pt-32 lg:p-20">
+                <section className="lg:pt-32 lg:p-20 sm:pt-40">
                     <h2 className="text-3xl font-bold text-center mb-6">DESENVOLVEDORES</h2>
                     <CardSobre />
                 </section>

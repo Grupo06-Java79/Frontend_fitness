@@ -38,26 +38,34 @@ function Aquecimento() {
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="flex">
-                <div className="bg-[#F9D9A9] w-full p-10">
-                    {/* Seção Esquerda */}
-                    <div className="flex items-center gap-2">
-                        <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração: 10 a 20 minutos</h2>
-                    </div>
-                    <div className="flex items-center gap-2 mt-4 md:mt-0">
-                        <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Média</h2>
-                    </div>
-                    <br></br>
-                    <p>Realize cada movimento de forma controlada e progressiva para ativar os músculos corretamente.</p>
-                    <p>O aquecimento é essencial para melhorar a mobilidade e evitar lesões durante o treino.</p>
+            <div className="flex flex-col lg:flex-row">
+                {/* Seção Esquerda (Visível sempre, centralizada apenas em telas pequenas) */}
+                <div className="w-full p-10 bg-[#F9D9A9] flex flex-col items-center text-center lg:items-start lg:text-left">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        🕑 Duração: 10 a 20 minutos
+                    </h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 p-2">
+                        ⚡ Intensidade: Média
+                    </h2>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
+                        Realize cada movimento de forma controlada e progressiva para ativar os músculos corretamente.
+                    </p>
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md mt-2">
+                        O aquecimento é essencial para melhorar a mobilidade e evitar lesões durante o treino.
+                    </p>
                 </div>
-                {/* Seção Direita */}
-                <div className="bg-[#E0B878] w-full p-10">
+
+                {/* Seção Direita (Oculta em telas pequenas, visível apenas em telas grandes) */}
+                <div className="w-full p-10 bg-[#E0B878] hidden lg:block">
                     <h2 className="text-3xl font-bold text-gray-900 p-2">📌 Benefícios do aquecimento</h2>
-                    <br></br>
-                    <p className="text-center p-2">Aumenta a flexibilidade | Melhora a circulação | Reduz o estresse muscular</p>
+                    <br />
+                    <p className="text-sm sm:text-base md:text-lg text-center p-2">
+                        Aumenta a flexibilidade | Melhora a circulação | Reduz o estresse muscular
+                    </p>
                 </div>
             </div>
+
 
             {/* Passo a Passo do Aquecimento */}
             <div className="flex justify-center w-full bg-white py-8 min-h-screen">

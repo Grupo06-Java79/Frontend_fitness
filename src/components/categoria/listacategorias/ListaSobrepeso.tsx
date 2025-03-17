@@ -63,8 +63,8 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                     className="absolute w-full h-full object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
-                    <h1 className="text-white text-5xl font-extrabold">
-                        EMAGRECIMENTO LEVE {/* Alterado de "Condicionamento Físico" para "Emagrecimento Leve" */}
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
+                        EMAGRECIMENTO LEVE
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl text-justify">
                     O treino ao ar livre para emagrecimento leve combina movimentos dinâmicos que estimulam 
@@ -76,30 +76,34 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             </div>
 
             {/* Informações sobre o treino */}
-            <div className="flex">
-                <div className="bg-[#CEF9A9] w-full p-10">
-                    {/* Seção Esquerda */}
-                    <div className="flex items-center gap-2">
+            <div className="flex flex-col md:flex-row">
+                {/* Seção Esquerda (Sempre visível) */}
+                <div className="w-full p-10 flex flex-col items-center text-center bg-white md:bg-[#CEF9A9]">
+                    <div className="flex flex-col items-center gap-2">
                         <h2 className="text-3xl font-bold text-gray-900">🕑 Duração: 30 a 45 minutos</h2>
                     </div>
-                    <div className="flex items-center gap-2 mt-4 md:mt-0">
+                    <div className="flex flex-col items-center gap-2 mt-4">
                         <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
                     </div>
-                    <br></br>
-                    <p>Descansos de 1 a 3 minutos entre as séries.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
-                    <p>Realize o aquecimento adequadamente para evitar lesões.</p> {/* Texto atualizado para enfatizar a prevenção de lesões */}
+                    <br />
+                    <p>Descansos de 1 a 3 minutos entre as séries.</p>
+                    <p>Realize o aquecimento adequadamente para evitar lesões.</p>
                 </div>
-                {/* Seção Direita */}
-                <div className="bg-[#A0E080] w-full p-10">
+
+                {/* Seção Direita (Só aparece em telas grandes) */}
+                <div className="bg-[#A0E080] w-full p-10 hidden lg:block">
                     <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do treino</h2>
-                    <br></br>
+                    <br />
                     <p>Perda de gordura | Melhor condicionamento | Ganho de força</p>
                 </div>
             </div>
 
-            <div className="bg-gray-100 text-center">
+
+            <div className="bg-gray-100 text-center hidden lg:block">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
+                {/* Carrossel */}
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                 {/* Carrossel */}
                 <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper

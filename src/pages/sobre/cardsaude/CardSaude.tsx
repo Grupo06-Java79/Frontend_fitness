@@ -5,7 +5,7 @@ import uesb from "../../../assets/images/jovempam.png";
 function CardSaude() {
     return (
         <>
-            <section className="p-10">
+            <section className="p-10 hidden lg:block">
                 <h2 className="text-3xl font-bold text-center mb-6 mt-20">CUIDE DA SUA SAÚDE</h2>
                 {/* <p className="text-center text-gray-700 lg:pl-32 lg:pr-32 text-justify">
           
