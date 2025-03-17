@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, A11y  } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
 import fotosobre from "../../../public/images/fotosobre.png"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -10,6 +10,7 @@ import { buscar } from "../../services/Service";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import MapaParques from "../../services/MapaParques";
 
 const images: string[] = [
     "/img/foto1.png",
@@ -36,7 +37,7 @@ function Home() {
         usuario: "",
         senha: "",
         foto: "",
-        imc:0,
+        imc: 0,
         peso: 0,
         altura: 0,
         idade: 0,
@@ -56,7 +57,7 @@ function Home() {
         buscaDados()
     }, [usuario.id])
 
-    
+
 
 
 
@@ -66,69 +67,68 @@ function Home() {
             <div className="">
                 <section style={{ backgroundImage: `url('images/fundo.png')` }} className="text-white bg-fixed bg-cover bg-center" >
                     <div className="flex flex-col justify-start p-20">
-                        
+
                         <h2 className='text-5xl font-bold my-20'>
-                            PRAÇAFit<br/> Seu treino livre
+                            PRAÇAFit<br /> Seu treino livre
                         </h2>
                         <p className='text-xl'>
-                            Liberte sua energia, abrace a natureza e transforme <br/> seu corpo ao ar livre. 
+                            Liberte sua energia, abrace a natureza e transforme <br /> seu corpo ao ar livre.
                         </p>
                         {usuario.token !== "" &&
-                        <div>
-                            <Link to={`/exercicios`} 
-                                className='text-slate-100 bg-[#75BA23] hover:bg-[#61A514] 
+                            <div>
+                                <Link to={`/exercicios`}
+                                    className='text-slate-100 bg-[#75BA23] hover:bg-[#61A514] 
                                     flex justify-center w-32 my-10 p-1'>
-                                <button>Veja os treinos</button>
-                            </Link>
-                        </div>
+                                    <button>Veja os treinos</button>
+                                </Link>
+                            </div>
                         }
                     </div>
                 </section>
                 <section className="flex">
                     <div className="bg-[#CEF9A9] w-full p-5 px-10">
                         <p className="text-3xl font-bold py-5">
-                            Veja o treino para<br/> seu IMC
+                            Veja o treino para<br /> seu IMC
                         </p>
                         <p className="w-3/5">
-                            Aqui você consegue montar seu treino de acordo com o seu objetivo. <br/>
-                            Te ajudamos a aprender usar cada aparelho na nossa lista de exercícios.
+                            
+                            Te entregamos um treino personalizado de acordo com o seu IMC.
                         </p>
                         {cliente.imc < 18.5 &&
-                        <Link to={`/listacategorias/ListaAbaixoDoPeso`}>
-                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
-                                Ver Treino
-                            </button>
-                        </Link>
+                            <Link to={`/listacategorias/ListaAbaixoDoPeso`}>
+                                <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                    Ver Treino
+                                </button>
+                            </Link>
                         }
                         {cliente.imc >= 18.5 && cliente.imc <= 24.99 &&
-                        <Link to={`/listacategorias/ListaPesoNormal`}>
-                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
-                                Ver Treino
-                            </button>
-                        </Link>
+                            <Link to={`/listacategorias/ListaPesoNormal`}>
+                                <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                    Ver Treino
+                                </button>
+                            </Link>
                         }
                         {cliente.imc >= 25 && cliente.imc <= 29.99 &&
-                        <Link to={`/listacategorias/ListaAtencaoSaude`}>
-                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
-                                Ver Treino
-                            </button>
-                        </Link>
+                            <Link to={`/listacategorias/ListaAtencaoSaude`}>
+                                <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                    Ver Treino
+                                </button>
+                            </Link>
                         }
                         {cliente.imc > 29.99 &&
-                        <Link to={`/listacategorias/ListaSaudeEmFoco`}>
-                            <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
-                                Ver Treino
-                            </button>
-                        </Link>
+                            <Link to={`/listacategorias/ListaSaudeEmFoco`}>
+                                <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
+                                    Ver Treino
+                                </button>
+                            </Link>
                         }
                     </div>
                     <div className="bg-[#B6EE8D] w-full p-5 px-10 text-end ">
                         <p className="text-3xl font-bold py-5 ">
-                            Escolha uma<br/> Categoria de treino
+                            Escolha uma<br /> categoria de treino
                         </p>
                         <p className="">
-                            Aqui você encontra categorias de treinos que <br/> se adequam a sua necessidade.<br/>
-                            Monte seu IMC e veja o melhor treino para seu objetivo <br/> e comece o quanto antes.
+                            Aqui você encontra categorias de treinos que <br /> se adequam a sua necessidade.
                         </p>
                         <Link to={`/categorias`}>
                             <button className='text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]'>
@@ -142,9 +142,9 @@ function Home() {
                         <p className="text-xl">
                             Veja alguns exercícios na praça para você incluir no seu treino:
                         </p>
-                        <div className="flex p-10 relative rounded-lg shadow-lg">
+                        <div className="flex p-10 relative rounded-lg shadow-lg justify-center">
                             <Swiper
-                                modules={[Navigation, Pagination, Autoplay , A11y]}
+                                modules={[Navigation, Pagination, Autoplay, A11y]}
                                 slidesPerView={4}
                                 navigation={{
                                     nextEl: '.swiper-button-next',
@@ -154,32 +154,52 @@ function Home() {
                                 scrollbar={{ draggable: true }}
                                 onSwiper={(swiper) => console.log(swiper)}
                                 onSlideChange={() => console.log('slide change')}
-                                autoplay={{ delay: 1000}}
+                                autoplay={{ delay: 1000 }}
                                 loop={true}
                             >
                                 {images.map((src, index) => (
-                                <SwiperSlide key={index}>
-                                    <img
-                                    src={src}
-                                    alt={`Slide ${index + 1}`}
-                                    className="rounded-none" 
-                                    />
-                                </SwiperSlide>
+                                    <SwiperSlide key={index} className="flex items-center justify-center">
+                                        <img
+                                            src={src}
+                                            alt={`Slide ${index + 1}`}
+                                            className="rounded-none mx-auto object-contain"
+                                        />
+                                    </SwiperSlide>
                                 ))}
                             </Swiper>
                         </div>
                     </div>
                 </section>
-                <section >
+                {/* Adicione o componente do mapa aqui */}
+                <section className=" py-4 px-8">
+                    <p className="text-3xl text-center font-bold py-10 ">
+                        Parques em São Paulo para o seu treino
+                    </p>
+                    <div className="flex flex-col md:flex-row-reverse items-start">
+                        <div className="grid justify-items-center m-20">
+                            <p className="text-xl">
+                                Quer manter a rotina de treinos ao ar livre? Além de praças,<br />
+                                São Paulo oferece diversas opções de parques para correr, caminhar e
+                                se exercitar em meio à natureza.<br /> Com espaços amplos, áreas verdes
+                                e infraestrutura adequada, a cidade conta com várias alternativas
+                                para quem busca esse tipo de atividade. <br />Escolha o seu favorito e aproveite!
+                            </p>
+                        </div>
+                        <div className="md:w-1/2">
+                            <MapaParques />
+                        </div>
+                    </div>
+                </section>
+                <section>
                     <p className="text-3xl text-center font-bold py-10 ">
                         SOBRE PRAÇAFit
                     </p>
                     <div className="flex justify-around">
                         <div className="grid justify-items-center m-20">
                             <p className="text-xl">
-                                Quer mais praticidade e eficiência na sua jornada fitness? <br/>
-                                Com o Praça Fit, você tem uma plataforma exclusiva para
-                                monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva. 📊💪
+                                Quer mais praticidade e eficiência na sua jornada fitness? <br />
+                                Com o PRAÇAFit, você tem uma plataforma exclusiva para
+                                monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva.
                             </p>
                             <Link to={`/sobre`} className="flex justify-center m-10">
                                 <button className='text-slate-100 p-2 bg-[#14B467] hover:bg-[#129858]'>
@@ -187,9 +207,11 @@ function Home() {
                                 </button>
                             </Link>
                         </div>
-                        <img src={fotosobre} alt="Logotipo" className="m-10" />
+                        <img src={fotosobre} alt="sobre" className="m-10" />
                     </div>
                 </section>
+
+
             </div>
         </>
     )

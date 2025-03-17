@@ -19,7 +19,7 @@ function Aquecimento() {
         <>
             {/* Banner da página */}
             <div className="bg-gray-100 min-h-screen">
-            <img
+                <img
                     src={foto}
                     alt="Homem correndo no parque"
                     className="absolute w-full h-full object-cover"
@@ -28,8 +28,11 @@ function Aquecimento() {
                     <h1 className="text-white text-5xl font-extrabold">
                         Aquecimento
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl">
-                        Sessão essencial para ativar a circulação, preparar os músculos e evitar lesões, garantindo um desempenho seguro e eficiente nos treinos.
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                        O aquecimento ao ar livre é uma etapa essencial para preparar o corpo
+                        para um treino, envolvendo exercícios leves que ativam todos os grupos musculares.
+                        o aquecimento ajuda a aumentar a circulação sanguínea, melhorar a flexibilidade e a mobilidade, 
+                        além de prevenir lesões durante os exercícios mais intensos.
                     </p>
                 </div>
             </div>
@@ -37,7 +40,7 @@ function Aquecimento() {
             {/* Informações sobre o treino */}
             <div className="flex">
                 <div className="bg-[#F9D9A9] w-full p-10">
-                {/* Seção Esquerda */}
+                    {/* Seção Esquerda */}
                     <div className="flex items-center gap-2">
                         <h2 className="text-3xl font-bold text-gray-900 p-2">🕑 Duração: 10 a 20 minutos</h2>
                     </div>
@@ -71,7 +74,7 @@ function Aquecimento() {
                             <li><strong>Rotação de tronco:</strong> Gire o tronco lentamente de um lado para o outro para soltar a coluna e os músculos abdominais.</li>
                             <li><strong>Flexões de braço:</strong> Faça 5 a 10 flexões de braço em um ritmo leve para aquecer os membros superiores.</li>
                             <li><strong>Respiração final:</strong> Inspire profundamente e solte o ar lentamente. Faça 3 respirações profundas para finalizar o aquecimento.</li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -79,7 +82,7 @@ function Aquecimento() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >

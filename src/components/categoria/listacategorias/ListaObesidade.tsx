@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentopesado.png";
+import { Oval } from "react-loader-spinner";
 
 
 function ListaObesidade() {
@@ -16,7 +17,7 @@ function ListaObesidade() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
-    const imagens = [ 
+    const imagens = [
         { src: "/img/caminhada.jpg" },
         { src: "/img/remada.jpg" },
         { src: "/img/legpress.jpg" },
@@ -27,7 +28,7 @@ function ListaObesidade() {
 
     async function buscarExercicio() {
         try {
-            await buscar('/exercicios?categoria=obesidade', setExercicios, { 
+            await buscar('/exercicios?categoria=obesidade', setExercicios, {
                 headers: {
                     Authorization: token,
                 },
@@ -66,8 +67,11 @@ function ListaObesidade() {
                     <h1 className="text-white text-5xl font-extrabold">
                         EMAGRECIMENTO INTENSO
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl">
-                        Exercícios planejados para perda de peso segura e eficaz, priorizando baixa intensidade e adaptação progressiva.
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                    O treino ao ar livre para emagrecimento intenso foca em atividades de alta intensidade
+                    que aceleram o metabolismo e aumentam o gasto calórico. Combinando movimentos rápidos 
+                    e dinâmicos, é possível potencializar a queima de gordura, melhorar a resistência
+                    e fortalecer o corpo de forma eficiente e desafiadora.
                     </p>
                 </div>
             </div>
@@ -96,8 +100,8 @@ function ListaObesidade() {
 
             <div className="bg-gray-100 text-center">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
-            {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                {/* Carrossel */}
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -117,14 +121,14 @@ function ListaObesidade() {
                         className="rounded-lg shadow-lg align-middle"
                     >
                         {imagens.map((imagem, index) => (
-                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                           {/* Imagem */}
-                           <img 
-                               src={imagem.src} 
-                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
-                           />
-                       </SwiperSlide>                       
-                        
+                            <SwiperSlide key={index} className="flex items-center justify-center">
+                                {/* Imagem */}
+                                <img
+                                    src={imagem.src}
+                                    className="w-auto h-72 mx-auto object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                                />
+                            </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
@@ -143,10 +147,18 @@ function ListaObesidade() {
                                 exerciciosObesidade.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
-                                    } } />
+                                    }} />
                                 ))
                             ) : (
-                                <p className="text-center text-gray-700">Carregando exercícios...</p>
+                                <Oval
+                                    visible={false}
+                                    height="80"
+                                    width="80"
+                                    color="#4fa94d"
+                                    ariaLabel="oval-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                />
                             )}
                         </div>
                     </div>
@@ -155,7 +167,7 @@ function ListaObesidade() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >

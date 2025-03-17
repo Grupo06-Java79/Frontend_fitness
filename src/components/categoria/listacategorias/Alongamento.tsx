@@ -29,8 +29,11 @@ function Alongamento() {
                     <h1 className="text-white text-5xl font-extrabold">
                         Alongamento
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl">
-                        Sessão essencial para melhorar a flexibilidade, evitar lesões e alongar os músculos, promovendo bem-estar e alívio do estresse.
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                        O alongamento ao ar livre é uma prática fundamental para aumentar a flexibilidade,
+                        melhorar a amplitude de movimento e reduzir o risco de lesões durante o treino.
+                        os alongamentos ajudam a relaxar a musculatura, 
+                        a recuperação e preparam o corpo para os exercícios de força.
                     </p>
                 </div>
             </div>
@@ -62,7 +65,7 @@ function Alongamento() {
             <div className="flex justify-center w-full py-8 min-h-screen">
                 <div className="container flex flex-col">
                     <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-                        Passo a passo para um alongamento completo 
+                        Passo a passo para um alongamento completo
                     </h2>
                     <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto text-gray-800 text-lg">
                         <ul className="list-decimal list-inside space-y-4">
@@ -80,7 +83,7 @@ function Alongamento() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >

@@ -7,6 +7,7 @@ import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentoleve.png";
+import { Oval } from "react-loader-spinner";
 
 function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
     const navigate = useNavigate();
@@ -65,8 +66,11 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                     <h1 className="text-white text-5xl font-extrabold">
                         EMAGRECIMENTO LEVE {/* Alterado de "Condicionamento Físico" para "Emagrecimento Leve" */}
                     </h1>
-                    <p className="text-white text-lg mt-4 max-w-3xl">
-                        Treino focado na perda de peso gradual e sustentável, combinando exercícios aeróbicos e de resistência para promover saúde e bem-estar. {/* Texto atualizado para refletir o emagrecimento */}
+                    <p className="text-white text-lg mt-4 max-w-3xl text-justify">
+                    O treino ao ar livre para emagrecimento leve combina movimentos dinâmicos que estimulam 
+                    o gasto calórico de forma equilibrada. Aproveitando o ambiente aberto e os equipamentos
+                    disponíveis, é possível manter uma rotina ativa, melhorar a resistência 
+                    e promover o bem-estar de maneira leve e sustentável.
                     </p>
                 </div>
             </div>
@@ -84,7 +88,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                     <br></br>
                     <p>Descansos de 1 a 3 minutos entre as séries.</p> {/* Alterado de "5 a 10 minutos" para "5 a 8 minutos" */}
                     <p>Realize o aquecimento adequadamente para evitar lesões.</p> {/* Texto atualizado para enfatizar a prevenção de lesões */}
-                </div> 
+                </div>
                 {/* Seção Direita */}
                 <div className="bg-[#A0E080] w-full p-10">
                     <h2 className="text-3xl font-bold text-gray-900">📌 Benefícios do treino</h2>
@@ -96,8 +100,8 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
             <div className="bg-gray-100 text-center">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
-            {/* Carrossel */}
-            <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                {/* Carrossel */}
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -117,21 +121,21 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                         className="rounded-lg shadow-lg"
                     >
                         {imagens.map((imagem, index) => (
-                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                           {/* Imagem */}
-                           <img 
-                               src={imagem.src} 
-                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
-                           />
-                       </SwiperSlide>                       
-                        
+                            <SwiperSlide key={index} className="flex items-center justify-center">
+                                {/* Imagem */}
+                                <img
+                                    src={imagem.src}
+                                    className="w-auto h-72 mx-auto object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                                />
+                            </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
             </div>
 
 
-            
+
 
             {/* Lista de Exercícios */}
             <div className="flex justify-center w-full bg-[#CEF9A9] py-8 min-h-screen">
@@ -145,10 +149,20 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
                                 exerciciosSobrePeso.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
-                                    } } />
+                                    }} />
                                 ))
                             ) : (
-                                <p className="text-center text-gray-700">Carregando exercícios...</p>
+
+                                <Oval
+                                    visible={false}
+                                    height="80"
+                                    width="80"
+                                    color="#4fa94d"
+                                    ariaLabel="oval-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                />
+
                             )}
                         </div>
                     </div>
@@ -157,11 +171,11 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
 
             {/* Botões de Ação */}
             <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
-                    Voltar para Categorias
+                    Voltar para categorias
                 </button>
             </div>
         </>

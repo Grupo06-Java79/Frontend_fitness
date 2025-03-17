@@ -7,6 +7,7 @@ import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import foto from "../../../../public/images/categoriasfotos/fundopesoideal.png";
+import { Oval } from "react-loader-spinner";
 
 
 function ListaPesoNormal() {
@@ -68,7 +69,11 @@ function ListaPesoNormal() {
                         CONDICIONAMENTO FÍSICO
                     </h1>
                     <p className="text-white text-lg mt-4 max-w-3xl text-justify">
-                        Treino focado na resistência, ideal para manter a boa forma e um estilo de vida equilibrado.
+                    O treino ao ar livre para manter o condicionamento físico é uma
+                    ótima opção para quem busca equilíbrio entre saúde e bem-estar.
+                    Com a combinação de movimentos dinâmicos, que trabalham força, 
+                    resistência e mobilidade, é possível aproveitar o espaço aberto 
+                    e os equipamentos disponíveis para uma prática variada e estimulante.
                     </p>
                 </div>
             </div>
@@ -83,7 +88,7 @@ function ListaPesoNormal() {
                         </div>
 
                         <div className="flex items-center gap-2 mt-4 md:mt-0 p-2">
-                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>           
+                            <h2 className="text-3xl font-bold text-gray-900">⚡ Intensidade: Alta</h2>
                         </div>
                         <br></br>
                         <p>Descansos de 1 a 3 minutos entre as séries.</p>
@@ -97,13 +102,13 @@ function ListaPesoNormal() {
                     <p>Manter a boa forma | Manter a força | Bom condicionamento</p>
                 </div>
             </div>
-            
+
             {/* Separação visual com Carrossel */}
             <div className="bg-gray-100 text-center">
                 <h2 className="text-2xl font-bold pt-5 text-gray-900">Veja alguns exercícios na praça para você incluir no seu treino</h2>
 
                 {/* Carrossel */}
-                <div className="max-w-screen-2xl mx-auto mt-6 p-12">                   
+                <div className="max-w-screen-2xl mx-auto mt-6 p-12">
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay]}
                         spaceBetween={20} // Espaçamento entre os slides
@@ -123,14 +128,14 @@ function ListaPesoNormal() {
                         className="rounded-lg shadow-lg align-middle"
                     >
                         {imagens.map((imagem, index) => (
-                           <SwiperSlide key={index} className="flex justify-center items-center relative w-full">
-                           {/* Imagem */}
-                           <img 
-                               src={imagem.src} 
-                               className="w-auto h-[45vh] object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
-                           />
-                       </SwiperSlide>                       
-                        
+                            <SwiperSlide key={index} className="flex items-center justify-center">
+                                {/* Imagem */}
+                                <img
+                                    src={imagem.src}
+                                    className="w-auto h-72 mx-auto object-cover rounded-lg"  // Ajustando a largura automática e mantendo a altura
+                                />
+                            </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
@@ -149,10 +154,18 @@ function ListaPesoNormal() {
                                 exerciciosPesoNormal.map((exercicio) => (
                                     <CardExercicio key={exercicio.id} exercicio={exercicio} onDelete={function (): void {
                                         throw new Error("Function not implemented.");
-                                    } } />
+                                    }} />
                                 ))
                             ) : (
-                                <p className="text-center text-gray-700">Carregando exercícios...</p>
+                                <Oval
+                                    visible={false}
+                                    height="80"
+                                    width="80"
+                                    color="#4fa94d"
+                                    ariaLabel="oval-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                />
                             )}
                         </div>
                     </div>
@@ -161,7 +174,7 @@ function ListaPesoNormal() {
 
             {/* Botões de Ação */}
             <div className="flex justify-center bg-[#CEF9A9] gap-4 py-6">
-                <button 
+                <button
                     className="bg-gray-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition"
                     onClick={() => navigate('/categorias')}
                 >
