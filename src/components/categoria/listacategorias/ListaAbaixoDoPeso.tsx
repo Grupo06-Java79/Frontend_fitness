@@ -9,6 +9,7 @@ import foto from "../../../../public/images/categoriasfotos/fundoganhomassa.png"
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { b } from "framer-motion/client";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaExercicios() {
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ function ListaExercicios() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         }
     }, [token]);

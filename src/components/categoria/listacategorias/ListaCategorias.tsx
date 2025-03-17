@@ -9,6 +9,7 @@ import CardCategoria4 from "../cardcategoria/CardCategoria4";
 import CardCategoria5 from "../cardcategoria/CardCategoria5";
 import CardCategoria6 from "../cardcategoria/CardCategoria6";
 import Exercicio from "../../../models/Exercicio";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaCategorias() {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ function ListaCategorias() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         }
     }, [token]);

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import foto from "../../../../public/images/categoriasfotos/fundoaquecimento.png";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function Aquecimento() {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Aquecimento() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado");
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate("/");
         }
     }, [token]);

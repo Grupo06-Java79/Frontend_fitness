@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardExercicio from "../cardexercicio/CardExercicio";
 import Exercicio from "../../../models/Exercicio";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaExercicios() {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ function ListaExercicios() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         } else {
             buscarExercicio(); 

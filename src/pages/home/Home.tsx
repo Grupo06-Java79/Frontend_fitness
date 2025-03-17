@@ -80,8 +80,8 @@ function Home() {
                 </section>
                 <section className="flex flex-col sm:flex-row">
                     {/* Treinos personalizados */}
-                    <div className="bg-[#CEF9A9] w-full p-5 px-10 text-center sm:text-left">
-                        <p className="text-3xl font-bold py-5">
+                    <div className="bg-[#CEF9A9] w-full p-5 px-10 text-center justify-center sm:text-left">
+                        <p className="text-3xl font-bold py-5 text-center">
                             Veja o treino para
                             <br /> seu IMC
                         </p>
@@ -91,53 +91,55 @@ function Home() {
                             Te ajudamos a aprender a usar cada aparelho na nossa lista de exercícios.
                         </p>
 
-                        {cliente.imc < 18.5 && (
-                            <Link to={`/listacategorias/ListaAbaixoDoPeso`}>
-                                <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
-                                    Ver Treino
-                                </button>
-                            </Link>
-                        )}
-                        {cliente.imc >= 18.5 && cliente.imc <= 24.99 && (
-                            <Link to={`/listacategorias/ListaPesoNormal`}>
-                                <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
-                                    Ver Treino
-                                </button>
-                            </Link>
-                        )}
-                        {cliente.imc >= 25 && cliente.imc <= 29.99 && (
-                            <Link to={`/listacategorias/ListaAtencaoSaude`}>
-                                <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
-                                    Ver Treino
-                                </button>
-                            </Link>
-                        )}
-                        {cliente.imc > 29.99 && (
-                            <Link to={`/listacategorias/ListaSaudeEmFoco`}>
-                                <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
-                                    Ver Treino
-                                </button>
-                            </Link>
-                        )}
+                        <div className="flex justify-center">
+                            {cliente.imc < 18.5 && (
+                                <Link className="flex" to={`/listacategorias/ListaAbaixoDoPeso`}>
+                                    <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
+                                        Ver Treino
+                                    </button>
+                                </Link>
+                            )}
+                            {cliente.imc >= 18.5 && cliente.imc <= 24.99 && (
+                                <Link to={`/listacategorias/ListaPesoNormal`}>
+                                    <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
+                                        Ver Treino
+                                    </button>
+                                </Link>
+                            )}
+                            {cliente.imc >= 25 && cliente.imc <= 29.99 && (
+                                <Link to={`/listacategorias/ListaAtencaoSaude`}>
+                                    <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
+                                        Ver Treino
+                                    </button>
+                                </Link>
+                            )}
+                            {cliente.imc > 29.99 && (
+                                <Link to={`/listacategorias/ListaSaudeEmFoco`}>
+                                    <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
+                                        Ver Treino
+                                    </button>
+                                </Link>
+                            )}
+                        </div>
                     </div>
                     {/* Categorias */}
-                    <div className="bg-[#B6EE8D] w-full p-5 px-10 text-center sm:text-right hidden lg:block">
-                        <p className="text-3xl font-bold py-5">
+                    <div className="bg-[#B6EE8D] w-full p-5 px-10 text-center sm:text-right hidden lg:block justify-center">
+                        <p className="text-3xl font-bold py-5 text-center">
                             Escolha uma
                             <br /> Categoria de treino
                         </p>
-                        <p className="text-justify ">
-                            Aqui você encontra categorias de treinos que
-                            <br /> se adequam a sua necessidade.
+                        <p className="w-full max-w-md mx-auto text-base sm:text-lg md:text-xl text-center sm:text-justify leading-relaxed px-6">
+                            Aqui você encontra categorias de treinos que se adequam a sua necessidade.
                             <br />
-                            Monte seu IMC e veja o melhor treino para seu objetivo
-                            <br /> e comece o quanto antes.
+                            Monte seu IMC e veja o melhor treino para seu objetivo e comece o quanto antes.
                         </p>
-                        <Link to={`/categorias`}>
-                            <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
-                                Categorias
-                            </button>
-                        </Link>
+                        <div className="flex justify-center">
+                            <Link to={`/categorias`}>
+                                <button className="text-slate-100 p-2 my-5 bg-[#14B467] hover:bg-[#129858]">
+                                    Categorias
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </section>
                 <section className="bg-[#E5E5E5]">

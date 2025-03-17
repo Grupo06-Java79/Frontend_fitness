@@ -7,6 +7,7 @@ import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import foto from "../../../../public/images/categoriasfotos/fundopesoideal.png";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function ListaPesoNormal() {
@@ -40,7 +41,7 @@ function ListaPesoNormal() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         }
     }, [token]);

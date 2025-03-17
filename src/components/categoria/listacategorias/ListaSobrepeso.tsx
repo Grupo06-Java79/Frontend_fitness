@@ -7,6 +7,7 @@ import { buscar } from "../../../services/Service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentoleve.png";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
     const navigate = useNavigate();
@@ -40,7 +41,7 @@ function ListaSobrepeso() { // Alterado de ListaPesoNormal para ListaSobrepeso
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         }
     }, [token]);
