@@ -9,6 +9,7 @@ import CardCategoria4 from "../cardcategoria/CardCategoria4";
 import CardCategoria5 from "../cardcategoria/CardCategoria5";
 import CardCategoria6 from "../cardcategoria/CardCategoria6";
 import Exercicio from "../../../models/Exercicio";
+import foto from "../../../../public/images/categoriasfotos/fundocategorias.png";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaCategorias() {
@@ -44,13 +45,18 @@ function ListaCategorias() {
 
     return (
         <>
-            <section className="text-center py-64 bg-cover bg-center"
-                style={{ backgroundImage: `url('../../../../public/images/categoriasfotos/fundocategorias.png')` }}>
-
-                <h1 className="text-5xl font-bold text-white brightness-70">
-                    Escolha sua categoria
-                </h1>
-            </section>
+             <div className="bg-gray-100 min-h-screen relative overflow-hidden">
+                <img
+                    src={foto}
+                    alt="Imagem de treino"
+                    className="absolute top-0 left-0 w-full h-full object-cover sm:h-auto sm:max-h-screen"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
+                    <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold">
+                        ESCOLHA SUA CATEGORIA
+                    </h1>
+                </div>
+            </div>
             {/* Título no topo da página */}
             <div className="bg-[#CEF9A9]">
 
