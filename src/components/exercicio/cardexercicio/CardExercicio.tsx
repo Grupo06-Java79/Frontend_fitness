@@ -2,29 +2,33 @@ import { Link, useNavigate } from 'react-router-dom';
 import Exercicio from '../../../models/Exercicio';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { useContext } from 'react';
+import foto from "../../../../public/images/exer_01.jpg"
 
 
 interface CardExercicioProps {
     exercicio: Exercicio;
-    onDelete: () => void; 
-    showActions?: boolean; 
+    onDelete: () => void;
+    showActions?: boolean;
 }
 
 function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
- 
+
     const Navigate = useNavigate();
 
-    const { usuario} = useContext(AuthContext)
+    const { usuario } = useContext(AuthContext)
 
- 
+
     return (
         <div className="relative flex flex-col w-full my-6 bg-white shadow-lg border border-slate-200 rounded-lg max-w-xs overflow-hidden">
             <div className="relative w-full h-56">
-                <img
-                    className="h-full w-full object-cover"
-                    src={exercicio.foto}
-                    alt={'Foto do exercicio ${exercicio.nome}'}
-                />
+                <div className="relative w-full h-56">
+                    <img
+                        className="h-full w-full object-cover"
+                        src={exercicio.foto && exercicio.foto !== "" ? exercicio.foto : foto}
+                        alt={`Foto do exercício ${exercicio.nome}`}
+                    />
+                </div>
+
             </div>
 
             <div className="p-5 flex flex-col items-center">
@@ -46,53 +50,53 @@ function CardExercicio({ exercicio, showActions = true }: CardExercicioProps) {
                     <p><strong>Repetições:</strong> {exercicio.repeticao}</p>
                 </div>
 
-                {showActions && ( 
+                {showActions && (
                     <div className="mt-4 flex gap-4">
-                        {usuario.id===1 && 
-                        <Link
-                            to={`/editarexercicio/${exercicio.id}`}
-                            className="text-teal-600 font-semibold text-sm hover:underline flex items-center"
-                        >
-                            Editar
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="ml-2 h-4 w-4"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                        {usuario.id === 1 &&
+                            <Link
+                                to={`/editarexercicio/${exercicio.id}`}
+                                className="text-teal-600 font-semibold text-sm hover:underline flex items-center"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                />
-                            </svg>
-                        </Link>
+                                Editar
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="ml-2 h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    />
+                                </svg>
+                            </Link>
                         }
-                        {usuario.id===1 &&
-                        <Link
-                            to={`/deletarexercicio/${exercicio.id}`} 
-                            className="text-red-600 font-semibold text-sm hover:underline flex items-center"
-                        >
-                            Deletar
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="ml-2 h-4 w-4"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                        {usuario.id === 1 &&
+                            <Link
+                                to={`/deletarexercicio/${exercicio.id}`}
+                                className="text-red-600 font-semibold text-sm hover:underline flex items-center"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </Link>
+                                Deletar
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="ml-2 h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </Link>
                         }
-                        {usuario.id>1 &&
+                        {usuario.id > 1 &&
                             <div className='flex justify-center'>
                                 <input className='w-8 h-8' type="checkbox"></input> <span className='pt-1 pl-2'>CONCLUÍDO</span>
                             </div>
