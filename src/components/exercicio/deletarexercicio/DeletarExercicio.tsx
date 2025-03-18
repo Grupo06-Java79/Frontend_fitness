@@ -51,7 +51,7 @@ function DeletarExercicio() {
                     'Authorization': token
                 }
             })
-            alert('Exercício apagado com sucesso')
+            ToastAlerta('Exercício apagado com sucesso','sucesso')
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()

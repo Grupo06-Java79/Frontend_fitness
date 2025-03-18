@@ -150,15 +150,7 @@ function ListaSobrepeso() {
                                 ))
                             ) : (
                                 <div className="flex justify-center items-center w-full h-full">
-                                    <Oval
-                                        visible={true}
-                                        height="80"
-                                        width="80"
-                                        color="#4fa94d"
-                                        ariaLabel="oval-loading"
-                                        wrapperStyle={{}}
-                                        wrapperClass=""
-                                    />
+                                   <p></p>
                                 </div>
                             )}
                         </div>
