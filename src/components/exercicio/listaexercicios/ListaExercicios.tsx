@@ -62,7 +62,7 @@ function ListaExercicios() {
                                 } } />
                             ))
                         ) : (
-                            <p>Carregando exercícios...</p>
+                            <p></p>
                         )}
                     </div>
                     

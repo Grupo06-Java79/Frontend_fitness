@@ -111,7 +111,7 @@ function FormExercicio() {
                     type="text"
                     name="nome"
                     placeholder="Nome do exercício"
-                    className="border border-gray-300 rounded w-96 p-2"
+                    className="border border-gray-300 rounded w-full sm:w-80 p-2"
                     value={exercicio.nome || ""}
                     onChange={atualizarEstado}
                     required
@@ -126,7 +126,7 @@ function FormExercicio() {
                     type="text"
                     name="descricao"
                     placeholder="Descreva o exercício"
-                    className="border border-gray-300 rounded w-96 p-2"
+                    className="border border-gray-300 rounded w-full sm:w-80 p-2"
                     value={exercicio.descricao || ""}
                     onChange={atualizarEstado}
                     required
@@ -141,7 +141,7 @@ function FormExercicio() {
                     type="text"
                     name="foto"
                     placeholder="Informe a foto do exercicio"
-                    className="border border-gray-300 rounded w-96 p-2"
+                    className="border border-gray-300 rounded w-full sm:w-80 p-2"
                     value={exercicio.foto}
                     onChange={atualizarEstado}
                   />
@@ -155,7 +155,7 @@ function FormExercicio() {
                     type="text"
                     name="aparelho"
                     placeholder="Informe o aparelho utilizado"
-                    className="border border-gray-300 rounded w-96 p-2"
+                    className="border border-gray-300 rounded w-full sm:w-80 p-2"
                     value={exercicio.aparelho || ""}
                     onChange={atualizarEstado}
                   />
@@ -170,7 +170,7 @@ function FormExercicio() {
                       type="number"
                       name="serie"
                       placeholder="Número de séries"
-                      className="border border-gray-300 rounded w-60 p-2"
+                      className="border border-gray-300 rounded w-full sm:w-80 p-2"
                       value={exercicio.serie || ""}
                       onChange={atualizarEstado}
                       min={1}
@@ -185,7 +185,7 @@ function FormExercicio() {
                       type="number"
                       name="repeticao"
                       placeholder="Número de repetições"
-                      className="border border-gray-300 rounded w-60 p-2"
+                      className="border border-gray-300 rounded w-full sm:w-80 p-2"
                       value={exercicio.repeticao || ""}
                       onChange={atualizarEstado}
                       min={1}
@@ -199,7 +199,7 @@ function FormExercicio() {
                   </label>
                   <select
                     name="categoria"
-                    className="border border-gray-300 rounded w-96 p-2"
+                    className="border border-gray-300 rounded w-full sm:w-80 p-2"
                     value={exercicio.categoria?.id || ""}
                     onChange={(e) =>
                       setExercicio({
