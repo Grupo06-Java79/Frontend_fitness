@@ -178,33 +178,33 @@ function Home() {
                     </div>
                 </section>
                 {/* Adicione o componente do mapa aqui */}
-                <section className=" py-4 px-8">
-                    <p className=" flex text-3xl text-center justify-center font-bold py-10 ">
+                <section className=" py-10 px-4">
+                    <p className=" flex text-3xl text-center justify-center font-bold py-10">
                         Parques em São Paulo para o seu treino
                     </p>
-                    <div className="flex flex-col md:flex-row-reverse items-start">
-                        <div className="grid justify-items-center m-20">
-                            <p className="text-xl hidden lg:block">
-                                Quer manter a rotina de treinos ao ar livre? Além de praças,<br />
-                                São Paulo oferece diversas opções de parques para correr, caminhar e
+                    <div className="flex flex-col lg:flex-row-reverse justify-around items-center  py-6">
+                        <div className="grid justify-items-center lg:mr-28 py-6">
+                            <p className="text-xl sm:text-xl md:text-xl">
+                                Quer manter a rotina de treinos ao ar livre? <br />
+                                Além de praças, São Paulo oferece diversas opções de parques para correr, caminhar e
                                 se exercitar em meio à natureza.<br /> Com espaços amplos, áreas verdes
                                 e infraestrutura adequada, a cidade conta com várias alternativas
                                 para quem busca esse tipo de atividade. <br />Escolha o seu favorito e aproveite!
                             </p>
                         </div>
-                        <div className=" flex justify-center ">
+                        <div className=" flex justify-center w-full">
                             <MapaParques />
                         </div>
                     </div>
                 </section>
-                <section className="py-10 px-4">
-                    <p className="text-3xl text-center font-bold py-10 ">
+                <section className="py-2 px-4">
+                    <p className="text-3xl text-center font-bold py-6 ">
                         SOBRE PRAÇAFit
                     </p>
                     <div className="flex flex-col lg:flex-row justify-around items-center mt-8">
                         {/* Texto */}
-                        <div className="grid justify-items-center text-center lg:text-left max-w-lg">
-                            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed px-6">
+                        <div className="grid justify-items-center lg:text-left max-w-lg">
+                            <p className="text-xl sm:text-xl px-6">
                                 Quer mais praticidade e eficiência na sua jornada fitness?
                                 <br />
                                 Com o <strong>PRAÇAFit</strong>, você tem uma plataforma exclusiva para monitorar seu peso e IMC, ajudando você a acompanhar sua evolução de forma simples e intuitiva.

@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import foto from "../../../../public/images/categoriasfotos/fundoemagrecimentopesado.png";
 import { Oval } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function ListaObesidade() {
@@ -42,7 +43,7 @@ function ListaObesidade() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado","alerta");
             navigate('/');
         }
     }, [token]);

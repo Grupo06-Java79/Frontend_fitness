@@ -5,7 +5,7 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 import Cadastrar from '../cadastrar/Cadastrar';
-import logo from '../../../public/images/logopraca.png';
+import logo from '../../../public/images/logopraca2.png';
 
 function Login() {
 
