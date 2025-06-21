@@ -12,7 +12,7 @@ function CardSobre() {
     return (
       <div>
         {/* Div com os 3 primeiros cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-20 mx-auto max-w-7xl">
+        <div id="membros" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-20 mx-auto max-w-7xl">
           {/* Card 1 */}
           <div className="bg-slate-100 rounded-xl shadow-md p-4 max-w-xs mb-4 mx-auto">
             <div className="text-center">

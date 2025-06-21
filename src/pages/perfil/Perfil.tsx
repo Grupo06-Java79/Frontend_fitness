@@ -52,7 +52,7 @@ function Perfil() {
   const fotoPerfil = usuario.foto || "https://img.freepik.com/free-vector/user-circles-set_78370-4704.jpg?t=st=1741890600~exp=1741894200~hmac=8a60a25fe22ba7f27d4d9b46d7488678c3eb4bb67fbbeb7b308087476a77c34b&w=740";
 
   return (
-    <div className="flex justify-center mx-4 min-h-screen">
+    <div className="flex justify-center mx-4 min-h-screen ">
       <div className="container mx-auto my-4 rounded-2xl overflow-hidden">
         <img
           className="w-full h-72 object-cover border-b-8 border-white"

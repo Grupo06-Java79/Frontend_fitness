@@ -20,7 +20,11 @@ function Login() {
     const navigate = useNavigate();
     const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
-    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin);
+    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+        usuario: 'recrutador@visitante.com',
+        senha: '123456789'   
+
+    } as UsuarioLogin);
 
     useEffect(() => {
         if (usuario?.token) {

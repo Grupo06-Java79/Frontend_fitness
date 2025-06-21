@@ -1,4 +1,5 @@
-import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     let data = new Date().getFullYear();
@@ -7,15 +8,15 @@ function Footer() {
         <>
             <div className="flex">
                 <div className="flex w-100 pr-5 bg-black text-white">
-                    <div className="flex p-2">
-                        <a href="https://www.linkedin.com/in/seu_usuario" target="_blank" className="pl-5">
+                    <div className="flex p-2 items-center gap-x-5 justify-center">
+                        <Link to="/sobre#membros">
                             <LinkedinLogo size={36} weight='bold'/>
-                        </a>
-                        <a href="https://www.instagram.com/seu_usuario" target="_blank" className="px-5">
+                        </Link>
+                        <Link to="/sobre#membros">
                             <InstagramLogo size={36} weight='bold' />
-                        </a>
-                        <a href="https://www.facebook.com/seu_usuario" target="_blank" >
-                            <FacebookLogo size={36} weight='bold' />
+                        </Link>
+                        <a href="https://github.com/Grupo06-Java79/Frontend_fitness" target="_blank" rel="noopener noreferrer">
+                            <GithubLogo size={36} weight='bold' />
                         </a>
                         <p className='text-xl font-bold px-5'>
                             PRAÇAFit

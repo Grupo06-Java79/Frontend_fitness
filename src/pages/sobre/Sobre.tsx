@@ -7,11 +7,22 @@ import CardSaude from "./cardsaude/CardSaude";
 import HistoriaPracaFit from "./historiapracafit/HistoriaPracaFit";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Sobre() {
 
     const {usuario} = useContext(AuthContext)
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.replace("#", ""));
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location])
 
     return (
         <>
