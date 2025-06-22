@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# 🏋️💪 PraçaFit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **PraçaFit** é um aplicativo fitness voltado para auxiliar usuários no cálculo do **IMC** e no uso correto dos **aparelhos de praças públicas**. Nosso objetivo é incentivar um estilo de vida mais saudável, fornecendo informações acessíveis e intuitivas sobre exercícios ao ar livre.
 
-Currently, two official plugins are available:
+## 👀 Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔗 **Site:** [https://pracafit.netlify.app](https://pracafit.netlify.app)
+- 🔗 **Backend:** [https://github.com/Grupo06-Java79/Backend_fitness](https://github.com/Grupo06-Java79/Backend_fitness)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Funcionalidades
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 📊 **Cálculo de IMC:** Informe seu peso e altura para calcular o índice de massa corporal.
+- 🔮 **Dicas de Exercícios:** Explicação detalhada sobre como usar cada equipamento da praça corretamente.
+- 🔧 **Acompanhamento:** Possibilidade de registrar medidas e acompanhar a evolução.
+- 📲 **Responsivo:** Compatível com dispositivos móveis para melhor experiência de usuário.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 👨‍💻 Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🌐 **Frontend**
+- React
+- Styled Components
+- Tailwind CSS
+- React Router
+- Axios
+- AuthContext (Autenticação com Context API)
+- Netlify (Hospedagem)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### 🛠️ **Backend**
+- Java + Spring Boot
+- Spring Security (Autenticação e Autorização)
+- PostgreSQL
+- JPA/Hibernate
+- Banco de Dados: PostgreSQL
+- Render (Hospedagem do Backend)
+- Aiven(Hospedagem Banco de dados)
+
+## 💾 Hospedagem
+- 🌍 **Frontend:** Hospedado no Netlify
+- 🛠️ **Backend:** Hospedado no Render
+- 🛢️ **Banco de Dados:** Hospedado no Aiven
+
+
+
+Feito com ❤️ por: 
+- [Lucas](https://github.com/Lucas300)
+- [Guilherme](https://github.com/GuilhermeKaludin)
+- [João](https://github.com/jloliveira95)
+- [Juliana](https://github.com/JulianaMonteiro4)
+- [Tainá](https://github.com/tainalara)
